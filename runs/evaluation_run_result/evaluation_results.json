@@ -1,0 +1,25 @@
+{
+  "summary": {
+    "total": 1,
+    "scored": 1,
+    "average_score": null,
+    "score_distribution": {},
+    "errored": 1,
+    "skipped": 0
+  },
+  "errored": [
+    {
+      "test_id": "04",
+      "reason": "API call failed: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=120)"
+    }
+  ],
+  "skipped": [],
+  "all_results": [
+    {
+      "test_id": "04",
+      "status": "error",
+      "reason": "api_error",
+      "error": "HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=120)"
+    }
+  ]
+}

@@ -1,0 +1,524 @@
+{
+  "My 4 year old son is into cars and trucks. Give me recommendations of books he'll enjoy.": {
+    "themes": [
+      "cars",
+      "trucks",
+      "vehicles",
+      "transportation"
+    ],
+    "audience_range": "preschool",
+    "genre": "fiction",
+    "format": "picture_book",
+    "recommendation_type": "general",
+    "request_type": "general",
+    "use_canonical_search": true,
+    "known_titles": [
+      "Goodnight Moon by Margaret Wise Brown",
+      "The Little Blue Truck by Alice Schertle",
+      "Truck by Donald Crews",
+      "Cars by Richard Scarry",
+      "Big Red Barn by Margaret Wise Brown"
+    ]
+  },
+  "My 4 year old daughter is into cars and trucks. Give me recommendations of books she will enjoy.": {
+    "themes": [
+      "cars",
+      "trucks",
+      "vehicles",
+      "transportation"
+    ],
+    "audience_range": "preschool",
+    "genre": "fiction",
+    "format": "picture_book",
+    "recommendation_type": "general",
+    "request_type": "general",
+    "use_canonical_search": true,
+    "known_titles": [
+      "The Little Blue Truck by Alice Schertle",
+      "Trucks by Christopher Savage",
+      "Big Red Barn by Margaret Wise Brown",
+      "Goodnight Moon by Margaret Wise Brown"
+    ]
+  },
+  "My boy is into cars and trucks. Give me recommendations of books he'll enjoy.": {
+    "themes": [
+      "cars",
+      "trucks",
+      "vehicles",
+      "transportation",
+      "adventure"
+    ],
+    "audience_range": "not_specified",
+    "genre": "mixed",
+    "format": "not_specified",
+    "recommendation_type": "general",
+    "request_type": "general",
+    "use_canonical_search": true,
+    "known_titles": [
+      "Cars by Mary Pope Osborne",
+      "Truck Stuck by Mark Rosenthal",
+      "Little Blue Truck by Alice Schertle",
+      "Goodnight, Goodnight Construction Site by Sherri Duskey Rinker",
+      "Big Red Barn by Margaret Wise Brown"
+    ]
+  },
+  "My son likes cars. Recommend a progression of books so he learns about engineering and complex mechanisms gradually.": {
+    "themes": [
+      "vehicles",
+      "engineering",
+      "mechanics",
+      "how things work"
+    ],
+    "audience_range": "preschool",
+    "genre": "mixed",
+    "format": "not_specified",
+    "recommendation_type": "progression",
+    "request_type": "progression",
+    "use_canonical_search": true,
+    "known_titles": [],
+    "levels": [
+      {
+        "level": 1,
+        "description": "Introduction to cars and vehicles through pictures",
+        "keywords": [
+          "cars",
+          "trucks",
+          "vehicles",
+          "picture books"
+        ],
+        "audience_range": "toddler",
+        "known_titles": [
+          "Richard Scarry's Cars and Trucks and Things That Go"
+        ]
+      },
+      {
+        "level": 2,
+        "description": "Different types of vehicles and their purposes",
+        "keywords": [
+          "vehicles",
+          "construction vehicles",
+          "transportation",
+          "trucks"
+        ],
+        "audience_range": "preschool",
+        "known_titles": [
+          "Big Red Barn by Margaret Wise Brown",
+          "Goodnight, Goodnight Construction Site by Sherri Duskey Rinker"
+        ]
+      },
+      {
+        "level": 3,
+        "description": "How machines and mechanical parts work",
+        "keywords": [
+          "wheels",
+          "gears",
+          "simple machines",
+          "how things work"
+        ],
+        "audience_range": "early_reader",
+        "known_titles": []
+      },
+      {
+        "level": 4,
+        "description": "How engines and motors work",
+        "keywords": [
+          "engines",
+          "motors",
+          "car mechanics",
+          "how cars work"
+        ],
+        "audience_range": "middle_grade",
+        "known_titles": [
+          "Mike Mulligan and His Steam Shovel by Virginia Lee Burton",
+          "If I Built a Car by Chris Van Dusen"
+        ]
+      },
+      {
+        "level": 5,
+        "description": "Engineering design and maker projects",
+        "keywords": [
+          "engineering",
+          "STEM",
+          "building projects",
+          "invention",
+          "design"
+        ],
+        "audience_range": "middle_grade",
+        "known_titles": [
+          "The Way Things Work Now by Macaulay"
+        ]
+      }
+    ]
+  },
+  "My 4 year son likes cars. What other kinds of books do you think he'd enjoy?": {
+    "themes": [
+      "vehicles",
+      "transportation",
+      "machines"
+    ],
+    "audience_range": "preschool",
+    "genre": "fiction",
+    "format": "picture_book",
+    "recommendation_type": "exploration",
+    "request_type": "exploration",
+    "exploration_themes": [
+      [
+        "trucks"
+      ],
+      [
+        "construction",
+        "building"
+      ],
+      [
+        "machines",
+        "how things work"
+      ],
+      [
+        "action",
+        "adventure"
+      ],
+      [
+        "animals",
+        "friendships"
+      ]
+    ],
+    "use_canonical_search": true,
+    "known_titles": [
+      "Richard Scarry's Cars and Trucks and Things That Go",
+      "The Little Blue Truck by Alice Schertle",
+      "Click, Clack, Moo by Doreen Cronin",
+      "Pete the Cat by James Dean"
+    ]
+  },
+  "I want my 5 year old to enjoy cooking. What books I can read to teach him cooking.": {
+    "themes": [
+      "cooking for kids",
+      "recipes kids",
+      "cooking activities children",
+      "kitchen skills",
+      "food"
+    ],
+    "audience_range": "preschool",
+    "genre": "nonfiction",
+    "format": "not_specified",
+    "recommendation_type": "general",
+    "request_type": "general",
+    "use_canonical_search": true,
+    "known_titles": [
+      "Cooking with Kids by Salad Rohde",
+      "Little Chef by Kate Hewson",
+      "The Toddler Cookbook by Pesach Lattin",
+      "Good Enough to Eat by Lizzy Rockwell"
+    ]
+  },
+  "I am a software engineer and I want to write a book about being a software engineer in the AI world. Suggest some helpful books.": {
+    "themes": [
+      "software engineering",
+      "artificial intelligence",
+      "AI systems",
+      "technical writing",
+      "engineering practices"
+    ],
+    "audience_range": "adult",
+    "genre": "nonfiction",
+    "format": "guide",
+    "recommendation_type": "general",
+    "request_type": "general",
+    "use_canonical_search": true,
+    "known_titles": [
+      "Designing Machine Learning Systems by Chip Huyen",
+      "Building Machine Learning Powered Applications by Emmanuel Ameisen",
+      "Designing Data-Intensive Applications by Martin Kleppmann",
+      "The Pragmatic Programmer by David Thomas and Andrew Hunt",
+      "Software Engineering at Google by Titus Winters, Tom Manshreck, and Hyrum Wright"
+    ],
+    "exploration_themes": []
+  },
+  "I want some spiritual guidance that can give me peace and direction. Recommend books.": {
+    "themes": [
+      "spirituality",
+      "mindfulness",
+      "self-discovery",
+      "peace",
+      "meaning"
+    ],
+    "audience_range": "adult",
+    "genre": "nonfiction",
+    "format": "not_specified",
+    "recommendation_type": "general",
+    "request_type": "general",
+    "use_canonical_search": true,
+    "known_titles": [
+      "The Power of Now by Eckhart Tolle",
+      "Man's Search for Meaning by Viktor Frankl",
+      "Wherever You Go, There You Are by Jon Kabat-Zinn",
+      "The Untethered Soul by Michael A. Singer",
+      "When Things Fall Apart by Pema Ch\u00f6dr\u00f6n"
+    ]
+  },
+  "I want some spiritual guidance that can give me peace and direction. Recommend some Indian inspired books.": {
+    "themes": [
+      "spirituality",
+      "Indian philosophy",
+      "mindfulness",
+      "self-help",
+      "wisdom"
+    ],
+    "audience_range": "adult",
+    "genre": "nonfiction",
+    "format": "not_specified",
+    "recommendation_type": "general",
+    "request_type": "general",
+    "use_canonical_search": true,
+    "known_titles": [
+      "The Bhagavad Gita",
+      "The Yoga Sutras of Patanjali",
+      "Siddhartha by Hermann Hesse",
+      "The Upanishads",
+      "I Am That by Nisargadatta Maharaj",
+      "The Power of Now by Eckhart Tolle"
+    ]
+  },
+  "Recommend a sci-fi book that deals heavily with artificial intelligence ethics and consciousness.": {
+    "themes": [
+      "artificial intelligence",
+      "AI ethics",
+      "consciousness",
+      "philosophy"
+    ],
+    "audience_range": "adult",
+    "genre": "fiction",
+    "format": "novel",
+    "recommendation_type": "general",
+    "request_type": "general",
+    "use_canonical_search": true,
+    "known_titles": [
+      "Do Androids Dream of Electric Sheep? by Philip K. Dick",
+      "Klara and the Sun by Kazuo Ishiguro",
+      "Ancillary Justice by Ann Leckie",
+      "The Expelled by David Langford",
+      "Machines Like Me by Ian McEwan"
+    ]
+  },
+  "What are the best books to learn system design for a senior engineer preparing for big tech interviews?": {
+    "themes": [
+      "system design",
+      "distributed systems",
+      "software architecture",
+      "scalability"
+    ],
+    "audience_range": "adult",
+    "genre": "nonfiction",
+    "format": "guide",
+    "recommendation_type": "general",
+    "request_type": "general",
+    "use_canonical_search": true,
+    "known_titles": [
+      "Designing Data-Intensive Applications by Martin Kleppmann",
+      "System Design Interview by Alex Xu",
+      "The System Design Primer by Alex Xu and Shuai Raj",
+      "Building Microservices by Sam Newman",
+      "Site Reliability Engineering by Google",
+      "Designing Distributed Systems by Brendan Burns"
+    ]
+  },
+  "My 8-year-old is a reluctant reader but loves graphic novels. What adventure series should I get them?": {
+    "themes": [
+      "adventure",
+      "humor",
+      "action",
+      "fast-paced"
+    ],
+    "audience_range": "early_reader",
+    "genre": "fiction",
+    "format": "graphic_novel",
+    "recommendation_type": "general",
+    "request_type": "general",
+    "use_canonical_search": true,
+    "known_titles": [
+      "Dog Man by Dav Pilkey",
+      "Amulet by Kazu Kibuishi",
+      "Wings of Fire: The Dragonet Prophecy (graphic novel adaptation)",
+      "Smile by Raina Telgemeier",
+      "Nathan Hale's Hazardous Tales series"
+    ]
+  },
+  "Recommend some classic literature translated from Japanese that explores modern urban loneliness.": {
+    "themes": [
+      "Japanese literature",
+      "urban loneliness",
+      "modern isolation",
+      "contemporary Japan",
+      "psychological fiction"
+    ],
+    "audience_range": "adult",
+    "genre": "fiction",
+    "format": "novel",
+    "recommendation_type": "general",
+    "request_type": "general",
+    "use_canonical_search": true,
+    "known_titles": [
+      "Norwegian Wood by Haruki Murakami",
+      "Kitchen by Banana Yoshimoto",
+      "The Temple of the Golden Pavilion by Yukio Mishima",
+      "South of the Border, West of the Sun by Haruki Murakami",
+      "Convenience Store Woman by Sayaka Murata"
+    ]
+  },
+  "I need a book on personal finance tailored for someone starting mid-career with a tech salary.": {
+    "themes": [
+      "personal finance",
+      "investment",
+      "wealth management",
+      "tech salary",
+      "financial planning"
+    ],
+    "audience_range": "adult",
+    "genre": "nonfiction",
+    "format": "guide",
+    "recommendation_type": "general",
+    "request_type": "general",
+    "use_canonical_search": true,
+    "known_titles": [
+      "The Bogleheads' Guide to Investing",
+      "I Will Teach You to Be Rich by Ramit Sethi",
+      "A Random Walk Down Wall Street by Burton Malkiel",
+      "The Simple Path to Wealth by JL Collins",
+      "Money: Master the Game by Tony Robbins"
+    ]
+  },
+  "Give me history book recommendations about the silicon valley tech boom from the 1970s to 90s.": {
+    "themes": [
+      "Silicon Valley",
+      "technology history",
+      "computer industry",
+      "1970s 1980s 1990s",
+      "startup culture"
+    ],
+    "audience_range": "adult",
+    "genre": "nonfiction",
+    "format": "not_specified",
+    "recommendation_type": "general",
+    "request_type": "general",
+    "use_canonical_search": true,
+    "known_titles": [
+      "The Innovators by Walter Isaacson",
+      "Fire in the Valley by Paul Freiberger and Michael Swaine",
+      "The Accidental Billionaires by Ben Mezrich",
+      "Dealers of Lightning by Michael A. Hiltzik",
+      "The Ride of a Lifetime by Robert Iger"
+    ]
+  },
+  "What are some beginner-friendly poetry books for someone who usually finds poetry pretentious?": {
+    "themes": [
+      "poetry",
+      "accessible",
+      "humor",
+      "everyday life",
+      "contemporary poetry"
+    ],
+    "audience_range": "adult",
+    "genre": "fiction",
+    "format": "anthology",
+    "recommendation_type": "general",
+    "request_type": "general",
+    "use_canonical_search": true,
+    "known_titles": [
+      "Milk and Honey by Rupi Kaur",
+      "The Sun and Her Flowers by Rupi Kaur",
+      "Citizen by Claudia Rankine",
+      "Love that Boy by Ron Fournier",
+      "Wearing Overalls to Church by David Tufts"
+    ]
+  },
+  "Recommend fiction books that feature complex corporate strategy and office politics similar to Succession.": {
+    "themes": [
+      "corporate politics",
+      "power dynamics",
+      "business drama",
+      "workplace conflict",
+      "ambition"
+    ],
+    "audience_range": "adult",
+    "genre": "fiction",
+    "format": "novel",
+    "recommendation_type": "general",
+    "request_type": "general",
+    "use_canonical_search": true,
+    "known_titles": [
+      "Barbarians at the Gate by Bryan Burrough and John Helyar",
+      "The Bonfire of the Vanities by Tom Wolfe",
+      "American Psycho by Bret Easton Ellis",
+      "Debt of Honor by Tom Clancy",
+      "The Firm by John Grisham",
+      "Disclosure by Michael Crichton"
+    ]
+  },
+  "I'm looking for high-fantasy books with hard magic systems and intricate political world-building.": {
+    "themes": [
+      "hard magic systems",
+      "political intrigue",
+      "world-building",
+      "fantasy"
+    ],
+    "audience_range": "adult",
+    "genre": "fiction",
+    "format": "novel",
+    "recommendation_type": "general",
+    "request_type": "general",
+    "use_canonical_search": true,
+    "known_titles": [
+      "Mistborn by Brandon Sanderson",
+      "The Name of the Wind by Patrick Rothfuss",
+      "The Poppy War by R.F. Kuang",
+      "A Song of Ice and Fire by George R.R. Martin",
+      "The Stormlight Archive by Brandon Sanderson",
+      "The Blade Itself by Joe Abercrombie"
+    ]
+  },
+  "Suggest books on habit formation and behavioral psychology that are backed by actual scientific research.": {
+    "themes": [
+      "habit formation",
+      "behavioral psychology",
+      "neuroscience",
+      "behavioral change",
+      "evidence-based"
+    ],
+    "audience_range": "adult",
+    "genre": "nonfiction",
+    "format": "not_specified",
+    "recommendation_type": "general",
+    "request_type": "general",
+    "use_canonical_search": true,
+    "known_titles": [
+      "Atomic Habits by James Clear",
+      "The Power of Habit by Charles Duhigg",
+      "Thinking, Fast and Slow by Daniel Kahneman",
+      "Predictably Irrational by Dan Ariely",
+      "How to Change by Katy Milkman"
+    ]
+  },
+  "What are some gripping true crime books that focus heavily on the investigative process rather than gore?": {
+    "themes": [
+      "true crime",
+      "investigation",
+      "detective work",
+      "criminal justice",
+      "forensic evidence"
+    ],
+    "audience_range": "adult",
+    "genre": "nonfiction",
+    "format": "not_specified",
+    "recommendation_type": "general",
+    "request_type": "general",
+    "use_canonical_search": true,
+    "known_titles": [
+      "I'll Be Gone in the Dark by Michelle McNamara",
+      "The Devil in the White City by Erik Larson",
+      "In Cold Blood by Truman Capote",
+      "Killers of the Flower Moon by David Grann",
+      "The Immortal Life of Henrietta Lacks by Rebecca Skloot",
+      "Helter Skelter by Vincent Bugliosi"
+    ]
+  }
+}

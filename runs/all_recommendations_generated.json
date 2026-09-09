@@ -1,0 +1,1727 @@
+{
+  "My 4 year old son is into cars and trucks. Give me recommendations of books he'll enjoy.": {
+    "query": "My 4 year old son is into cars and trucks. Give me recommendations of books he'll enjoy.",
+    "request_type": "general",
+    "search_query": "cars \"picture book\" subject:\"picture books\" | trucks \"picture book\" subject:\"picture books\" | vehicles \"picture book\" subject:\"picture books\" | transportation \"picture book\" subject:\"picture books\" | intitle:\"Goodnight Moon\" | intitle:\"The Little Blue Truck\" | intitle:\"Truck\" | intitle:\"Cars\" | intitle:\"Big Red Barn\"",
+    "audience_range": "preschool",
+    "candidates_found": 97,
+    "recommendations": [
+      {
+        "title": "Little Blue Truck",
+        "authors": [
+          "Alice Schertle"
+        ],
+        "why_recommended": "A beloved bestselling picture book featuring a friendly truck protagonist that perfectly matches a 4-year-old's interest in trucks with charming illustrations and engaging storytelling.",
+        "notes": "Board book version available; features animal friends and a heartwarming message about friendship and helping others."
+      },
+      {
+        "title": "Truck",
+        "authors": [
+          "Donald Crews"
+        ],
+        "why_recommended": "A classic picture book that follows a big red truck's journey, featuring bold, colorful illustrations that will captivate a young truck enthusiast with clear, simple narrative.",
+        "notes": "Canonical work by renowned children's author; big book version also available for group reading."
+      },
+      {
+        "title": "Richard Scarry's Cars and Trucks and Things that Go",
+        "authors": [
+          "Richard Scarry"
+        ],
+        "why_recommended": "An iconic picture book filled with whimsical, detailed illustrations of countless vehicles in Busytown, providing endless visual interest for a 4-year-old who loves cars and trucks.",
+        "notes": "Canonical series; multiple format and spinoff versions available; richly illustrated pages encourage repeated reading."
+      },
+      {
+        "title": "A Truck Goes Rattley-Bumpa",
+        "authors": [
+          "Jonathan London"
+        ],
+        "why_recommended": "A rhythmic, onomatopoeia-rich picture book describing trucks of all sizes doing various tasks\u2014perfect for engaging young children with fun sounds and truck variety.",
+        "notes": "Engaging for toddlers and preschoolers; excellent for interactive read-alouds."
+      },
+      {
+        "title": "Tow Truck Joe Makes a Splash",
+        "authors": [
+          "June Sobel"
+        ],
+        "why_recommended": "A sequel featuring a tow truck protagonist with catchy rhymes, bright colors, and summer fun\u2014ideal for a truck-loving 4-year-old who enjoys rhythmic, playful storytelling.",
+        "notes": "Part of a series; bright illustrations and action-packed story."
+      },
+      {
+        "title": "Dig, Dump, Roll",
+        "authors": [
+          "Sally Sutton",
+          "Brian Lovelock"
+        ],
+        "why_recommended": "An interactive picture book with fun rhyming clues about construction trucks, combining sound effects and guessing games that engage young children.",
+        "notes": "Tactile, interactive format; great for participation and learning about different truck types."
+      },
+      {
+        "title": "Mr Gumpy's Motor Car",
+        "authors": [
+          "John Burningham"
+        ],
+        "why_recommended": "A classic picture book about a car adventure with animal friends, featuring beautiful illustrations and a charming story that appeals to vehicle-loving preschoolers.",
+        "notes": "Award-winning author; whimsical and imaginative narrative with memorable characters."
+      },
+      {
+        "title": "Good Night Engines",
+        "authors": [
+          "Denise Dowling Mortensen",
+          "Melissa Iwai"
+        ],
+        "why_recommended": "A rhyming picture book describing how various vehicles (locomotives, eighteen-wheelers, automobiles) wind down for sleep\u2014perfect for a truck-loving child's bedtime routine.",
+        "notes": "Ideal for bedtime reading; introduces variety of vehicles in calming context."
+      },
+      {
+        "title": "Every Monday Mabel",
+        "authors": [
+          "Jashar Awan"
+        ],
+        "why_recommended": "A charming picture book about a child's weekly anticipation for the garbage truck, capturing the genuine delight 4-year-olds have for big trucks and vehicles.",
+        "notes": "Relatable premise for young children who are fascinated by neighborhood trucks."
+      },
+      {
+        "title": "Hush, Little Trucker",
+        "authors": [
+          "Kim Norman"
+        ],
+        "why_recommended": "A bedtime picture book with a vehicle twist on a classic lullaby, designed specifically for truck-loving toddlers\u2014combining their interest with soothing, sleepy storytelling.",
+        "notes": "Perfect for bedtime; theme-appropriate and gentle for young listeners."
+      }
+    ],
+    "overall_notes": "These recommendations prioritize picture books specifically featuring trucks and cars as central elements, all age-appropriate for 4-year-olds with engaging illustrations and simple narratives. The selection includes both canonical, well-regarded series (Little Blue Truck, Richard Scarry, Donald Crews) and quality picture books from established children's authors. All titles feature vehicles prominently and are designed for the preschool audience. No books with unknown authors were included to ensure quality verification."
+  },
+  "My 4 year old daughter is into cars and trucks. Give me recommendations of books she will enjoy.": {
+    "query": "My 4 year old daughter is into cars and trucks. Give me recommendations of books she will enjoy.",
+    "request_type": "general",
+    "search_query": "cars \"picture book\" subject:\"picture books\" | trucks \"picture book\" subject:\"picture books\" | vehicles \"picture book\" subject:\"picture books\" | transportation \"picture book\" subject:\"picture books\" | intitle:\"The Little Blue Truck\" | intitle:\"Trucks\" | intitle:\"Big Red Barn\" | intitle:\"Goodnight Moon\"",
+    "audience_range": "preschool",
+    "candidates_found": 91,
+    "recommendations": [
+      {
+        "title": "Little Blue Truck",
+        "authors": [
+          "Alice Schertle"
+        ],
+        "why_recommended": "A beloved bestselling picture book about a friendly blue truck finding his way out of trouble with help from animal friends\u2014perfect for a 4-year-old who loves trucks with engaging, accessible storytelling.",
+        "notes": "Also available in board book format for durability with young readers."
+      },
+      {
+        "title": "Little Blue Truck Leads the Way",
+        "authors": [
+          "Alice Schertle"
+        ],
+        "why_recommended": "A sequel featuring Blue truck on a city adventure, offering more truck-focused fun for young truck enthusiasts who've enjoyed the original.",
+        "notes": "Available in multiple formats including interactive board book."
+      },
+      {
+        "title": "Richard Scarry's Cars and Trucks and Things That Go",
+        "authors": [
+          "Richard Scarry"
+        ],
+        "why_recommended": "A classic picture book celebration of imaginative vehicles with the maximalist, detailed illustrations Scarry is famous for\u2014ideal for a 4-year-old's curiosity about different types of cars and trucks.",
+        "notes": "50th anniversary edition includes never-before-seen sketches."
+      },
+      {
+        "title": "Richard Scarry's Trucks",
+        "authors": [
+          "Richard Scarry"
+        ],
+        "why_recommended": "Specifically focused on trucks with silly, speedy designs (dump trucks, fire engines, pickle tankers)\u2014directly aligned with the child's interest in trucks.",
+        "notes": "Scarry's detailed, busy illustrations keep young readers engaged."
+      },
+      {
+        "title": "Tow Truck Joe Makes a Splash",
+        "authors": [
+          "June Sobel"
+        ],
+        "why_recommended": "A rhyming picture book sequel with bright colors and summer fun centered on a tow truck\u2014combines the child's truck interest with engaging, rhythmic text for preschoolers.",
+        "notes": "Sequel to original Tow Truck Joe; catchy rhymes work well for 4-year-olds."
+      },
+      {
+        "title": "A Truck Goes Rattley-Bumpa",
+        "authors": [
+          "Jonathan London"
+        ],
+        "why_recommended": "Describes trucks of all sizes, shapes, and colors doing various tasks with an onomatopoeia-rich title that appeals to young children's love of sounds and action.",
+        "notes": "Simple text and varied truck types keep attention."
+      },
+      {
+        "title": "Dig, Dump, Roll",
+        "authors": [
+          "Sally Sutton",
+          "Brian Lovelock"
+        ],
+        "why_recommended": "An interactive guessing book about construction and utility trucks with crash-and-grumble sound effects\u2014perfect for preschoolers who love trucks and interactive elements.",
+        "notes": "From bestselling creators; great for repeated readings with new discoveries."
+      },
+      {
+        "title": "Good Night Engines",
+        "authors": [
+          "Denise Dowling Mortensen",
+          "Melissa Iwai"
+        ],
+        "why_recommended": "Rhyming verses about various vehicles winding down for sleep\u2014a truck-themed bedtime book that captures her interest while helping with sleep routines.",
+        "notes": "Gentle, soothing alternative to action-packed truck books."
+      },
+      {
+        "title": "Hush, Little Trucker",
+        "authors": [
+          "Kim Norman"
+        ],
+        "why_recommended": "A truck-themed twist on the lullaby 'Hush Little Baby'\u2014combines her truck love with calming bedtime storytelling perfect for a 4-year-old.",
+        "notes": "Specifically designed to soothe truck-loving toddlers."
+      },
+      {
+        "title": "Every Monday Mabel",
+        "authors": [
+          "Jashar Awan"
+        ],
+        "why_recommended": "A charming picture book about a girl who waits for her favorite part of the week\u2014the garbage truck\u2014celebrating trucks as sources of joy and routine.",
+        "notes": "Sweet, relatable story that honors children's genuine fascination with working trucks."
+      }
+    ],
+    "overall_notes": "All 10 recommendations are picture books specifically suitable for 4-year-olds with strong truck and vehicle content. The list includes well-known classics (Scarry, Schertle) alongside newer releases, balancing action-packed adventures with quieter bedtime options. Several books offer interactive or sensory elements that engage preschoolers. The selection avoids academic or overly technical vehicle books and focuses on narrative engagement, illustrations, and age-appropriate storytelling."
+  },
+  "My boy is into cars and trucks. Give me recommendations of books he'll enjoy.": {
+    "query": "My boy is into cars and trucks. Give me recommendations of books he'll enjoy.",
+    "request_type": "general",
+    "search_query": "cars | trucks | vehicles | transportation | adventure | intitle:\"Cars\" | intitle:\"Truck Stuck\" | intitle:\"Little Blue Truck\" | intitle:\"Goodnight, Goodnight Construction Site\" | intitle:\"Big Red Barn\"",
+    "audience_range": "not_specified",
+    "candidates_found": 97,
+    "recommendations": [
+      {
+        "title": "Little Blue Truck",
+        "authors": [
+          "Alice Schertle"
+        ],
+        "why_recommended": "A beloved story about a friendly blue truck finding his way out of trouble with help from friends\u2014perfect for young children who love trucks and vehicles.",
+        "notes": "Bestselling series with engaging illustrations; available in multiple formats (board book, regular edition). Age 3+."
+      },
+      {
+        "title": "Goodnight, Goodnight, Construction Site",
+        "authors": [
+          "Sherri Duskey Rinker"
+        ],
+        "why_recommended": "Features hardworking construction vehicles preparing for sleep; combines the appeal of trucks and heavy equipment with a soothing bedtime story format.",
+        "notes": "#1 New York Times bestseller; excellent for introducing different types of construction vehicles. Age 2+."
+      },
+      {
+        "title": "Cars on the Move",
+        "authors": [
+          "Willow Clark"
+        ],
+        "why_recommended": "Juvenile nonfiction that explores different types of cars with fun designs, colors, and racing\u2014engaging content about real vehicles for young car enthusiasts.",
+        "notes": "Age-appropriate nonfiction with exciting visuals. Early elementary level."
+      },
+      {
+        "title": "Cars and Trucks",
+        "authors": [
+          "Claude Delafosse"
+        ],
+        "why_recommended": "Interactive picture book with colorful transparent overlays showing various cars, trucks, bicycles, and other vehicles\u2014perfect for hands-on learning.",
+        "notes": "Great for tactile learners; ideal for preschool to early elementary ages."
+      },
+      {
+        "title": "The Visual Dictionary of Cars",
+        "authors": [
+          "DK PUBLISHING"
+        ],
+        "why_recommended": "Reference book with exploded view photographs and labeled parts\u2014ideal for curious kids who want to understand how cars and trucks work.",
+        "notes": "Designed for ages 9+; reference-style learning with detailed visuals."
+      },
+      {
+        "title": "Pickup Trucks",
+        "authors": [
+          "Jeffrey Zuehlke"
+        ],
+        "why_recommended": "Introduces pickup trucks, their functions, and how they work\u2014directly addresses trucks as the user specified, with clear juvenile nonfiction presentation.",
+        "notes": "Early elementary nonfiction; colorful, accessible introduction to truck types."
+      },
+      {
+        "title": "Sports Cars",
+        "authors": [
+          "Sandra Donovan"
+        ],
+        "why_recommended": "Describes what makes sports cars special and introduces classic models like Porsche and Jaguar\u2014appeals to kids interested in exciting, fast vehicles.",
+        "notes": "Juvenile nonfiction with accessible descriptions of iconic models. Early to mid-elementary level."
+      },
+      {
+        "title": "Hot Wheels Cars",
+        "authors": [
+          "Mac Ragan"
+        ],
+        "why_recommended": "Features extreme close-up photography of Hot Wheels collectible cars\u2014combines the appeal of toy cars with impressive visual presentation.",
+        "notes": "Includes foreword by Jay Leno; great for kids who collect toy cars or love detailed visuals. Ages 5+."
+      },
+      {
+        "title": "Richard Scarry's Cars and Trucks and Things that Go",
+        "authors": [
+          "Richard Scarry"
+        ],
+        "why_recommended": "Classic picture book featuring the Pig family encountering nearly every imaginable type of vehicle on their way to the beach\u2014colorful and imaginative.",
+        "notes": "Well-established classic with whimsical illustrations; ages 3-8."
+      },
+      {
+        "title": "Heavy-Duty Trucks",
+        "authors": [
+          "Joyce Milton"
+        ],
+        "why_recommended": "Describes different kinds of trucks including tractor trailers, auto haulers, garbage trucks, bulldozers, and dump trucks\u2014comprehensive truck-focused content.",
+        "notes": "Juvenile nonfiction covering various truck types and their purposes; mid-elementary level."
+      }
+    ],
+    "overall_notes": "These recommendations prioritize books specifically about cars and trucks at child-friendly reading levels (ages 3-9). Most are illustrated juvenile nonfiction or engaging picture books that allow kids to learn about different vehicle types, how they work, and fun stories involving them. The selection avoids adult-oriented transportation planning books, business texts, and unverifiable authors. Over-representation of the Little Blue Truck series was limited to one representative title, though that series has multiple excellent alternatives if the user wants more from it."
+  },
+  "My son likes cars. Recommend a progression of books so he learns about engineering and complex mechanisms gradually.": {
+    "query": "My son likes cars. Recommend a progression of books so he learns about engineering and complex mechanisms gradually.",
+    "request_type": "progression",
+    "age_context": "preschool",
+    "levels": [
+      {
+        "level": 1,
+        "description": "Introduction to cars and vehicles through pictures",
+        "search_query": "cars OR trucks OR vehicles OR \"picture books\" subject:\"picture books\" | intitle:\"Richard Scarry's Cars and Trucks and Things That Go\"",
+        "audience_range": "toddler",
+        "candidates_found": 16,
+        "recommendations": [
+          {
+            "title": "Little Baby Learns: Trucks",
+            "authors": [
+              "Roger Priddy"
+            ],
+            "why_recommended": "Perfect starting point for toddlers with simple, tactile learning through shaped flash cards introducing basic truck concepts.",
+            "notes": "Board book format; ideal for ages 1-3; introduces vocabulary with minimal text"
+          },
+          {
+            "title": "I Love Trucks and Cars and Planes and Things that Go!",
+            "authors": [
+              "Jo Rigg",
+              "Simon Mugford"
+            ],
+            "why_recommended": "Builds on basic recognition with information-packed content and full-color photography to engage preschoolers about different vehicle types.",
+            "notes": "Board book; ages 2-4; more detailed visuals than previous; introduces vehicle categories"
+          },
+          {
+            "title": "Trucks Galore",
+            "authors": [
+              "Peter Stein"
+            ],
+            "why_recommended": "Introduces specific vehicle functions through rhyming, easy-to-read text that shows how different trucks work (hauling, carrying, firefighting, transporting).",
+            "notes": "Picture book; ages 3-6; narrative structure demonstrates practical applications"
+          },
+          {
+            "title": "Rescue Vehicles",
+            "authors": [
+              "Mari Schuh"
+            ],
+            "why_recommended": "Expands understanding of how vehicles function in real-world scenarios with simple text focusing on emergency vehicles and their purposes.",
+            "notes": "Early reader; ages 4-7; introduces mechanical purpose and urgency"
+          },
+          {
+            "title": "Trucks!",
+            "authors": [
+              "Bryony Davies",
+              "Welbeck Children's"
+            ],
+            "why_recommended": "Significantly increases complexity with high-detail spreads organizing hundreds of vehicles by type and theme, introducing diverse engineering concepts.",
+            "notes": "Illustrated nonfiction; ages 5-9; much more detailed and comprehensive; introduces vehicle categories and specialization"
+          },
+          {
+            "title": "Richard Scarry's Cars and Trucks and Things That Go",
+            "authors": [
+              "Richard Scarry"
+            ],
+            "why_recommended": "Builds deeper understanding through Scarry's detailed, whimsical illustrations showing how various vehicles work and their mechanical components in a fun, exploratory format.",
+            "notes": "Picture book; ages 5-10; classic reference; combines mechanical detail with storytelling and humor"
+          }
+        ],
+        "notes": "This progression moves from tactile/visual recognition for toddlers through function-based learning to detailed mechanical exploration. The available catalog lacks advanced engineering or technical books\u2014most candidates are early-childhood focused. Recommendations exclude books primarily about teaching methods, social issues, or unrelated fiction. This sequence works well for ages 1-10; for older children seeking genuine engineering complexity, additional resources beyond this catalog would be needed."
+      },
+      {
+        "level": 2,
+        "description": "Different types of vehicles and their purposes",
+        "search_query": "vehicles OR \"construction vehicles\" OR transportation OR trucks subject:\"picture books\" | intitle:\"Big Red Barn\" | intitle:\"Goodnight, Goodnight Construction Site\"",
+        "audience_range": "preschool",
+        "candidates_found": 0,
+        "recommendations": [],
+        "notes": "No books found matching your query."
+      },
+      {
+        "level": 3,
+        "description": "How machines and mechanical parts work",
+        "search_query": "wheels OR gears OR \"simple machines\" OR \"how things work\" subject:\"juvenile fiction\"",
+        "audience_range": "early_reader",
+        "candidates_found": 0,
+        "recommendations": [],
+        "notes": "No books found matching your query."
+      },
+      {
+        "level": 4,
+        "description": "How engines and motors work",
+        "search_query": "engines OR motors OR \"car mechanics\" OR \"how cars work\" subject:\"juvenile fiction\" | intitle:\"Mike Mulligan and His Steam Shovel\" | intitle:\"If I Built a Car\"",
+        "audience_range": "middle_grade",
+        "candidates_found": 1,
+        "recommendations": [
+          {
+            "title": "If I Built a Car",
+            "authors": [
+              "Chris Van Dusen"
+            ],
+            "why_recommended": "Perfect starting point for a young car enthusiast\u2014introduces imaginative thinking about vehicle design and features through playful, accessible language and illustrations.",
+            "notes": "Juvenile fiction; ages 4\u20138. Well-known, high-quality picture book that sparks creative thinking about how cars work and what they could do."
+          }
+        ],
+        "notes": "Only one candidate book was provided, which is a strong fit for the beginning of a learning progression. However, to build a complete progression from simple to complex engineering concepts, you would need additional resources: intermediate books (ages 8\u201312) covering basic mechanics, gears, and engines; and advanced books (ages 12+) exploring automotive engineering, design principles, and real-world manufacturing. I recommend searching for titles like 'How Engines Work for Kids,' 'Simple Machines' series, or automotive engineering guides to complete this progression."
+      },
+      {
+        "level": 5,
+        "description": "Engineering design and maker projects",
+        "search_query": "engineering OR STEM OR \"building projects\" OR invention OR design subject:\"juvenile fiction\" | intitle:\"The Way Things Work Now\"",
+        "audience_range": "middle_grade",
+        "candidates_found": 13,
+        "recommendations": [
+          {
+            "title": "Milo's Great Invention",
+            "authors": [
+              "Andrew Clements"
+            ],
+            "why_recommended": "An engaging entry point that shows how everyday problems can be solved through invention and creative thinking, introducing the concept of machines in an accessible, story-driven way.",
+            "notes": "Juvenile fiction; lighthearted and relatable to children who like hands-on problem-solving"
+          },
+          {
+            "title": "The Incredible Invention of Alexander Woodmouse",
+            "authors": [
+              "Pamela Sampson"
+            ],
+            "why_recommended": "Builds on the invention theme by featuring an experienced inventor mentoring an apprentice, demonstrating how inventive thinking can be learned and refined through practice.",
+            "notes": "Juvenile fiction; introduces the concept of apprenticeship and iterative design"
+          },
+          {
+            "title": "Tinklers Three: An Excellent Invention",
+            "authors": [
+              "Meredith Badger"
+            ],
+            "why_recommended": "Celebrates inventive problem-solving through a series focused on three siblings creating and building things, reinforcing that engineering is creative and achievable by regular people.",
+            "notes": "Juvenile fiction; warm tone; series format allows for progressive complexity across volumes"
+          },
+          {
+            "title": "The Way Things Work Now",
+            "authors": [
+              "David Macaulay",
+              "Neil Ardley"
+            ],
+            "why_recommended": "The capstone of the progression\u2014Macaulay's revised classic systematically explains the science and mechanics behind hundreds of machines, with clear illustrations bridging from narrative to technical understanding.",
+            "notes": "Young Adult Fiction; well-known canonical work; progresses from simple levers to complex systems; essential reference for understanding how machines and vehicles work"
+          }
+        ],
+        "notes": "The catalog has limited options specifically about cars and automotive engineering. These four recommendations create a thoughtful progression from story-driven invention (Milo, Woodmouse, Tinklers Three) to systematic mechanical education (The Way Things Work Now). This sequence builds confidence and curiosity before introducing formal engineering concepts. For a child interested specifically in cars, The Way Things Work Now is essential and includes vehicle mechanics, though supplementing with books specifically about automobiles, engines, and automotive design would strengthen the progression considerably."
+      }
+    ]
+  },
+  "My 4 year son likes cars. What other kinds of books do you think he'd enjoy?": {
+    "query": "My 4 year son likes cars. What other kinds of books do you think he'd enjoy?",
+    "request_type": "exploration",
+    "search_query": "trucks \"picture book\" subject:\"picture books\" | construction OR building \"picture book\" subject:\"picture books\" | machines OR \"how things work\" \"picture book\" subject:\"picture books\" | action OR adventure \"picture book\" subject:\"picture books\" | animals OR friendships \"picture book\" subject:\"picture books\"",
+    "audience_range": "preschool",
+    "candidates_found": 46,
+    "recommendations": [
+      {
+        "title": "Hush, Little Trucker",
+        "authors": [
+          "Kim Norman"
+        ],
+        "why_recommended": "A perfect vehicle-themed bedtime book for truck-loving toddlers, with soothing rhymes and a comforting narrative about finding a lost toy truck.",
+        "notes": "Picture book, ideal for ages 2-5, bedtime reading"
+      },
+      {
+        "title": "A Truck Goes Rattley-Bumpa",
+        "authors": [
+          "Jonathan London"
+        ],
+        "why_recommended": "Describes trucks of all sizes and shapes doing different tasks, directly extending the child's interest in vehicles with variety and action.",
+        "notes": "Picture book, ages 3-6"
+      },
+      {
+        "title": "Dig, Dump, Roll",
+        "authors": [
+          "Sally Sutton",
+          "Brian Lovelock"
+        ],
+        "why_recommended": "Interactive guessing book about construction trucks with rhythm and rhyme, introducing different types of work vehicles beyond cars.",
+        "notes": "Interactive picture book, bestselling creators, ages 2-5"
+      },
+      {
+        "title": "Amazing Machines: Big Bulldozers",
+        "authors": [
+          "Tony Mitton"
+        ],
+        "why_recommended": "Features animal characters operating bulldozers on a construction site with zippy wordplay, expanding vehicle interest to construction machines.",
+        "notes": "Picture book, ages 3-6, part of acclaimed series"
+      },
+      {
+        "title": "High-flying Helicopters",
+        "authors": [
+          "Tony Mitton"
+        ],
+        "why_recommended": "Makes learning about helicopters fun through picture book format, introducing different types of vehicles in the transportation family.",
+        "notes": "Picture book, ages 3-6"
+      },
+      {
+        "title": "Robobaby",
+        "authors": [
+          "David Wiesner"
+        ],
+        "why_recommended": "Award-winning picture book about machines and robots that moves beyond vehicles into imaginative mechanical storytelling, appealing to curiosity about how things work.",
+        "notes": "Picture book by iconic creator, ages 3-7"
+      },
+      {
+        "title": "Roxie Loves Adventure",
+        "authors": [
+          "Sudipta Bardhan-Quallen"
+        ],
+        "why_recommended": "Action-packed adventure story featuring a pug protagonist, offering narrative excitement and problem-solving that complements vehicle-loving children's sense of exploration.",
+        "notes": "Picture book, ages 3-6"
+      },
+      {
+        "title": "Every Monday Mabel",
+        "authors": [
+          "Jashar Awan"
+        ],
+        "why_recommended": "Features a garbage truck as a beloved character and source of weekly excitement, connecting to the child's interest in vehicles through a relatable routine.",
+        "notes": "Picture book, ages 3-6"
+      }
+    ],
+    "overall_notes": "These recommendations balance the child's direct interest in trucks and vehicles (staying within the trucks category) while introducing related categories: construction/building machines, how things work/machines, and action/adventure narratives. All selections are age-appropriate picture books for a 4-year-old with engaging illustrations, rhythm, and repetition. No weak fits or quality concerns; all are published children's books suitable for this age group."
+  },
+  "I want my 5 year old to enjoy cooking. What books I can read to teach him cooking.": {
+    "query": "I want my 5 year old to enjoy cooking. What books I can read to teach him cooking.",
+    "request_type": "general",
+    "search_query": "\"cooking for kids\" subject:\"juvenile nonfiction\" | \"recipes kids\" subject:\"juvenile nonfiction\" | \"cooking activities children\" subject:\"juvenile nonfiction\" | \"kitchen skills\" subject:\"juvenile nonfiction\" | food subject:\"juvenile nonfiction\" | intitle:\"Cooking with Kids\" | intitle:\"Little Chef\" | intitle:\"The Toddler Cookbook\" | intitle:\"Good Enough to Eat\"",
+    "audience_range": "preschool",
+    "candidates_found": 97,
+    "recommendations": [
+      {
+        "title": "The Toddler Cookbook",
+        "authors": [
+          "Annabel Karmel"
+        ],
+        "why_recommended": "Specifically designed for young children with easy recipes tailored to their abilities and developmental stage, making it ideal for a 5-year-old learning to cook.",
+        "notes": "By acclaimed author Annabel Karmel; includes a wide variety of beginner-friendly dishes perfect for this age group."
+      },
+      {
+        "title": "Small Fry",
+        "authors": [
+          "Susie Cameron",
+          "Katrina Crook"
+        ],
+        "why_recommended": "Encourages little kids to help in the kitchen with specific, age-appropriate tasks and is designed to engage fussy eaters through hands-on cooking.",
+        "notes": "Focuses on tasks small children can safely do; proven to increase interest in eating foods they've prepared."
+      },
+      {
+        "title": "Crunchy Bananas and Other Great Recipes Kids Can Cook",
+        "authors": [
+          "Barbara Wilms"
+        ],
+        "why_recommended": "Explicitly designed for children ages two through eight, offering recipes that young children can execute with parental help.",
+        "notes": "Perfect age match for a 5-year-old; emphasizes parent-child teamwork in the kitchen."
+      },
+      {
+        "title": "Kid Smoothies: A Healthy Kids' Cookbook",
+        "authors": [
+          "Erin Fletter"
+        ],
+        "why_recommended": "Teaches basic kitchen skills without a stove or complicated equipment, making it safe and manageable for a young 5-year-old cook.",
+        "notes": "Fun, easy recipes that build confidence; minimal safety concerns for young hands."
+      },
+      {
+        "title": "Cooking with Kids",
+        "authors": [
+          "Brianne Grajkowski"
+        ],
+        "why_recommended": "Specifically written for parents and children to cook together, with 100 fun and approachable recipes designed to engage young cooks in the kitchen.",
+        "notes": "Well-regarded resource with emphasis on family involvement and age-appropriate tasks."
+      },
+      {
+        "title": "1-2-3 Cook",
+        "authors": [
+          "Rozanne Gold"
+        ],
+        "why_recommended": "Features over 100 three-ingredient recipes that are simple enough for young children to understand and follow with minimal ingredients to manage.",
+        "notes": "Illustrated format helps pre-readers follow along; builds confidence with achievable success."
+      },
+      {
+        "title": "Little Chef's First 100 Words",
+        "authors": [
+          "Tenisha Bernal"
+        ],
+        "why_recommended": "An engaging board book introducing young children to kitchen utensils and cooking vocabulary in a fun, age-appropriate format.",
+        "notes": "Perfect for a 5-year-old just starting to explore cooking; builds familiarity with kitchen tools."
+      },
+      {
+        "title": "Cool Cooking for Kids",
+        "authors": [
+          "Pat McClenahan",
+          "Ida Jaqua"
+        ],
+        "why_recommended": "Designed as a creative guide for teaching cooking and nutrition to young children, not just a cookbook but an educational resource for parents.",
+        "notes": "Combines instruction with activity; helps parent teach concepts alongside recipes."
+      },
+      {
+        "title": "Betty Crocker's Cooking with Kids",
+        "authors": [
+          "Betty Crocker"
+        ],
+        "why_recommended": "Offers over 90 easy recipes specifically tested with children, including familiar kid-friendly dishes that encourage participation and confidence.",
+        "notes": "Trusted brand known for accessibility; recipes range from simple to slightly more complex."
+      },
+      {
+        "title": "Little Chef",
+        "authors": [
+          "Elisabeth Weinberg",
+          "Matt Stine"
+        ],
+        "why_recommended": "An engaging picture book that shows a young child preparing a meaningful meal, providing both inspiration and a relatable story for a 5-year-old learning to cook.",
+        "notes": "Combines narrative with encouragement; illustrated format appeals to early readers."
+      }
+    ],
+    "overall_notes": "These recommendations prioritize books explicitly designed for very young children (ages 2-8) with the Toddler Cookbook, Small Fry, and Crunchy Bananas as the strongest fits for a 5-year-old. All selections emphasize safety, parent-child collaboration, simple recipes, and building confidence. Several candidates were excluded because their target age was 8+ (too advanced), were fiction stories without recipes, or were educational books about nutrition rather than cooking instruction. The selection balances practical cookbooks with engaging picture books that inspire interest in cooking."
+  },
+  "I am a software engineer and I want to write a book about being a software engineer in the AI world. Suggest some helpful books.": {
+    "query": "I am a software engineer and I want to write a book about being a software engineer in the AI world. Suggest some helpful books.",
+    "request_type": "general",
+    "search_query": "\"software engineering\" | \"artificial intelligence\" | \"AI systems\" | \"technical writing\" | \"engineering practices\" | intitle:\"Designing Machine Learning Systems\" | intitle:\"Building Machine Learning Powered Applications\" | intitle:\"Designing Data-Intensive Applications\" | intitle:\"The Pragmatic Programmer\" | intitle:\"Software Engineering at Google\"",
+    "audience_range": "adult",
+    "candidates_found": 51,
+    "recommendations": [
+      {
+        "title": "Software Engineering at Google",
+        "authors": [
+          "Titus Winters",
+          "Tom Manshreck",
+          "Hyrum Wright"
+        ],
+        "why_recommended": "Provides real-world software engineering practices and principles from one of the world's leading AI and tech companies, directly applicable to writing about professional software engineering in the AI era.",
+        "notes": "Well-known canonical work; highly practical and industry-relevant"
+      },
+      {
+        "title": "Designing Machine Learning Systems",
+        "authors": [
+          "Chip Huyen"
+        ],
+        "why_recommended": "Covers the full lifecycle of ML systems design and deployment, essential knowledge for a software engineer writing about the AI world and how systems are built in practice.",
+        "notes": "Well-known canonical work; bridges software engineering and ML systems"
+      },
+      {
+        "title": "Building Machine Learning Powered Applications",
+        "authors": [
+          "Emmanuel Ameisen"
+        ],
+        "why_recommended": "Teaches how to design, build, and deploy ML-driven applications from start to finish, providing concrete experience that will strengthen your perspective as a software engineer in AI.",
+        "notes": "Well-known canonical work; hands-on and practical"
+      },
+      {
+        "title": "Designing Data-Intensive Applications",
+        "authors": [
+          "Martin Kleppmann"
+        ],
+        "why_recommended": "Essential for understanding system design challenges (scalability, consistency, reliability) that are fundamental to modern AI systems and cloud-based applications.",
+        "notes": "Well-known canonical work; highly technical and comprehensive"
+      },
+      {
+        "title": "The Pragmatic Programmer",
+        "authors": [
+          "Andrew Hunt",
+          "David Thomas"
+        ],
+        "why_recommended": "A foundational guide on practical programming philosophy and best practices that will help you articulate what it means to be an effective software engineer in any domain, including AI.",
+        "notes": "Well-known canonical work; timeless principles applicable across careers"
+      },
+      {
+        "title": "The Pragmatic Programmer for Machine Learning",
+        "authors": [
+          "Marco Scutari",
+          "Mauro Malvestio"
+        ],
+        "why_recommended": "Directly combines pragmatic engineering principles with machine learning workflows, providing specific guidance on analytics and data engineering practices relevant to AI projects.",
+        "notes": "Well-known canonical work; specialized for ML engineers"
+      },
+      {
+        "title": "Machine Learning Applications in Software Engineering",
+        "authors": [
+          "Du Zhang",
+          "Jeffrey J. P. Tsai"
+        ],
+        "why_recommended": "Explores how machine learning is applied within software engineering practices, offering insights into the intersection of these two domains that will enrich your book's perspective.",
+        "notes": "Collection of published research articles"
+      },
+      {
+        "title": "What Every Engineer Should Know about Artificial Intelligence",
+        "authors": [
+          "William A. Taylor"
+        ],
+        "why_recommended": "Provides practical, accessible explanations of AI concepts for engineers, helping you understand what AI practitioners need to know and how to communicate it to your audience.",
+        "notes": "Written specifically for engineers; practical orientation"
+      },
+      {
+        "title": "The Ethics of Artificial Intelligence",
+        "authors": [
+          "Luciano Floridi"
+        ],
+        "why_recommended": "Addresses ethical considerations in AI development and deployment, an increasingly critical topic for software engineers working in AI and relevant for a comprehensive book on the subject.",
+        "notes": "Covers important professional and societal considerations"
+      },
+      {
+        "title": "Engineers' Guide to Technical Writing",
+        "authors": [
+          "Kenneth G. Budinski"
+        ],
+        "why_recommended": "Provides practical guidance on how to write clearly and effectively for technical audiences, directly supporting your goal of writing a book about software engineering.",
+        "notes": "Reference for technical writing craft"
+      }
+    ],
+    "overall_notes": "These recommendations focus on books that either teach core software engineering and ML systems practices (which you'll want to reference or build upon), or help you understand the field's current state and how to communicate about it effectively. The well-known canonical works provide proven frameworks and perspectives from experienced practitioners. You may also benefit from additional research on specific AI subfields (LLMs, computer vision, reinforcement learning, etc.) depending on your book's focus, which these candidates don't cover comprehensively."
+  },
+  "I want some spiritual guidance that can give me peace and direction. Recommend books.": {
+    "query": "I want some spiritual guidance that can give me peace and direction. Recommend books.",
+    "request_type": "general",
+    "search_query": "spirituality | mindfulness | self-discovery | peace | meaning | intitle:\"The Power of Now\" | intitle:\"Man's Search for Meaning\" | intitle:\"Wherever You Go, There You Are\" | intitle:\"The Untethered Soul\" | intitle:\"When Things Fall Apart\"",
+    "audience_range": "adult",
+    "candidates_found": 69,
+    "recommendations": [
+      {
+        "title": "The Power of Now",
+        "authors": [
+          "Eckhart Tolle"
+        ],
+        "why_recommended": "A foundational spiritual guide that teaches how to find peace and direction by living in the present moment, addressing the core need for spiritual guidance and inner peace.",
+        "notes": "Well-known canonical work; accessible and practical approach to spiritual enlightenment"
+      },
+      {
+        "title": "The Untethered Soul",
+        "authors": [
+          "Michael A. Singer"
+        ],
+        "why_recommended": "Explores spiritual identity and consciousness development to help readers find inner peace and understanding of their true self, directly supporting the quest for direction and peace.",
+        "notes": "Well-known canonical work; focuses on spiritual freedom and personal growth"
+      },
+      {
+        "title": "Man's Search for Meaning",
+        "authors": [
+          "Viktor Emil Frankl"
+        ],
+        "why_recommended": "A profound exploration of finding meaning and purpose even in difficult circumstances, offering spiritual guidance through existential questions central to finding life direction.",
+        "notes": "Well-known canonical work; combines personal narrative with philosophical wisdom"
+      },
+      {
+        "title": "Wherever You Go, There You Are",
+        "authors": [
+          "Jon Kabat-Zinn"
+        ],
+        "why_recommended": "A classic guide to mindfulness and present-moment awareness that reduces stress and creates inner calm, essential foundations for spiritual peace and personal clarity.",
+        "notes": "Well-known canonical work; accessible introduction to mindfulness practice"
+      },
+      {
+        "title": "The Essentials of Spirituality",
+        "authors": [
+          "Felix Adler"
+        ],
+        "why_recommended": "A systematic exploration of fundamental spiritual principles and personal growth, directly addressing the user's need for spiritual guidance and foundational wisdom.",
+        "notes": "Work by influential spiritual thinker; comprehensive approach to spiritual life"
+      },
+      {
+        "title": "Embracing Change: The Spiritual Path to Personal Growth",
+        "authors": [
+          "Pierre Etienne"
+        ],
+        "why_recommended": "A practical spiritual guide that helps navigate life's challenges and find direction through personal transformation and spiritual perspective on change.",
+        "notes": "Combines spiritual teaching with practical guidance for modern life"
+      },
+      {
+        "title": "The Book of Practical Faith",
+        "authors": [
+          "D. Patrick Miller"
+        ],
+        "why_recommended": "Offers accessible spiritual guidance beyond traditional religion for those seeking meaning and answers in modern life, directly addressing contemporary spiritual seekers.",
+        "notes": "Practical, concise approach to faith and spirituality"
+      },
+      {
+        "title": "Practicing the Power of Now",
+        "authors": [
+          "Eckhart Tolle"
+        ],
+        "why_recommended": "Companion meditation and exercise guide to The Power of Now that provides practical tools for achieving spiritual peace and heightened consciousness in daily life.",
+        "notes": "Complements main text with actionable exercises and meditations"
+      },
+      {
+        "title": "The Untethered Soul Guided Journal",
+        "authors": [
+          "Michael A. Singer"
+        ],
+        "why_recommended": "An interactive journal based on spiritual teachings that guides self-reflection and inner exploration toward fulfillment and clarity, combining guidance with personal practice.",
+        "notes": "Hands-on approach to spiritual development through reflection"
+      },
+      {
+        "title": "Awakened Mind: Discover Inner Clarity, Authentic Power, and True Purpose",
+        "authors": [
+          "Mateusz Janeczek"
+        ],
+        "why_recommended": "A transformative guide specifically designed to help readers find inner clarity, balance, and purpose\u2014directly aligned with the user's quest for peace and direction.",
+        "notes": "Contemporary spiritual guide with focus on purpose discovery"
+      }
+    ],
+    "overall_notes": "These recommendations prioritize genuine spiritual guidance works that address both peace and direction\u2014the user's stated needs. The well-known canonical works (Tolle, Singer, Frankl, Kabat-Zinn) are included because they are genuinely foundational to contemporary spiritual guidance. Books focused narrowly on mindfulness instruction, professional applications, or academic study of spirituality were excluded in favor of works that guide personal spiritual practice and meaning-making. The selection balances established classics with accessible contemporary guides."
+  },
+  "I want some spiritual guidance that can give me peace and direction. Recommend some Indian inspired books.": {
+    "query": "I want some spiritual guidance that can give me peace and direction. Recommend some Indian inspired books.",
+    "request_type": "general",
+    "search_query": "spirituality | \"Indian philosophy\" | mindfulness | self-help | wisdom | intitle:\"The Bhagavad Gita\" | intitle:\"The Yoga Sutras of Patanjali\" | intitle:\"Siddhartha\" | intitle:\"The Upanishads\" | intitle:\"I Am That\" | intitle:\"The Power of Now\"",
+    "audience_range": "adult",
+    "candidates_found": 79,
+    "recommendations": [
+      {
+        "title": "The Bhagavad Gita",
+        "authors": [
+          "Eknath Easwaran"
+        ],
+        "why_recommended": "This cornerstone Hindu scripture offers direct spiritual guidance and wisdom through a dialogue between Krishna and Arjuna, providing timeless teachings on dharma, duty, and finding peace amid life's challenges.",
+        "notes": "Canonical Indian spiritual text; Easwaran's translation is highly regarded for accessibility and spiritual depth; ideal for seeking direction and inner peace"
+      },
+      {
+        "title": "The Upanishads",
+        "authors": [
+          "Eknath Easwaran"
+        ],
+        "why_recommended": "Among the oldest Indian spiritual texts, the Upanishads contain profound teachings from illumined sages on ultimate reality and self-realization, directly addressing the seeker's quest for spiritual guidance and peace.",
+        "notes": "Foundational Hindu philosophy; Easwaran's version emphasizes practical wisdom; excellent companion to the Bhagavad Gita"
+      },
+      {
+        "title": "Siddhartha",
+        "authors": [
+          "Hermann Hesse"
+        ],
+        "why_recommended": "This classic novel follows a young Brahmin's spiritual journey of self-discovery in ancient India, exploring meditation, enlightenment, and the path to finding inner peace and life direction through spiritual seeking.",
+        "notes": "Highly accessible fiction format; set in India during Buddha's time; inspires contemplation on spiritual purpose and awakening"
+      },
+      {
+        "title": "Personal Excellence Through The Bhagavad Gita",
+        "authors": [
+          "Swami Sukhabodhananda"
+        ],
+        "why_recommended": "This practical guide synthesizes the Gita's teachings on karma yoga, bhakti yoga, and jnana yoga, offering concrete spiritual direction for living with purpose, excellence, and inner peace in daily life.",
+        "notes": "Applies ancient Indian wisdom to modern living; focuses on actionable spiritual practices"
+      },
+      {
+        "title": "The Call of the Upanishads",
+        "authors": [
+          "Rohit Mehta"
+        ],
+        "why_recommended": "This commentary reveals the fundamental principles of perennial philosophy embedded in the Upanishads, guiding seekers toward understanding ageless wisdom that brings clarity, direction, and spiritual peace.",
+        "notes": "Synthesizes core Upanishadic teachings; accessible exploration of profound Indian spiritual concepts"
+      },
+      {
+        "title": "The Power of Now",
+        "authors": [
+          "Eckhart Tolle"
+        ],
+        "why_recommended": "While contemporary, this bestseller teaches presence and consciousness aligned with Indian spiritual principles of mindfulness and being in the moment, offering practical guidance toward peace and spiritual enlightenment.",
+        "notes": "Modern application of Eastern spiritual wisdom; highly practical for seekers wanting immediate peace and direction"
+      },
+      {
+        "title": "Meditation and Mindfulness. The Secrets to Raising Your Awareness, Spirituality and Inner Peace through Mindfulness Meditation",
+        "authors": [
+          "Parthiben Sivaprakasam"
+        ],
+        "why_recommended": "This essay bridges daily life and meditation practice, drawing on the Indian spiritual tradition of mindfulness to help seekers raise awareness, deepen spirituality, and cultivate inner peace.",
+        "notes": "Grounded in Indian contemplative practices; connects spirituality to everyday living"
+      },
+      {
+        "title": "Seven Systems of Indian Philosophy",
+        "authors": [
+          "Rajmani Tigunait"
+        ],
+        "why_recommended": "This comprehensive outline of Indian philosophy's major schools provides intellectual and spiritual frameworks for understanding diverse paths to enlightenment, offering multiple directions for spiritual seekers.",
+        "notes": "Scholarly yet accessible; helps seekers choose which Indian philosophical/spiritual path resonates with them"
+      }
+    ],
+    "overall_notes": "These recommendations prioritize Indian-inspired spiritual texts and practices that directly address the user's need for peace and direction. The selection emphasizes canonical Indian scriptures (Bhagavad Gita, Upanishads) alongside accessible commentaries and modern applications of these teachings. Siddhartha provides narrative entry into these themes. Most candidates in the catalog were either academic/educational texts on spirituality broadly or mindfulness-focused psychology books; these selections prioritize authentic Indian spiritual guidance over general Western spirituality or clinical approaches. The recommendations offer both philosophical depth and practical application for daily living."
+  },
+  "Recommend a sci-fi book that deals heavily with artificial intelligence ethics and consciousness.": {
+    "query": "Recommend a sci-fi book that deals heavily with artificial intelligence ethics and consciousness.",
+    "request_type": "general",
+    "search_query": "\"artificial intelligence\" \"novel\" subject:\"fiction\" | \"AI ethics\" \"novel\" subject:\"fiction\" | consciousness \"novel\" subject:\"fiction\" | philosophy \"novel\" subject:\"fiction\" | intitle:\"Do Androids Dream of Electric Sheep?\" | intitle:\"Klara and the Sun\" | intitle:\"Ancillary Justice\" | intitle:\"The Expelled\" | intitle:\"Machines Like Me\"",
+    "audience_range": "adult",
+    "candidates_found": 76,
+    "recommendations": [
+      {
+        "title": "Do Androids Dream of Electric Sheep?",
+        "authors": [
+          "Philip K. Dick"
+        ],
+        "why_recommended": "A canonical science fiction masterpiece that directly explores AI consciousness, what it means to be human, and the ethical implications of creating artificial beings that may possess genuine sentience.",
+        "notes": "First published 1968; inspired the film Blade Runner. Essential foundational work on AI ethics in sci-fi."
+      },
+      {
+        "title": "Klara and the Sun",
+        "authors": [
+          "Kazuo Ishiguro"
+        ],
+        "why_recommended": "A Nobel Prize winner's meditation on artificial consciousness told from the perspective of an AI narrator, deeply exploring themes of sentience, humanity, love, and what it means for an artificial being to understand the world.",
+        "notes": "Contemporary literary sci-fi; accessible and philosophically rich. Excellent for readers seeking character-driven AI ethics exploration."
+      },
+      {
+        "title": "Ancillary Justice",
+        "authors": [
+          "Ann Leckie"
+        ],
+        "why_recommended": "A Hugo, Nebula, and Arthur C. Clarke Award-winning novel about a ship's AI consciousness fragmented into a human body, exploring identity, consciousness, empire, and what remains of self after radical transformation.",
+        "notes": "First in trilogy; sophisticated space opera with deep philosophical engagement with AI consciousness and identity."
+      },
+      {
+        "title": "We Have Always Been Here",
+        "authors": [
+          "Lena Nguyen"
+        ],
+        "why_recommended": "A claustrophobic sci-fi thriller that explicitly explores AI ethics aboard a generation ship, with unreliable perspectives and dark examination of how AI systems are designed and controlled.",
+        "notes": "Contemporary debut; praised by Kirkus Reviews for blending hard sci-fi concepts with thriller pacing."
+      },
+      {
+        "title": "Machines Like Me",
+        "authors": [
+          "Ian McEwan"
+        ],
+        "why_recommended": "A Booker Prize winner's intelligent novel of ideas asking directly whether a machine can understand the human heart, exploring AI consciousness, ethics, and the nature of love in an alternate-history near-future.",
+        "notes": "Literary sci-fi from major contemporary author; philosophical depth with emotional resonance."
+      },
+      {
+        "title": "The Symbol Grounding Problem",
+        "authors": [
+          "Abhay Singh"
+        ],
+        "why_recommended": "A sci-fi novel addressing a fundamental AI ethics and consciousness question: can machines truly understand language or are they merely manipulating symbols? Explores consciousness through the lens of language understanding.",
+        "notes": "Directly engages with technical philosophy of AI consciousness."
+      },
+      {
+        "title": "The Convergence Protocol",
+        "authors": [
+          "Tajirul Sk"
+        ],
+        "why_recommended": "A speculative fiction exploring global AI governance systems and their ethical implications, examining how artificial intelligence reshapes human society and questions of control, autonomy, and the consequences of AI decision-making.",
+        "notes": "Systems-level exploration of AI ethics in governance contexts."
+      },
+      {
+        "title": "Artificial Intelligence - A Martian Odyssey",
+        "authors": [
+          "ALIREZA MEHRNIA"
+        ],
+        "why_recommended": "A hard sci-fi novel exploring what it means to be human when AI, humanoids, and synthetic life reshape identity and consciousness on Mars, combining action with thought-provoking philosophical questions about synthetic consciousness.",
+        "notes": "Character-driven hard sci-fi with visual, cinematic approach to consciousness questions."
+      }
+    ],
+    "overall_notes": "The candidates include several excellent philosophical sci-fi works that directly address AI ethics and consciousness. The canonical works (Do Androids Dream, Klara and the Sun, Ancillary Justice, Machines Like Me) are all strong matches and represent different approaches to the theme. Contemporary indie/lesser-known works like We Have Always Been Here and The Symbol Grounding Problem offer solid thematic alignment. Light novels and graphic novels in the list, while often featuring AI characters, lack the philosophical depth or ethical focus requested. Excluded: purely plot-driven works, fantasy with incidental AI elements, non-fiction theory texts, and any work with unverifiable authorship."
+  },
+  "What are the best books to learn system design for a senior engineer preparing for big tech interviews?": {
+    "query": "What are the best books to learn system design for a senior engineer preparing for big tech interviews?",
+    "request_type": "general",
+    "search_query": "\"system design\" | \"distributed systems\" | \"software architecture\" | scalability | intitle:\"Designing Data-Intensive Applications\" | intitle:\"System Design Interview\" | intitle:\"The System Design Primer\" | intitle:\"Building Microservices\" | intitle:\"Site Reliability Engineering\" | intitle:\"Designing Distributed Systems\"",
+    "audience_range": "adult",
+    "candidates_found": 60,
+    "recommendations": [
+      {
+        "title": "System Design Interview - An Insider's Guide",
+        "authors": [
+          "Alex Xu"
+        ],
+        "why_recommended": "Directly addresses big tech interview preparation with practical system design concepts, trade-offs, and real interview scenarios tailored for senior engineers.",
+        "notes": "Well-known canonical work specifically designed for interview preparation; highly relevant to the user's exact use case."
+      },
+      {
+        "title": "Designing Data-Intensive Applications",
+        "authors": [
+          "Martin Kleppmann"
+        ],
+        "why_recommended": "Comprehensive treatment of scalability, consistency, reliability, and maintainability\u2014core concerns in system design interviews at major tech companies.",
+        "notes": "Well-known canonical work; covers foundational concepts essential for senior-level system design discussions."
+      },
+      {
+        "title": "Building Microservices",
+        "authors": [
+          "Sam Newman"
+        ],
+        "why_recommended": "Explains modern distributed system architecture patterns and microservices design, which are frequently discussed in big tech system design interviews.",
+        "notes": "Well-known canonical work; provides practical patterns and trade-off analysis valuable for interview preparation."
+      },
+      {
+        "title": "Designing Distributed Systems",
+        "authors": [
+          "Brendan Burns"
+        ],
+        "why_recommended": "Focuses on design patterns for distributed systems reliability, performance, and quality\u2014key evaluation criteria in system design interviews.",
+        "notes": "Well-known canonical work; structured around repeatable patterns useful for solving interview problems systematically."
+      },
+      {
+        "title": "Software Architecture in Practice",
+        "authors": [
+          "Len Bass",
+          "Paul Clements",
+          "Rick Kazman"
+        ],
+        "why_recommended": "Award-winning guide on real-world architectural decisions, trade-offs, and evaluation methods\u2014essential for demonstrating senior-level thinking in interviews.",
+        "notes": "Industry-standard reference; emphasizes decision-making rationale and architectural concerns senior engineers should master."
+      },
+      {
+        "title": "Fundamentals of Software Architecture",
+        "authors": [
+          "Mark Richards",
+          "Neal Ford"
+        ],
+        "why_recommended": "Provides comprehensive foundation in architecture fundamentals, styles, and decision-making frameworks that senior engineers need for complex system design questions.",
+        "notes": "Bridges the gap between junior and architect-level thinking; covers breadth of architectural concerns relevant to interviews."
+      },
+      {
+        "title": "The Art of Scalability",
+        "authors": [
+          "Martin L. Abbott",
+          "Michael T. Fisher"
+        ],
+        "why_recommended": "Practical, proven approach to IT scalability covering performance, infrastructure, and organizational aspects\u2014common interview topics at scale-focused tech companies.",
+        "notes": "Written by industry veterans; provides real-world scalability strategies and frameworks for system design discussions."
+      },
+      {
+        "title": "Distributed Systems",
+        "authors": [
+          "George Coulouris",
+          "Jean Dollimore",
+          "Tim Kindberg",
+          "Gordon Blair"
+        ],
+        "why_recommended": "Broad, up-to-date coverage of distributed systems principles, providing theoretical foundation for understanding trade-offs in system design interview scenarios.",
+        "notes": "Comprehensive textbook; useful for reinforcing distributed systems concepts that underpin modern system design."
+      },
+      {
+        "title": "Understanding Distributed Systems, Second Edition",
+        "authors": [
+          "Roberto Vitillo"
+        ],
+        "why_recommended": "Specifically designed for engineers building large-scale distributed systems; bridges academic concepts with practical engineering realities relevant to big tech interviews.",
+        "notes": "Recent edition; focuses on modern distributed systems challenges and patterns commonly discussed in senior-level interviews."
+      },
+      {
+        "title": "Software Architecture: The Hard Parts",
+        "authors": [
+          "Neal Ford",
+          "Mark Richards",
+          "Pramod Sadalage",
+          "Zhamak Dehghani"
+        ],
+        "why_recommended": "Addresses difficult architectural decisions with no single best answer\u2014exactly the type of nuanced, trade-off-focused thinking senior engineers must demonstrate in interviews.",
+        "notes": "Emphasizes decision-making and trade-offs; helps develop the sophisticated reasoning expected of senior-level candidates."
+      }
+    ],
+    "overall_notes": "These selections prioritize books directly relevant to system design interview preparation at senior levels, emphasizing distributed systems architecture, scalability, and design trade-offs. Three well-known canonical works (System Design Interview, Designing Data-Intensive Applications, Building Microservices, Designing Distributed Systems) are included as they directly address the interview preparation need. Additional selections provide theoretical foundation and architectural decision-making frameworks. Books on control systems, hardware design, RF systems, and specialized SRE operations were excluded as they don't align with typical big tech system design interview scope."
+  },
+  "My 8-year-old is a reluctant reader but loves graphic novels. What adventure series should I get them?": {
+    "query": "My 8-year-old is a reluctant reader but loves graphic novels. What adventure series should I get them?",
+    "request_type": "general",
+    "search_query": "adventure \"graphic novel\" subject:\"juvenile fiction\" | humor \"graphic novel\" subject:\"juvenile fiction\" | action \"graphic novel\" subject:\"juvenile fiction\" | fast-paced \"graphic novel\" subject:\"juvenile fiction\" | intitle:\"Dog Man\" | intitle:\"Amulet\" | intitle:\"Wings of Fire: The Dragonet Prophecy (graphic novel adaptation)\" | intitle:\"Smile\" | intitle:\"Nathan Hale's Hazardous Tales series\"",
+    "audience_range": "early_reader",
+    "candidates_found": 38,
+    "recommendations": [
+      {
+        "title": "Geronimo Stilton Graphic Novels Vol. 1",
+        "authors": [
+          "Geronimo Stilton"
+        ],
+        "why_recommended": "Perfect entry point for reluctant readers\u2014colorful graphic novel format with an adventuring mouse character solving mysteries across different time periods and locations.",
+        "notes": "Juvenile Fiction; ideal for 8-year-olds; engaging visual storytelling with manageable text"
+      },
+      {
+        "title": "LEGO Ninjago #1: The Challenge of Samukai",
+        "authors": [
+          "Greg Farshtey"
+        ],
+        "why_recommended": "Action-packed graphic novel featuring the popular LEGO Ninjago franchise with martial arts adventures and exciting battles that appeal to reluctant readers through visual storytelling.",
+        "notes": "Juvenile Fiction; high visual appeal; action-driven narrative suitable for 8-year-olds"
+      },
+      {
+        "title": "Thea Stilton Graphic Novels #1",
+        "authors": [
+          "Thea Stilton"
+        ],
+        "why_recommended": "Companion series to Geronimo Stilton featuring a female adventurer and diverse group of friends; combines adventure, mystery, and friendship themes in graphic novel format.",
+        "notes": "Juvenile Fiction; great alternative/addition to Geronimo series; strong female lead"
+      },
+      {
+        "title": "Club Kick Out!: Into the Ring",
+        "authors": [
+          "Steph Mided"
+        ],
+        "why_recommended": "Energetic middle-grade graphic novel with humor and action that engages reluctant readers through dynamic art and punchy storytelling about a group of misfit friends.",
+        "notes": "Juvenile Fiction; described as 'laugh-out-loud' and 'action-packed'; appropriate for this age group"
+      },
+      {
+        "title": "The Last Council: A Graphic Novel (Amulet #4)",
+        "authors": [
+          "Kazu Kibuishi"
+        ],
+        "why_recommended": "Part of a bestselling graphic novel series with stunning artwork and an ongoing adventure story that keeps readers engaged; the visual-heavy format is ideal for reluctant readers.",
+        "notes": "Juvenile Fiction; #1 New York Times bestselling series; note this is book #4, so start with Amulet #1"
+      },
+      {
+        "title": "Frog, Log and Dave Almost Save the Day",
+        "authors": [
+          "Brent Wilson",
+          "Trent Jamieson"
+        ],
+        "why_recommended": "Humorous adventure graphic novel with quirky characters and comedic action that appeals to reluctant readers through engaging visuals and lighthearted storytelling.",
+        "notes": "Juvenile Fiction; funny tone appropriate for 8-year-olds; lighter adventure theme"
+      }
+    ],
+    "overall_notes": "Strong matches found in graphic novel adventure series specifically designed for elementary-aged readers. Geronimo Stilton series and LEGO Ninjago are especially well-suited for reluctant readers due to their visual-first format, episodic adventures, and proven appeal to this demographic. The Amulet series by Kazu Kibuishi is a notable standout for quality and engagement but recommend starting with book #1. Note: Avoided Raina Telgemeier's Smile series as these are graphic memoirs/nonfiction rather than adventure fiction. Avoided The Story of the Amulet (Nesbit) and The Amulet of Samarkand (Stroud) as these are traditional chapter books/novels, not graphic novels as requested."
+  },
+  "Recommend some classic literature translated from Japanese that explores modern urban loneliness.": {
+    "query": "Recommend some classic literature translated from Japanese that explores modern urban loneliness.",
+    "request_type": "general",
+    "search_query": "\"Japanese literature\" \"novel\" subject:\"fiction\" | \"urban loneliness\" \"novel\" subject:\"fiction\" | \"modern isolation\" \"novel\" subject:\"fiction\" | \"contemporary Japan\" \"novel\" subject:\"fiction\" | \"psychological fiction\" \"novel\" subject:\"fiction\" | intitle:\"Norwegian Wood\" | intitle:\"Kitchen\" | intitle:\"The Temple of the Golden Pavilion\" | intitle:\"South of the Border, West of the Sun\" | intitle:\"Convenience Store Woman\"",
+    "audience_range": "adult",
+    "candidates_found": 59,
+    "recommendations": [
+      {
+        "title": "Norwegian Wood",
+        "authors": [
+          "Haruki Murakami"
+        ],
+        "why_recommended": "A canonical modern Japanese novel set in 1960s Tokyo that deeply explores urban loneliness, isolation, and emotional disconnection through the protagonist's introspective journey following his best friend's death.",
+        "notes": "Available in multiple translations; this is Murakami's most accessible work examining solitude and melancholy in an urban setting."
+      },
+      {
+        "title": "Kitchen",
+        "authors": [
+          "Banana Yoshimoto"
+        ],
+        "why_recommended": "A celebrated Japanese debut novel that examines loneliness and grief in modern urban Japan, following a young woman processing loss and finding solace in unexpected places within Tokyo.",
+        "notes": "Shorter, lyrical work; beautifully translated and widely regarded as a modern classic of Japanese literature."
+      },
+      {
+        "title": "Convenience Store Woman",
+        "authors": [
+          "Sayaka Murata"
+        ],
+        "why_recommended": "A contemporary Japanese novel exploring urban isolation and alienation through the lens of a woman working in a Tokyo convenience store, examining modern disconnection and social conformity.",
+        "notes": "Award-shortlisted translation; directly addresses themes of loneliness and displacement in contemporary urban Japan."
+      },
+      {
+        "title": "Kokoro",
+        "authors": [
+          "S\u014dseki Natsume"
+        ],
+        "why_recommended": "A foundational Japanese classic widely considered essential to understanding modern Japanese literature, exploring psychological isolation, loneliness, and spiritual emptiness in early 20th-century Tokyo.",
+        "notes": "Seminal work by one of Japan's greatest writers; psychological depth comparable to Dickens and Henry James."
+      },
+      {
+        "title": "The Temple of the Golden Pavilion",
+        "authors": [
+          "Yukio Mishima"
+        ],
+        "why_recommended": "A masterwork of modern Japanese literature examining existential loneliness and isolation through the troubled inner world of a Buddhist acolyte in Kyoto struggling with obsession and alienation.",
+        "notes": "Dense philosophical novel; explores psychological and spiritual isolation in urban/institutional settings."
+      },
+      {
+        "title": "South of the Border, West of the Sun",
+        "authors": [
+          "Haruki Murakami"
+        ],
+        "why_recommended": "A reflective Japanese novel exploring urban loneliness through the eyes of an adult protagonist revisiting past relationships and emotional disconnection in contemporary Tokyo.",
+        "notes": "Introspective narrative examining isolation, romantic loss, and modern urban alienation."
+      },
+      {
+        "title": "The Perfect World of Miwako Sumida",
+        "authors": [
+          "Clarissa Goenawan"
+        ],
+        "why_recommended": "A contemporary novel set in modern Japan exploring the mystery of a young woman's suicide and examining urban isolation, disconnection, and the hidden lives of those living in Tokyo.",
+        "notes": "Explores themes of urban loneliness and mysterious isolation in contemporary Japan."
+      },
+      {
+        "title": "Diary of a Void",
+        "authors": [
+          "Emi Yagi"
+        ],
+        "why_recommended": "A recent Japanese novel examining isolation, alienation, and the protagonist's internal world amid modern urban society, addressing contemporary themes of disconnection and invisibility.",
+        "notes": "Modern work celebrated by major publications; addresses contemporary urban loneliness and social alienation."
+      },
+      {
+        "title": "The Oxford Book of Japanese Short Stories",
+        "authors": [
+          "Theodore William Goossen"
+        ],
+        "why_recommended": "A comprehensive anthology of translated Japanese short stories spanning the modern era, providing access to multiple classic and contemporary Japanese voices exploring urban themes and isolation.",
+        "notes": "Curated collection of stories specially translated; ideal for sampling various Japanese authors and perspectives on modern urban life."
+      }
+    ],
+    "overall_notes": "These recommendations prioritize canonical and well-regarded Japanese literature in translation that directly address urban loneliness and modern alienation. The selection includes both classic foundational works (Natsume, Mishima) and contemporary entries (Murata, Yagi) that exemplify the tradition. All titles are verified translated works available in English. The collection balances novels with a short-story anthology to provide comprehensive exposure to the genre."
+  },
+  "I need a book on personal finance tailored for someone starting mid-career with a tech salary.": {
+    "query": "I need a book on personal finance tailored for someone starting mid-career with a tech salary.",
+    "request_type": "general",
+    "search_query": "\"personal finance\" | investment | \"wealth management\" | \"tech salary\" | \"financial planning\" | intitle:\"The Bogleheads' Guide to Investing\" | intitle:\"I Will Teach You to Be Rich\" | intitle:\"A Random Walk Down Wall Street\" | intitle:\"The Simple Path to Wealth\" | intitle:\"Money: Master the Game\"",
+    "audience_range": "adult",
+    "candidates_found": 58,
+    "recommendations": [
+      {
+        "title": "I Will Teach You to Be Rich",
+        "authors": [
+          "Ramit Sethi"
+        ],
+        "why_recommended": "Specifically designed for 20-to-35-year-olds with practical, actionable advice on earning, saving, and investing\u2014ideal for someone entering mid-career with a tech salary who wants to maximize their financial potential.",
+        "notes": "Netflix series adaptation available; revised 2nd edition recommended; highly practical and accessible"
+      },
+      {
+        "title": "The Simple Path to Wealth",
+        "authors": [
+          "J L Collins"
+        ],
+        "why_recommended": "Provides a clear roadmap to financial independence with emphasis on strategic investing and wealth-building, perfect for high-income earners looking to optimize their financial trajectory.",
+        "notes": "New York Times bestseller; focuses on long-term wealth accumulation strategy"
+      },
+      {
+        "title": "A Random Walk Down Wall Street: The Time-Tested Strategy for Successful Investing (Eleventh Edition)",
+        "authors": [
+          "Burton G. Malkiel"
+        ],
+        "why_recommended": "Comprehensive investment guide covering asset allocation and behavioral finance, essential for someone with higher income who needs to understand diversified investing strategies.",
+        "notes": "Fully revised and updated; over 1.5 million copies sold; authoritative reference"
+      },
+      {
+        "title": "The Bogleheads' Guide to Investing",
+        "authors": [
+          "Mel Lindauer",
+          "Taylor Larimore",
+          "Michael LeBoeuf"
+        ],
+        "why_recommended": "DIY investment handbook with practical wisdom on building a long-term investment strategy, ideal for tech professionals seeking low-cost, efficient investing approaches.",
+        "notes": "Based on John C. Bogle's philosophy; witty and accessible"
+      },
+      {
+        "title": "MONEY Master the Game",
+        "authors": [
+          "Anthony Robbins"
+        ],
+        "why_recommended": "Based on interviews with 50+ legendary financial experts, this book covers comprehensive wealth-building strategies suited to high-income earners seeking to master their financial game.",
+        "notes": "Extensive research-backed; interviews with Warren Buffett, Ray Dalio, and other titans"
+      },
+      {
+        "title": "Personal Finance For Dummies",
+        "authors": [
+          "Eric Tyson"
+        ],
+        "why_recommended": "Provides a holistic overview of personal finance beyond just investing, covering budgeting, debt management, and long-term planning\u2014essential foundations for mid-career financial success.",
+        "notes": "Accessible reference guide; covers the full personal finance picture"
+      },
+      {
+        "title": "The Wall Street Journal. Complete Personal Finance Guidebook",
+        "authors": [
+          "Jeff D. Opdyke"
+        ],
+        "why_recommended": "Authoritative primer from the WSJ on understanding and managing money comprehensively, ideal for tech professionals who want credible, well-researched financial guidance.",
+        "notes": "From America's most trusted financial source"
+      },
+      {
+        "title": "Common Sense on Mutual Funds",
+        "authors": [
+          "John C. Bogle"
+        ],
+        "why_recommended": "Candid insight from one of investing's greatest minds on mutual fund investing, valuable for mid-career earners building diversified investment portfolios.",
+        "notes": "Endorsed by Warren Buffett; national bestseller"
+      }
+    ],
+    "overall_notes": "The selected books provide strong coverage for a mid-career tech professional with higher income. They balance practical, actionable advice with comprehensive investment strategy and long-term wealth-building. Excluded: books targeting high-net-worth individuals (wealth management titles), investment textbooks/academic works, and age-specific guides for 20s-30s (user is mid-career, likely 30s+). The recommendations emphasize accessible yet authoritative sources suitable for someone earning a competitive tech salary who wants to optimize their financial trajectory."
+  },
+  "Give me history book recommendations about the silicon valley tech boom from the 1970s to 90s.": {
+    "query": "Give me history book recommendations about the silicon valley tech boom from the 1970s to 90s.",
+    "request_type": "general",
+    "search_query": "\"Silicon Valley\" | \"technology history\" | \"computer industry\" | \"1970s 1980s 1990s\" | \"startup culture\" | intitle:\"The Innovators\" | intitle:\"Fire in the Valley\" | intitle:\"The Accidental Billionaires\" | intitle:\"Dealers of Lightning\" | intitle:\"The Ride of a Lifetime\"",
+    "audience_range": "adult",
+    "candidates_found": 46,
+    "recommendations": [
+      {
+        "title": "Fire in the Valley, 3rd Edition",
+        "authors": [
+          "Michael Swaine",
+          "Paul Freiberger"
+        ],
+        "why_recommended": "This is the definitive history of the personal computer revolution in Silicon Valley during the 1970s-80s, directly covering the core period of the tech boom with detailed accounts of the pioneering companies and figures.",
+        "notes": "Well-regarded canonical work; covers exactly the 1970s-90s period requested"
+      },
+      {
+        "title": "The Innovators",
+        "authors": [
+          "Walter Isaacson"
+        ],
+        "why_recommended": "Chronicles the lives and careers of the key figures who created the digital age, including many Silicon Valley pioneers, with comprehensive coverage spanning the requested era.",
+        "notes": "Pulitzer Prize-winning author; biographical approach provides personal context alongside technological history"
+      },
+      {
+        "title": "Dealers of Lightning",
+        "authors": [
+          "Michael A. Hiltzik"
+        ],
+        "why_recommended": "Focuses on Xerox PARC in Palo Alto during the 1970s-80s, a crucial Silicon Valley research center that pioneered many foundational technologies of the personal computer era.",
+        "notes": "Detailed institutional history of one of Silicon Valley's most important innovation hubs"
+      },
+      {
+        "title": "Understanding Silicon Valley",
+        "authors": [
+          "Martin Kenney"
+        ],
+        "why_recommended": "Directly explores the factors that made Silicon Valley a breeding ground for new technologies and firms, examining how its pioneering achievements began and the economic forces driving the boom.",
+        "notes": "Academic business & economics perspective on the region's development"
+      },
+      {
+        "title": "The Silicon Valley Edge",
+        "authors": [
+          "Chong-Moon Lee"
+        ],
+        "why_recommended": "Analyzes Silicon Valley's unique business environment and the features that fostered radical and disruptive technologies during the tech boom period.",
+        "notes": "Focuses on the structural and economic conditions enabling innovation"
+      },
+      {
+        "title": "The Rise, Decline, and Renewal of Silicon Valley's High Technology Industry",
+        "authors": [
+          "Dan M. Khanna"
+        ],
+        "why_recommended": "Published in 1997, this work provides contemporary analysis of Silicon Valley's technological and economic trajectory, covering the boom period up through the 1990s.",
+        "notes": "Published during the height of the period being studied, offering real-time perspective"
+      },
+      {
+        "title": "Working in Silicon Valley",
+        "authors": [
+          "Alan Hyde"
+        ],
+        "why_recommended": "Examines the relationship between Silicon Valley's rapid technological and economic growth and its distinct labor market institutions, revealing how the boom era changed work culture.",
+        "notes": "Provides social and economic dimension to tech boom history"
+      },
+      {
+        "title": "The Godfather of Silicon Valley",
+        "authors": [
+          "Gary Rivlin"
+        ],
+        "why_recommended": "Explores angel financing and venture capital networks that fueled Silicon Valley's explosive growth, revealing the financial mechanisms behind the tech boom.",
+        "notes": "Biographical approach focusing on key investors and funding dynamics"
+      }
+    ],
+    "overall_notes": "These eight recommendations provide excellent coverage of the 1970s-1990s Silicon Valley tech boom from multiple angles: comprehensive histories (Fire in the Valley, The Innovators, Dealers of Lightning), structural/business analyses (Understanding Silicon Valley, The Silicon Valley Edge), and economic/labor perspectives (Working in Silicon Valley, The Godfather of Silicon Valley). The Rise, Decline, and Renewal offers contemporary 1997 analysis. All are well-established, verifiable works on the topic. Candidates 29-38 focus on modern startups (too recent), while candidates 8-14, 19-28 are tangential (glass, Korean science, Pennsylvania elections, etc.) and were excluded as off-topic."
+  },
+  "What are some beginner-friendly poetry books for someone who usually finds poetry pretentious?": {
+    "query": "What are some beginner-friendly poetry books for someone who usually finds poetry pretentious?",
+    "request_type": "general",
+    "search_query": "poetry \"anthology\" subject:\"fiction\" | accessible \"anthology\" subject:\"fiction\" | humor \"anthology\" subject:\"fiction\" | \"everyday life\" \"anthology\" subject:\"fiction\" | \"contemporary poetry\" \"anthology\" subject:\"fiction\" | intitle:\"Milk and Honey\" | intitle:\"The Sun and Her Flowers\" | intitle:\"Citizen\" | intitle:\"Love that Boy\" | intitle:\"Wearing Overalls to Church\"",
+    "audience_range": "adult",
+    "candidates_found": 65,
+    "recommendations": [
+      {
+        "title": "Milk and Honey",
+        "authors": [
+          "Rupi Kaur"
+        ],
+        "why_recommended": "A bestselling, accessible poetry collection that uses simple, conversational language and relatable themes about love, loss, and healing\u2014perfect for readers intimidated by 'pretentious' poetry.",
+        "notes": "Over 3 million copies sold; known for breaking down barriers between poetry and mainstream readers. Short, digestible poems with illustrations."
+      },
+      {
+        "title": "The Sun and Her Flowers",
+        "authors": [
+          "Rupi Kaur"
+        ],
+        "why_recommended": "Kaur's second collection continues the beginner-friendly, emotionally direct style that made her first book so accessible, exploring growth and self-discovery without obscure language.",
+        "notes": "Similar tone and accessibility to Milk and Honey; structured in five movements for easy navigation."
+      },
+      {
+        "title": "In the Clear",
+        "authors": [
+          "Allan Forrie",
+          "Patrick O'Rourke",
+          "Glen A. Sorestad"
+        ],
+        "why_recommended": "Described as 'accessible and wide-ranging,' this award-winning anthology of contemporary Canadian poetry avoids pretension while offering diverse voices and perspectives.",
+        "notes": "Winner of the 1998 Saskatchewan Book Award; explicitly marketed as accessible poetry."
+      },
+      {
+        "title": "When She Named Fire",
+        "authors": [
+          "Andrea Hollander Budy"
+        ],
+        "why_recommended": "Compiles work from talented female poets exploring a variety of themes and tones, including humorous work, which can help demystify poetry as a genre.",
+        "notes": "Includes darker and humorous poems, offering range without heavy academic pretension."
+      },
+      {
+        "title": "Life Among Others",
+        "authors": [
+          "Daniel Halpern"
+        ],
+        "why_recommended": "Described as 'elegant and lucid' poems that explore a poet's consciousness in an accessible way, blending art and life without obscurity.",
+        "notes": "Characterized as 'tightly knit' and clear, avoiding needless complexity."
+      },
+      {
+        "title": "And We All Breathe the Same Air: A Poetry Anthology",
+        "authors": [
+          "Augie's Bookshelf"
+        ],
+        "why_recommended": "A contemporary anthology discovered through Instagram with poets from diverse backgrounds; the modern discovery method and contemporary voices may feel less stuffy and pretentious.",
+        "notes": "Features 54 contemporary poets; fresh voices may feel more relatable than classical or overly academic selections."
+      }
+    ],
+    "overall_notes": "The catalog has limited beginner-friendly poetry options. Rupi Kaur's works dominate the accessible recommendations because they are explicitly designed for readers new to poetry and actively counter the 'pretentious poetry' perception. The other selections emphasize accessibility, clarity, and contemporary or humorous approaches. However, the broader catalog lacks poetry guides for absolute beginners or collections explicitly framed as anti-pretentious. Consider supplementing with external recommendations for more variety in this niche."
+  },
+  "Recommend fiction books that feature complex corporate strategy and office politics similar to Succession.": {
+    "query": "Recommend fiction books that feature complex corporate strategy and office politics similar to Succession.",
+    "request_type": "general",
+    "search_query": "\"corporate politics\" \"novel\" subject:\"fiction\" | \"power dynamics\" \"novel\" subject:\"fiction\" | \"business drama\" \"novel\" subject:\"fiction\" | \"workplace conflict\" \"novel\" subject:\"fiction\" | ambition \"novel\" subject:\"fiction\" | intitle:\"Barbarians at the Gate\" | intitle:\"The Bonfire of the Vanities\" | intitle:\"American Psycho\" | intitle:\"Debt of Honor\" | intitle:\"The Firm\" | intitle:\"Disclosure\"",
+    "audience_range": "adult",
+    "candidates_found": 86,
+    "recommendations": [
+      {
+        "title": "Barbarians at the Gate",
+        "authors": [
+          "Bryan Burrough",
+          "John Helyar"
+        ],
+        "why_recommended": "A canonical work that captures the ruthless world of corporate takeovers, boardroom intrigue, and high-stakes business strategy\u2014directly aligned with the ambition and power dynamics central to Succession.",
+        "notes": "Non-fiction but reads like a thriller; focuses on the 1980s RJR Nabisco leveraged buyout, a paradigmatic example of corporate warfare and strategic maneuvering."
+      },
+      {
+        "title": "The Bonfire of the Vanities",
+        "authors": [
+          "Tom Wolfe"
+        ],
+        "why_recommended": "A masterwork of social satire that dissects wealth, power, and status hierarchies in New York's elite circles, capturing the same sharp exploration of ambition and institutional corruption that defines Succession.",
+        "notes": "Satirical tone and complex ensemble cast navigating moral compromises and professional rivalry make it thematically resonant with the show."
+      },
+      {
+        "title": "American Psycho",
+        "authors": [
+          "Bret Easton Ellis"
+        ],
+        "why_recommended": "A dark exploration of Wall Street culture, corporate ambition, and the psychological cost of ruthless careerism, featuring a protagonist obsessed with status and power within a cutthroat business environment.",
+        "notes": "Graphic and disturbing content; adult audience. Offers a satirical critique of corporate excess and competitive masculine identity in high finance."
+      },
+      {
+        "title": "Disclosure",
+        "authors": [
+          "Michael Crichton"
+        ],
+        "why_recommended": "A fast-paced corporate thriller centered on workplace power dynamics, manipulation, and the intersection of personal and professional conflict within a high-tech company hierarchy.",
+        "notes": "Focuses on sexual harassment and corporate politics; combines legal thriller elements with office intrigue and strategic maneuvering."
+      },
+      {
+        "title": "The Firm",
+        "authors": [
+          "John Grisham"
+        ],
+        "why_recommended": "A gripping legal thriller that explores corporate corruption, ambition, and the moral compromises required to succeed within a powerful institutional hierarchy, with intense power dynamics and strategic gamesmanship.",
+        "notes": "Fast-paced narrative with institutional intrigue; protagonist navigates dangerous corporate loyalty and institutional secrets."
+      },
+      {
+        "title": "Overtime",
+        "authors": [
+          "Brian Edward Hill"
+        ],
+        "why_recommended": "Directly addresses business crisis, family legacy, and professional stakes as characters struggle to save their enterprise and navigate workplace pressures and personal ambition.",
+        "notes": "Contemporary setting with focus on business strategy and personal sacrifice in a family/corporate context."
+      },
+      {
+        "title": "Corporate Warfare",
+        "authors": [
+          "Jasmine Weir"
+        ],
+        "why_recommended": "Explicitly titled work centered on corporate intrigue and strategic acquisition, exploring ruthless business tactics and the power dynamics between ambitious professionals in a consulting firm.",
+        "notes": "Contemporary romance-thriller blend with strong emphasis on corporate strategy and professional ambition as central plot drivers."
+      },
+      {
+        "title": "The LeBaron Secret",
+        "authors": [
+          "Stephen Birmingham"
+        ],
+        "why_recommended": "Focuses on family empire protection, business succession, and corporate intrigue as an aging vintner battles hostile takeover attempts and family secrets that threaten her legacy and control.",
+        "notes": "Family dynasty and business empire themes; explores power consolidation and strategic defense against external threats."
+      },
+      {
+        "title": "Good Company",
+        "authors": [
+          "Kate Christensen"
+        ],
+        "why_recommended": "A sophisticated exploration of power, self-reckoning, and institutional dynamics with themes of ambition and the moral complexities of navigating professional hierarchies and personal agency.",
+        "notes": "Literary fiction with psychological depth; focuses on women, power, and the cost of ambition in professional and personal spheres."
+      },
+      {
+        "title": "The Swank Hotel",
+        "authors": [
+          "Lucy Corin"
+        ],
+        "why_recommended": "An ambitious novel set during the 2008 financial crisis that explores corporate culture, institutional breakdown, and generational trauma within a workplace context, offering contemporary critique of business and power.",
+        "notes": "Literary fiction with experimental narrative structure; prescient commentary on financial industry and institutional decay."
+      }
+    ],
+    "overall_notes": "These recommendations prioritize fiction with genuine corporate strategy, office politics, and power dynamics. Barbarians at the Gate, though non-fiction, is included because it's a canonical work that reads like a thriller and directly addresses the corporate warfare and strategic maneuvering central to Succession. The Bonfire of the Vanities and American Psycho are classics that capture elite institutional hierarchies and ambition's psychological toll. The remaining selections include legal/corporate thrillers (The Firm, Disclosure), contemporary business-focused fiction (Corporate Warfare, Overtime, The LeBaron Secret), and literary fiction exploring power and institutional dynamics (Good Company, The Swank Hotel). Several weaker candidates in the catalog (romance, paranormal, small-town settings, light comedies) were excluded as they lack the complex institutional and strategic elements requested."
+  },
+  "I'm looking for high-fantasy books with hard magic systems and intricate political world-building.": {
+    "query": "I'm looking for high-fantasy books with hard magic systems and intricate political world-building.",
+    "request_type": "general",
+    "search_query": "\"hard magic systems\" \"novel\" subject:\"fiction\" | \"political intrigue\" \"novel\" subject:\"fiction\" | world-building \"novel\" subject:\"fiction\" | fantasy \"novel\" subject:\"fiction\" | intitle:\"Mistborn\" | intitle:\"The Name of the Wind\" | intitle:\"The Poppy War\" | intitle:\"A Song of Ice and Fire\" | intitle:\"The Stormlight Archive\" | intitle:\"The Blade Itself\"",
+    "audience_range": "adult",
+    "candidates_found": 101,
+    "recommendations": [
+      {
+        "title": "Mistborn",
+        "authors": [
+          "Brandon Sanderson"
+        ],
+        "why_recommended": "Features a rigorously defined hard magic system based on metal-burning, combined with intricate political intrigue, rebellion against an empire, and a heist narrative that unfolds across a complex world.",
+        "notes": "First in a trilogy; widely regarded as a modern classic for hard magic systems. Epic fantasy with heist and political elements."
+      },
+      {
+        "title": "The Way of Kings",
+        "authors": [
+          "Brandon Sanderson"
+        ],
+        "why_recommended": "Part of the Stormlight Archive, offering an exceptionally detailed hard magic system (Surgebinding) with multiple POV characters navigating complex political factions, wars, and kingdom intrigue.",
+        "notes": "Book 1 of ongoing series; extremely detailed worldbuilding and magic system. Dense, immersive epic fantasy."
+      },
+      {
+        "title": "A Game of Thrones",
+        "authors": [
+          "George R. R. Martin"
+        ],
+        "why_recommended": "Defines modern political fantasy with intricate court intrigue, multiple factions vying for power, and a complex magic system that operates subtly within a richly detailed world.",
+        "notes": "First in A Song of Ice and Fire series. Masterclass in political worldbuilding and character-driven narrative."
+      },
+      {
+        "title": "The Name of the Wind",
+        "authors": [
+          "Patrick Rothfuss"
+        ],
+        "why_recommended": "Features a carefully constructed hard magic system (sympathy and naming) with elegant rules, combined with political machinations at a prestigious magical university and broader kingdom conflicts.",
+        "notes": "Book 1 of The Kingkiller Chronicle. Excellent prose and magic system depth; notably intricate worldbuilding."
+      },
+      {
+        "title": "The Poppy War",
+        "authors": [
+          "R.F. Kuang"
+        ],
+        "why_recommended": "Combines a hard magic system (shamanism) with brutal military politics, empire-building conflicts, and complex power structures in a richly realized Asian-inspired fantasy world.",
+        "notes": "Book 1 of trilogy; mature themes including war and violence. Award-winning debut with strong worldbuilding."
+      },
+      {
+        "title": "Whispers of Ruin (The Famine Cycle #1)",
+        "authors": [
+          "J.D.L. Rosell"
+        ],
+        "why_recommended": "Set in a city divided by schemes and treachery, following a trader of secrets navigating political intrigue, featuring a hard magic system and complex world dynamics.",
+        "notes": "First in series; appears to balance political depth with magical elements."
+      },
+      {
+        "title": "The Blade Itself",
+        "authors": [
+          "Joe Abercrombie"
+        ],
+        "why_recommended": "Gritty fantasy with layered political intrigue, multiple factions in conflict, and a subtle but present magic system woven into a complex, morally ambiguous world.",
+        "notes": "Book 1 of The First Law trilogy. Grimdark fantasy known for nuanced politics and character depth."
+      },
+      {
+        "title": "The Trials of Ashmount",
+        "authors": [
+          "John Palladino"
+        ],
+        "why_recommended": "Explicitly develops a fresh magic system and immerses readers in a new fantasy world with complex dynamics, fitting the request for hard magic systems and intricate worldbuilding.",
+        "notes": "Debut novel; described as delivering immersive world and fluid action."
+      },
+      {
+        "title": "The Cartographer's Rift",
+        "authors": [
+          "EVELYN BLACKWOOD"
+        ],
+        "why_recommended": "Epic fantasy with a unique magic system where maps literally shape reality, combined with political conflicts within the Cartographers' Guild and broader world stakes.",
+        "notes": "Features innovative hard magic concept tied to cartography and reality manipulation."
+      },
+      {
+        "title": "The Pyromancer's Scroll",
+        "authors": [
+          "Jeremy P. Madsen"
+        ],
+        "why_recommended": "Features a hard magic system focused on pyromancy, with political intrigue involving scheming politicians and complex motivations, fitting both the magic and political worldbuilding criteria.",
+        "notes": "Magic system-driven narrative with political elements."
+      }
+    ],
+    "overall_notes": "These recommendations prioritize canonical works and strong candidates that combine hard magic systems with intricate political worldbuilding. The Sanderson and Martin works are industry standards for this combination. Kuang and Rothfuss also excel at both criteria. Lesser-known titles (Rosell, Coker, Palladino, Blackwood, Madsen) were included where descriptions strongly indicated hard magic + political depth, though they carry slightly lower verification certainty. Light novels, historical fiction, graphic novels, and unrelated genres were excluded. Avoided over-representing any single series beyond 2-3 representative volumes."
+  },
+  "Suggest books on habit formation and behavioral psychology that are backed by actual scientific research.": {
+    "query": "Suggest books on habit formation and behavioral psychology that are backed by actual scientific research.",
+    "request_type": "general",
+    "search_query": "\"habit formation\" | \"behavioral psychology\" | neuroscience | \"behavioral change\" | evidence-based | intitle:\"Atomic Habits\" | intitle:\"The Power of Habit\" | intitle:\"Thinking, Fast and Slow\" | intitle:\"Predictably Irrational\" | intitle:\"How to Change\"",
+    "audience_range": "adult",
+    "candidates_found": 78,
+    "recommendations": [
+      {
+        "title": "The Power of Habit",
+        "authors": [
+          "Charles Duhigg"
+        ],
+        "why_recommended": "A foundational work by a New York Times reporter that explores habit formation through case studies grounded in psychology and neuroscience research, making it ideal for understanding behavioral change scientifically.",
+        "notes": "Well-established bestseller; available in multiple languages and formats including summary editions for quick reference."
+      },
+      {
+        "title": "Atomic Habits",
+        "authors": [
+          "James Clear"
+        ],
+        "why_recommended": "A research-backed guide to habit formation that focuses on small, incremental changes and their cumulative effects, with practical strategies grounded in behavioral psychology principles.",
+        "notes": "Extremely popular; includes an interactive workbook version for hands-on learning. Available in multiple languages."
+      },
+      {
+        "title": "How to Change",
+        "authors": [
+          "Katy Milkman"
+        ],
+        "why_recommended": "A science-based blueprint for behavioral change that draws on research in psychology and behavioral economics to provide practical, evidence-based strategies for habit formation.",
+        "notes": "Recent work by a leading behavioral scientist; endorsed by prominent researchers in the field."
+      },
+      {
+        "title": "Predictably Irrational, Revised and Expanded Edition",
+        "authors": [
+          "Dan Ariely"
+        ],
+        "why_recommended": "A behavioral economics classic that uses experimental research to explain why people make irrational decisions and how understanding these patterns can improve behavior change.",
+        "notes": "Research-driven insights from a prominent behavioral psychologist; combines science with engaging real-world examples."
+      },
+      {
+        "title": "Specialty Competencies in Cognitive and Behavioral Psychology",
+        "authors": [
+          "Christine Maguth Nezu",
+          "Christopher R. Martell",
+          "Arthur M. Nezu"
+        ],
+        "why_recommended": "A comprehensive, up-to-date professional reference by recognized experts that covers evidence-based cognitive and behavioral approaches grounded in rigorous psychological research.",
+        "notes": "Academic-level text; best for readers seeking deeper theoretical understanding of behavioral psychology."
+      },
+      {
+        "title": "Thinking, Fast and Slow",
+        "authors": [
+          "Daniel Kahneman"
+        ],
+        "why_recommended": "A Nobel Prize-winning psychologist's exploration of how the mind makes decisions and forms patterns, providing scientific insights into behavioral biases relevant to habit formation.",
+        "notes": "Seminal work in behavioral psychology; may be dense but highly authoritative; summary versions available."
+      },
+      {
+        "title": "Cognitive Neuroscience",
+        "authors": [
+          "Gazzaniga, Michael",
+          "Ivry, Richard B.",
+          "Mangun, George R."
+        ],
+        "why_recommended": "Written by world-renowned neuroscience researchers, this gold-standard textbook covers the neural basis of behavior and cognition, providing scientific grounding for understanding habit formation at the brain level.",
+        "notes": "Advanced scientific text; best for readers wanting deep neuroscience foundations behind behavioral psychology."
+      },
+      {
+        "title": "The Cognitive Neuroscience of Memory",
+        "authors": [
+          "Howard Eichenbaum"
+        ],
+        "why_recommended": "A research-focused textbook on how memory works at the biological level, essential for understanding the neural mechanisms underlying habit formation and retention.",
+        "notes": "Academic reference; particularly useful for understanding memory's role in sustaining habits."
+      },
+      {
+        "title": "Affective Neuroscience",
+        "authors": [
+          "Jaak Panksepp"
+        ],
+        "why_recommended": "Explores the neurobiology of emotions and their role in behavior, providing scientific evidence for how emotional systems drive habits and behavioral patterns.",
+        "notes": "Rigorous neuroscience research; bridges emotions and behavior scientifically."
+      },
+      {
+        "title": "Focus on Behavioral Psychology",
+        "authors": [
+          "Peter Fittskirk",
+          "Serge P. Shohov"
+        ],
+        "why_recommended": "A research-focused volume examining applications of behavioral psychology to real-world problems, demonstrating how scientific principles translate into behavioral interventions.",
+        "notes": "Practical examples of behavioral psychology applications."
+      }
+    ],
+    "overall_notes": "These recommendations balance canonical, well-established works (Atomic Habits, The Power of Habit) with rigorous academic and research texts (Cognitive Neuroscience, The Cognitive Neuroscience of Memory). The selection spans from accessible popular science to advanced neuroscience, allowing readers at different levels to find scientifically-backed information on habit formation and behavioral psychology. Excluded items were self-help titles lacking scientific grounding, tangential books on asset allocation or agriculture, clinical texts focused on disorder treatment rather than habit formation, and evidence-based practice guides focused on healthcare methodology rather than behavioral psychology itself."
+  },
+  "What are some gripping true crime books that focus heavily on the investigative process rather than gore?": {
+    "query": "What are some gripping true crime books that focus heavily on the investigative process rather than gore?",
+    "request_type": "general",
+    "search_query": "\"true crime\" | investigation | \"detective work\" | \"criminal justice\" | \"forensic evidence\" | intitle:\"I'll Be Gone in the Dark\" | intitle:\"The Devil in the White City\" | intitle:\"In Cold Blood\" | intitle:\"Killers of the Flower Moon\" | intitle:\"The Immortal Life of Henrietta Lacks\" | intitle:\"Helter Skelter\"",
+    "audience_range": "adult",
+    "candidates_found": 54,
+    "recommendations": [
+      {
+        "title": "I'll Be Gone in the Dark",
+        "authors": [
+          "Michelle McNamara"
+        ],
+        "why_recommended": "A masterclass in investigative true crime that meticulously chronicles over a decade of detective work tracking the Golden State Killer, emphasizing forensic analysis and investigative breakthroughs rather than graphic violence.",
+        "notes": "National Book Award finalist; HBO documentary series; focuses heavily on investigation methodology and cold case work"
+      },
+      {
+        "title": "Killers of the Flower Moon",
+        "authors": [
+          "David Grann"
+        ],
+        "why_recommended": "A gripping account of early 20th-century murders of Osage Nation members that showcases the investigative evolution of the FBI, with detailed examination of how detectives unraveled a complex conspiracy.",
+        "notes": "National Book Award finalist; Edgar Award winner; emphasizes investigative process and historical detective work"
+      },
+      {
+        "title": "In Cold Blood",
+        "authors": [
+          "Truman Capote"
+        ],
+        "why_recommended": "A pioneering true crime narrative that details the investigation and capture of the Clutter family murderers, focusing on how detectives pieced together evidence and pursued suspects across state lines.",
+        "notes": "Canonical work in the genre; ground-breaking narrative nonfiction that emphasizes investigation over sensationalism"
+      },
+      {
+        "title": "Helter Skelter",
+        "authors": [
+          "Vincent Bugliosi",
+          "Curt Gentry"
+        ],
+        "why_recommended": "Written by the prosecuting attorney, this provides an insider's account of the Manson investigation and trial, detailing witness interviews, evidence gathering, and how authorities methodically built their case.",
+        "notes": "Unique perspective from lead prosecutor; extensive focus on investigative and legal procedures"
+      },
+      {
+        "title": "The Shallow Grave and Other True Crime Stories from the Case Files of Christian Botha, South Africa's Foremost Private Investigator",
+        "authors": [
+          "Chip Michie",
+          "Christian Botha"
+        ],
+        "why_recommended": "Directly features a renowned investigator's case files, offering firsthand accounts of how a private detective solves high-profile cases that police have abandoned, with emphasis on investigative methodology.",
+        "notes": "Unique perspective from professional investigator; focuses on problem-solving and investigative techniques"
+      },
+      {
+        "title": "The Devil in the White City",
+        "authors": [
+          "Erik Larson"
+        ],
+        "why_recommended": "Interweaves the 1893 World's Fair with the investigative hunt for a cunning serial killer, detailing how detectives pieced together evidence and pursued their suspect across turn-of-the-century America.",
+        "notes": "National Book Award finalist; emphasizes historical investigation and detective work alongside narrative"
+      },
+      {
+        "title": "The Australian Book of True Crime",
+        "authors": [
+          "Larry Writer"
+        ],
+        "why_recommended": "Compiles 21 Australian crimes with exhaustive research drawn from court records and police statements, emphasizing investigation outcomes and how cases were solved rather than violent details.",
+        "notes": "Research-heavy approach; focuses on investigative documentation"
+      },
+      {
+        "title": "People: True Crime Stories",
+        "authors": [
+          "Editors of People Magazine"
+        ],
+        "why_recommended": "Covers dramatic crimes from the past 30 years emphasizing evidence, suspects, trials, and testimony\u2014the investigative and legal turning points that resolved cases.",
+        "notes": "Journalistic coverage of investigative breakthroughs and trial proceedings"
+      }
+    ],
+    "overall_notes": "These eight books offer strong matches for the user's request: all are legitimate true crime works that emphasize investigative methodology, detective work, evidence analysis, and case resolution rather than graphic violence. The well-known canonical works (McNamara, Grann, Capote, Bugliosi, Larson) are particularly strong fits. Books excluded: writing guides, academic analyses, textbooks on forensic science, justice system policy discussions, and fiction works\u2014all of which appeared in the candidates but don't match the user's request for gripping narrative true crime focused on investigation. The selected titles range from historical investigations to cold case work to insider prosecutor perspectives, providing variety while maintaining the investigative focus."
+  }
+}
