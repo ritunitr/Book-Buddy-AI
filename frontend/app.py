@@ -8,6 +8,8 @@ no Claude calls, no filtering/ranking. If the backend is ever replaced, only
 api_client.py should need to change.
 """
 
+import os
+
 import gradio as gr
 
 from api_client import get_recommendations, check_backend_health, BackendError
@@ -58,4 +60,11 @@ if __name__ == "__main__":
             "running (see scripts/main.py) and BACKEND_URL is set correctly "
             "if it's not on http://localhost:8000."
         )
-    demo.launch()
+    # 0.0.0.0 + $PORT: required for hosted platforms (Render, HF Spaces, etc.)
+    # where the platform assigns the port dynamically and expects the app to
+    # bind on all interfaces, not just localhost. Defaults (127.0.0.1:7860)
+    # still apply for local dev when PORT isn't set.
+    demo.launch(
+        server_name="0.0.0.0",
+        server_port=int(os.environ.get("PORT", 7860)),
+    )
