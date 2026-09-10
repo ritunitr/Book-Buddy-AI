@@ -13,6 +13,7 @@ from datetime import datetime
 from typing import List
 from pathlib import Path
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import RedirectResponse
 from pydantic import BaseModel, Field
 from dotenv import load_dotenv
 
@@ -143,6 +144,12 @@ def save_results(run_dir: Path, stage: str, data: dict, enabled: bool = True) ->
 
     print(f"[SAVED] {filepath}")
     return filepath
+
+
+@app.get("/", include_in_schema=False)
+async def root():
+    """Redirect the bare root path to the interactive API docs."""
+    return RedirectResponse(url="/docs")
 
 
 @app.get("/health")
