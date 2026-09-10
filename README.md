@@ -1,4 +1,4 @@
-# SmartyPants
+# Book-Buddy-AI
 
 Claude-powered book recommendation backend with a canonical-search stage to
 surface well-known titles that keyword search alone misses, plus a Gradio
@@ -70,7 +70,7 @@ and a [Google Books API key](https://developers.google.com/books).
 
 ```bash
 git clone <repo-url>
-cd SmartyPants
+cd Book-Buddy-AI
 python3 -m venv venv
 source venv/bin/activate
 pip install -r scripts/requirements.txt
