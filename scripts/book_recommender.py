@@ -7,20 +7,30 @@ Handles both general and progression queries.
 
 import json
 import os
+from concurrent.futures import ThreadPoolExecutor
 from dotenv import load_dotenv
 from anthropic import Anthropic
 try:
     from prompts import BOOK_RECOMMENDATION_SYSTEM_PROMPT_BASE
     from observability import traced_anthropic_client
+    from fetch_candidate_books import fetch_one_level
 except ImportError:
     from .prompts import BOOK_RECOMMENDATION_SYSTEM_PROMPT_BASE
     from .observability import traced_anthropic_client
+    from .fetch_candidate_books import fetch_one_level
 
 load_dotenv()
 
 # Traces every messages.create() call (latency, input/output tokens, model)
 # to LangSmith automatically. No-ops safely if LANGSMITH_API_KEY isn't set.
 anthropic_client = traced_anthropic_client(Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY")))
+
+# Caps how many progression levels' Claude calls run at once in the
+# split-stage path (_recommend_progression, kept as a standalone fallback).
+# The fused path (run_progression_concurrent) doesn't use this - it runs
+# one thread per level with no cap, since testing showed Google Books
+# doesn't throttle on concurrency (20 concurrent requests all succeeded).
+MAX_CONCURRENT_LEVELS = 3
 
 
 def extract_text(message) -> str:
@@ -205,38 +215,110 @@ def _recommend_general(user_query: str, candidates_data: dict, request_type: str
     return result
 
 
+def _recommend_one_level(user_query: str, level: dict) -> dict:
+    """Generate recommendations for a single progression level."""
+    books = level.get("books", [])
+    level_num = level.get("level", 0)
+    level_description = level.get("description", "")
+
+    recommendations = generate_recommendations(user_query, books, "progression")
+
+    level_result = {
+        "level": level_num,
+        "description": level_description,
+        "search_query": level.get("search_query", ""),
+        "audience_range": level.get("audience_range", ""),
+        "candidates_found": level.get("total_results", 0),
+        "recommendations": recommendations.get("recommendations", []),
+        "notes": recommendations.get("overall_notes", "")
+    }
+    # Phase 2 retry debug info - only present if this level actually retried
+    if level.get("retrieval_attempts"):
+        level_result["retrieval_debug"] = level.get("retrieval_debug", [])
+        level_result["retrieval_attempts"] = level["retrieval_attempts"]
+
+    return level_result
+
+
 def _recommend_progression(user_query: str, candidates_data: dict) -> dict:
-    """Generate recommendations for progression queries, one per level."""
+    """
+    Generate recommendations for progression queries, one per level.
+
+    Levels are recommended concurrently (capped pool, see
+    MAX_CONCURRENT_LEVELS) since each level's Claude call is independent -
+    paired with the concurrent fetch stage, this is what brings a 5-level
+    progression request down from ~78s to a small multiple of one level's
+    latency instead of five.
+    """
     levels = candidates_data.get("levels", [])
 
-    results = {
+    with ThreadPoolExecutor(max_workers=MAX_CONCURRENT_LEVELS) as executor:
+        # executor.map preserves input order in the returned results,
+        # regardless of which level finishes first.
+        level_results = list(executor.map(
+            lambda level: _recommend_one_level(user_query, level),
+            levels
+        ))
+
+    return {
         "query": user_query,
         "request_type": "progression",
         "age_context": candidates_data.get("age_context", ""),
-        "levels": []
+        "levels": level_results
     }
 
-    for level in levels:
-        books = level.get("books", [])
-        level_num = level.get("level", 0)
-        level_description = level.get("description", "")
 
-        recommendations = generate_recommendations(user_query, books, "progression")
+def _process_one_level_fused(level: dict, top_level_genre: str, original_query: str, user_query: str) -> dict:
+    """Fetch, then recommend, for a single level - runs entirely on one thread."""
+    level_entry = fetch_one_level(level, top_level_genre, original_query)
+    return _recommend_one_level(user_query, level_entry)
 
-        level_result = {
-            "level": level_num,
-            "description": level_description,
-            "search_query": level.get("search_query", ""),
-            "audience_range": level.get("audience_range", ""),
-            "candidates_found": level.get("total_results", 0),
-            "recommendations": recommendations.get("recommendations", []),
-            "notes": recommendations.get("overall_notes", "")
+
+def run_progression_concurrent(user_query: str, intent: dict) -> dict:
+    """
+    Fetch + recommend for every progression level, fused into one task per
+    level and run fully concurrently (one thread per level, no cap).
+
+    This replaces calling fetch_candidate_books() then recommend_books() as
+    two separate stages for progression: that split forces every level to
+    wait for the slowest level's fetch before ANY level can start its (much
+    more expensive) recommend call. Fusing removes that barrier - a fast
+    level moves straight to its own recommend call instead of idling until
+    the last level's Google Books search finishes.
+
+    No concurrency cap here (unlike the split-stage path above): testing
+    showed Google Books doesn't throttle on concurrent requests (20 fired at
+    once all succeeded), so the earlier cap was solving a problem that
+    doesn't exist. Uncapped, wall-clock time is bounded by the single
+    slowest level's fetch+recommend time, not by round-robin batches.
+
+    Trade-off: unlike fetch_candidate_books()/recommend_books() called
+    separately, there's no longer a distinct "candidates_fetched" snapshot
+    to log mid-pipeline - only the final per-level result (books already
+    consumed into recommendations) is available to save/return.
+    """
+    levels = intent.get("levels", [])
+    top_level_genre = intent.get("genre", "not_specified")
+    original_query = intent.get("original_query", "")
+
+    if not levels:
+        return {
+            "query": user_query,
+            "request_type": "progression",
+            "age_context": intent.get("audience_range", "not specified"),
+            "levels": []
         }
-        # Phase 2 retry debug info - only present if this level actually retried
-        if level.get("retrieval_attempts"):
-            level_result["retrieval_debug"] = level.get("retrieval_debug", [])
-            level_result["retrieval_attempts"] = level["retrieval_attempts"]
-        results["levels"].append(level_result)
 
-    return results
+    with ThreadPoolExecutor(max_workers=len(levels)) as executor:
+        level_results = list(executor.map(
+            lambda level: _process_one_level_fused(level, top_level_genre, original_query, user_query),
+            levels
+        ))
+
+    return {
+        "query": user_query,
+        "request_type": "progression",
+        "age_context": intent.get("audience_range", "not specified"),
+        "levels": level_results
+    }
 

@@ -27,6 +27,7 @@ matches above both kinds of noise.
 import os
 import re
 import httpx
+from concurrent.futures import ThreadPoolExecutor
 from dotenv import load_dotenv
 from langsmith import traceable
 
@@ -326,11 +327,18 @@ def _search_known_titles(known_titles: list) -> list:
         stages (recommender prompt) can treat them as a trusted signal. Only
         genuine title matches (see _is_title_match) - Google's own fuzzy
         intitle: matching is filtered down after the fact.
+
+    Different titles are looked up concurrently (one thread per title) since
+    they're fully independent searches - only the title+author call and its
+    title-only fallback stay sequential (the fallback needs to know the first
+    call came back empty), and that's still true per title, just no longer
+    serialized across titles.
     """
-    all_books = []
-    for entry in known_titles:
-        if not entry:
-            continue
+    entries = [e for e in known_titles if e]
+    if not entries:
+        return []
+
+    def _search_one_title(entry: str) -> list:
         title_part, author_part = _parse_known_title_entry(entry)
 
         title_query = f'intitle:"{title_part}"'
@@ -346,11 +354,17 @@ def _search_known_titles(known_titles: list) -> list:
         if not results:
             results = search_google_books(title_query)
 
+        matched = []
         for book in results:
             if not _is_title_match(title_part, book.get("title", "")):
                 continue
             book["is_canonical"] = True
-            all_books.append(book)
+            matched.append(book)
+        return matched
+
+    with ThreadPoolExecutor(max_workers=len(entries)) as executor:
+        per_title_results = executor.map(_search_one_title, entries)
+        all_books = [book for title_books in per_title_results for book in title_books]
 
     return all_books
 
@@ -477,13 +491,27 @@ def _search_multi_query(theme_clusters: list, subject: str = None, format_marker
 
     Returns (books, sub_queries) - sub_queries is kept for the response's
     search_query field so the actual API calls made are visible/debuggable.
+
+    Each cluster's search is a fully independent Google Books call, so they
+    run concurrently (one thread per cluster) instead of one after another -
+    testing showed Google Books doesn't throttle on concurrent requests (20
+    fired at once all succeeded), so there's no reason to serialize these.
     """
+    if not theme_clusters:
+        return [], []
+
+    sub_queries = [
+        build_google_books_query(cluster, subject=subject, format_marker=format_marker)
+        for cluster in theme_clusters
+    ]
+
+    with ThreadPoolExecutor(max_workers=len(theme_clusters)) as executor:
+        # executor.map preserves input order, so cluster_results[i] lines up
+        # with theme_clusters[i] / sub_queries[i] below.
+        cluster_results = list(executor.map(search_google_books, sub_queries))
+
     all_books = []
-    sub_queries = []
-    for cluster in theme_clusters:
-        query = build_google_books_query(cluster, subject=subject, format_marker=format_marker)
-        sub_queries.append(query)
-        cluster_books = search_google_books(query)
+    for cluster, cluster_books in zip(theme_clusters, cluster_results):
         if tag_clusters:
             cluster_label = " / ".join(cluster)
             for book in cluster_books:

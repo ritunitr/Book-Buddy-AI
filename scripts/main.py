@@ -21,6 +21,7 @@ from langsmith import traceable
 from intent_extractor import extract_intent
 from fetch_candidate_books import fetch_candidate_books
 from book_recommender import recommend_books as generate_recommendations
+from book_recommender import run_progression_concurrent
 
 load_dotenv()
 
@@ -188,25 +189,34 @@ async def recommend_books_endpoint(request: RecommendationRequest):
         append_to_aggregated(request.query, "intent_extracted", intent, request.save_results)
         print(f"  ✓ Intent: {intent.get('recommendation_type')} - Genre: {intent.get('genre')} - Format: {intent.get('format')}")
 
-        # Step 2: Fetch candidate books using intent (full filtered pool, no cap)
-        print(f"\n[Step 2] Fetching candidate books...")
-        candidates = fetch_candidate_books(intent)
+        if intent.get("recommendation_type") == "progression":
+            # Progression fuses fetch+recommend per level and runs all levels
+            # concurrently (one thread per level, uncapped) - see
+            # book_recommender.run_progression_concurrent for why. This
+            # skips the separate "candidates_fetched" snapshot stage since
+            # fetch and recommend now happen together inside each thread.
+            print(f"\n[Step 2+3] Fetching + generating recommendations per level (concurrent)...")
+            recommendations = run_progression_concurrent(request.query, intent)
 
-        total_candidates = candidates.get("total_results", 0) if candidates.get("request_type") != "progression" \
-            else sum(level.get("total_results", 0) for level in candidates.get("levels", []))
+            total_recs = sum(len(level.get("recommendations", [])) for level in recommendations.get("levels", []))
+            append_to_aggregated(request.query, "recommendations_generated", recommendations, request.save_results)
+            print(f"  ✓ Generated: {total_recs} recommendations")
+        else:
+            # Step 2: Fetch candidate books using intent (full filtered pool, no cap)
+            print(f"\n[Step 2] Fetching candidate books...")
+            candidates = fetch_candidate_books(intent)
 
-        append_to_aggregated(request.query, "candidates_fetched", candidates, request.save_results)
-        print(f"  ✓ Fetched: {total_candidates} total candidates")
+            total_candidates = candidates.get("total_results", 0)
+            append_to_aggregated(request.query, "candidates_fetched", candidates, request.save_results)
+            print(f"  ✓ Fetched: {total_candidates} total candidates")
 
-        # Step 3: Generate recommendations
-        print(f"\n[Step 3] Generating recommendations...")
-        recommendations = generate_recommendations(request.query, candidates)
+            # Step 3: Generate recommendations
+            print(f"\n[Step 3] Generating recommendations...")
+            recommendations = generate_recommendations(request.query, candidates)
 
-        total_recs = len(recommendations.get("recommendations", [])) if recommendations.get("request_type") != "progression" \
-            else sum(len(level.get("recommendations", [])) for level in recommendations.get("levels", []))
-
-        append_to_aggregated(request.query, "recommendations_generated", recommendations, request.save_results)
-        print(f"  ✓ Generated: {total_recs} recommendations")
+            total_recs = len(recommendations.get("recommendations", []))
+            append_to_aggregated(request.query, "recommendations_generated", recommendations, request.save_results)
+            print(f"  ✓ Generated: {total_recs} recommendations")
 
         # Convert to appropriate response format
         request_type = recommendations.get("request_type", "general")

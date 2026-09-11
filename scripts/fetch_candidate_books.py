@@ -9,12 +9,19 @@ retrieval_graph.py. Split this way to avoid a circular import between this
 module and retrieval_graph.py, which needs the same low-level primitives.
 """
 
+from concurrent.futures import ThreadPoolExecutor
+
 try:
     from google_books_client import get_subject_filter, FORMAT_MARKERS, translate_intent_to_search_params
     from retrieval_graph import run_retrieval
 except ImportError:
     from .google_books_client import get_subject_filter, FORMAT_MARKERS, translate_intent_to_search_params
     from .retrieval_graph import run_retrieval
+
+# Caps how many progression levels' Google Books searches run at once - keeps
+# concurrent request volume down to avoid the throttling seen when batch-
+# running the golden dataset without pacing.
+MAX_CONCURRENT_LEVELS = 3
 
 
 def fetch_candidate_books(intent: dict) -> dict:
@@ -129,6 +136,47 @@ def _fetch_exploration_books(intent: dict) -> dict:
     }
 
 
+def fetch_one_level(level: dict, top_level_genre: str, original_query: str) -> dict:
+    """
+    Run the Phase 2 retrieval graph for a single progression level.
+
+    Public (no leading underscore) because book_recommender.py's
+    run_progression_concurrent() imports this directly to fuse fetch+recommend
+    per level into one thread, instead of running all levels' fetches to
+    completion before any level's recommend can start.
+    """
+    keywords = level.get("keywords", [])
+    audience_range = level.get("audience_range", "not_specified")
+    known_titles = level.get("known_titles", [])
+
+    subject = get_subject_filter(audience_range, top_level_genre)
+
+    result = run_retrieval(
+        original_query=original_query,
+        themes=keywords,
+        known_titles=known_titles,
+        subject=subject,
+        format_marker=None,
+        genre=top_level_genre,
+        format_type="not_specified",
+        audience_range=audience_range,
+    )
+
+    level_entry = {
+        "level": level.get("level"),
+        "description": level.get("description", ""),
+        "search_query": " | ".join(result["search_queries_used"]),
+        "audience_range": audience_range,
+        "total_results": len(result["books"]),
+        "books": result["books"],
+    }
+    if result["attempts_used"] > 0:
+        level_entry["retrieval_debug"] = result["debug_log"]
+        level_entry["retrieval_attempts"] = result["attempts_used"]
+
+    return level_entry
+
+
 def _fetch_progression_books(intent: dict) -> dict:
     """
     Fetch books for progression queries using structured levels from intent.
@@ -139,6 +187,11 @@ def _fetch_progression_books(intent: dict) -> dict:
     expensive query type (one recommendation-generation call per level), so
     retrying the whole progression on one bad level would multiply cost for
     no benefit to the levels that were already fine.
+
+    Levels are fetched concurrently (capped pool, see MAX_CONCURRENT_LEVELS)
+    since each level's Google Books search is fully independent - this is
+    what makes progression queries (previously ~78s for 5 sequential levels)
+    fast enough to not trip Render's gateway timeout.
     """
     levels = intent.get("levels", [])
     top_level_genre = intent.get("genre", "not_specified")
@@ -151,42 +204,16 @@ def _fetch_progression_books(intent: dict) -> dict:
             "levels": []
         }
 
-    results = {
+    with ThreadPoolExecutor(max_workers=MAX_CONCURRENT_LEVELS) as executor:
+        # executor.map preserves input order in the returned results,
+        # regardless of which level finishes first.
+        level_entries = list(executor.map(
+            lambda level: fetch_one_level(level, top_level_genre, original_query),
+            levels
+        ))
+
+    return {
         "request_type": "progression",
         "age_context": intent.get("audience_range", "not specified"),
-        "levels": []
+        "levels": level_entries
     }
-
-    for level in levels:
-        keywords = level.get("keywords", [])
-        audience_range = level.get("audience_range", "not_specified")
-        known_titles = level.get("known_titles", [])
-
-        subject = get_subject_filter(audience_range, top_level_genre)
-
-        result = run_retrieval(
-            original_query=original_query,
-            themes=keywords,
-            known_titles=known_titles,
-            subject=subject,
-            format_marker=None,
-            genre=top_level_genre,
-            format_type="not_specified",
-            audience_range=audience_range,
-        )
-
-        level_entry = {
-            "level": level.get("level"),
-            "description": level.get("description", ""),
-            "search_query": " | ".join(result["search_queries_used"]),
-            "audience_range": audience_range,
-            "total_results": len(result["books"]),
-            "books": result["books"],
-        }
-        if result["attempts_used"] > 0:
-            level_entry["retrieval_debug"] = result["debug_log"]
-            level_entry["retrieval_attempts"] = result["attempts_used"]
-
-        results["levels"].append(level_entry)
-
-    return results
