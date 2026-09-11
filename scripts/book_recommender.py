@@ -11,12 +11,16 @@ from dotenv import load_dotenv
 from anthropic import Anthropic
 try:
     from prompts import BOOK_RECOMMENDATION_SYSTEM_PROMPT_BASE
+    from observability import traced_anthropic_client
 except ImportError:
     from .prompts import BOOK_RECOMMENDATION_SYSTEM_PROMPT_BASE
+    from .observability import traced_anthropic_client
 
 load_dotenv()
 
-anthropic_client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+# Traces every messages.create() call (latency, input/output tokens, model)
+# to LangSmith automatically. No-ops safely if LANGSMITH_API_KEY isn't set.
+anthropic_client = traced_anthropic_client(Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY")))
 
 
 def extract_text(message) -> str:
@@ -185,7 +189,7 @@ def _recommend_general(user_query: str, candidates_data: dict, request_type: str
 
     recommendations = generate_recommendations(user_query, books, request_type)
 
-    return {
+    result = {
         "query": user_query,
         "request_type": request_type,
         "search_query": candidates_data.get("search_query", ""),
@@ -194,6 +198,11 @@ def _recommend_general(user_query: str, candidates_data: dict, request_type: str
         "recommendations": recommendations.get("recommendations", []),
         "overall_notes": recommendations.get("overall_notes", "")
     }
+    # Phase 2 retry debug info - only present if a retry actually happened
+    if candidates_data.get("retrieval_attempts"):
+        result["retrieval_debug"] = candidates_data.get("retrieval_debug", [])
+        result["retrieval_attempts"] = candidates_data["retrieval_attempts"]
+    return result
 
 
 def _recommend_progression(user_query: str, candidates_data: dict) -> dict:
@@ -214,7 +223,7 @@ def _recommend_progression(user_query: str, candidates_data: dict) -> dict:
 
         recommendations = generate_recommendations(user_query, books, "progression")
 
-        results["levels"].append({
+        level_result = {
             "level": level_num,
             "description": level_description,
             "search_query": level.get("search_query", ""),
@@ -222,7 +231,12 @@ def _recommend_progression(user_query: str, candidates_data: dict) -> dict:
             "candidates_found": level.get("total_results", 0),
             "recommendations": recommendations.get("recommendations", []),
             "notes": recommendations.get("overall_notes", "")
-        })
+        }
+        # Phase 2 retry debug info - only present if this level actually retried
+        if level.get("retrieval_attempts"):
+            level_result["retrieval_debug"] = level.get("retrieval_debug", [])
+            level_result["retrieval_attempts"] = level["retrieval_attempts"]
+        results["levels"].append(level_result)
 
     return results
 

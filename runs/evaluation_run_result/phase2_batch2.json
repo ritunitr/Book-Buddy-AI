@@ -1,0 +1,530 @@
+{
+  "summary": {
+    "total": 5,
+    "scored": 5,
+    "average_score": 3.8,
+    "score_distribution": {
+      "4": 4,
+      "3": 1
+    },
+    "errored": 0,
+    "skipped": 0
+  },
+  "errored": [],
+  "skipped": [],
+  "all_results": [
+    {
+      "test_id": "06",
+      "status": "scored",
+      "query": "I want my 5 year old to enjoy cooking. What books I can read to teach him cooking.",
+      "api_response": {
+        "query": "I want my 5 year old to enjoy cooking. What books I can read to teach him cooking.",
+        "request_type": "general",
+        "search_query": "\"cooking for kids\" | \"simple recipes children\" | \"kitchen activities\" | intitle:\"Cooking with Kids\" | intitle:\"The Little Chef\" | intitle:\"Cook and Learn\"",
+        "audience_range": "preschool",
+        "candidates_found": 48,
+        "recommendations": [
+          {
+            "title": "Cooking with Kids",
+            "authors": [
+              "Brianne Grajkowski"
+            ],
+            "why_recommended": "A well-regarded cookbook specifically designed for parents to involve children in cooking, with 100 fun and easy recipes perfect for a 5-year-old's introduction to the kitchen.",
+            "notes": "Age-appropriate, features approachable recipes, ideal for parent-child cooking activities"
+          },
+          {
+            "title": "The Cooking with Kids Cookbook",
+            "authors": [
+              "Lynn Walters",
+              "Jane Stacey",
+              "Gabrielle Gonzales"
+            ],
+            "why_recommended": "Written explicitly for families to use together with kid-tested recipes and tips for engaging children in the kitchen, making it ideal for teaching a 5-year-old to cook.",
+            "notes": "Family-focused, includes tips for engagement, tested with children"
+          },
+          {
+            "title": "Betty Crocker's Cooking with Kids",
+            "authors": [
+              "Betty Crocker"
+            ],
+            "why_recommended": "Over 90 easy recipes from a trusted brand, including fun options like Dinosaur Calzones that appeal to young children's interests while teaching cooking basics.",
+            "notes": "Simple recipes, trusted publisher, includes fun themed dishes"
+          },
+          {
+            "title": "The Little Chef and the Surprise Soup",
+            "authors": [
+              "Jose Sanz"
+            ],
+            "why_recommended": "A story-based approach to cooking that follows a child learning to cook with family support, making it engaging for a 5-year-old who enjoys narrative while learning cooking.",
+            "notes": "Narrative format, focuses on intergenerational cooking, story-driven learning"
+          },
+          {
+            "title": "Marco the Little Chef",
+            "authors": [
+              "Joy Papini, PhD"
+            ],
+            "why_recommended": "An adventure story featuring a child chef character, making cooking feel exciting and accessible for a young child while exploring the fun of preparing food.",
+            "notes": "Adventure narrative, child protagonist, engaging for young ages"
+          },
+          {
+            "title": "Super Simple Cooking for Kids",
+            "authors": [
+              "Jodi Danen"
+            ],
+            "why_recommended": "Features 50 ridiculously easy recipes designed to make learning to cook fun and approachable, though technically aimed at ages 8\u201312, the simplicity makes some recipes suitable for younger children with parental guidance.",
+            "notes": "Very simple recipes, though aimed at slightly older children, adaptable for 5-year-olds with help"
+          },
+          {
+            "title": "Amish Cooking for Kids",
+            "authors": [
+              "Phyllis Pellman Good",
+              "Kate Good",
+              "Rebecca Good"
+            ],
+            "why_recommended": "Emphasizes cooking as family bonding time with easy-to-follow recipes, aligning with the goal of sharing cooking enjoyment with a young child.",
+            "notes": "Family-focused, emphasis on togetherness, easy-to-follow instructions"
+          },
+          {
+            "title": "The Little Chef's Guide to Yummy Veggies",
+            "authors": [
+              "BRITTANY. BOBO"
+            ],
+            "why_recommended": "An interactive book that makes vegetable cooking fun and educational for children, incorporating learning about nutrition in an engaging, age-appropriate way.",
+            "notes": "Interactive format, focuses on vegetables, fun facts included, educational component"
+          }
+        ],
+        "overall_notes": "These selections prioritize books specifically designed for young children and parent-child cooking activities. Most are cookbooks with simple, kid-friendly recipes, while a few include narrative elements that make cooking feel adventurous and fun for a 5-year-old. The well-known canonical works in this set are established cookbooks designed for family use, making them reliable choices. Excluded were books focused on older children (8+), parenting guides rather than engaging content, and unrelated categories like Writer's Market references.",
+        "retrieval_debug": [
+          "Tier 1: dropped subject filter (was 'picture books') and retried with same themes ['cooking for kids', 'simple recipes children', 'kitchen activities']"
+        ],
+        "retrieval_attempts": 1
+      },
+      "evaluation": {
+        "relevance_score": 5,
+        "real_books_score": 4,
+        "selection_quality_score": 4,
+        "overall_score": 4,
+        "feedback": "Good mix of cookbooks and narrative-style books relevant for a 5-year-old, though it misses the canonical Pretend Soup/Salad People (Katzen) or The Little Red Hen mentioned as expected exemplars; slight redundancy among similarly-titled 'Cooking with Kids' books."
+      },
+      "elapsed_s": 22.7
+    },
+    {
+      "test_id": "07",
+      "status": "scored",
+      "query": "I am a software engineer and I want to write a book about being a software engineer in the AI world. Suggest some helpful books.",
+      "api_response": {
+        "query": "I am a software engineer and I want to write a book about being a software engineer in the AI world. Suggest some helpful books.",
+        "request_type": "general",
+        "search_query": "\"artificial intelligence\" | \"software engineering\" | \"technical writing\" | intitle:\"Designing Machine Learning Systems\" | intitle:\"The Pragmatic Programmer\" | intitle:\"AI Engineering\" | intitle:\"Weapons of Math Destruction\"",
+        "audience_range": "adult",
+        "candidates_found": 33,
+        "recommendations": [
+          {
+            "title": "AI Engineering",
+            "authors": [
+              "Chip Huyen"
+            ],
+            "why_recommended": "Directly addresses building AI products and systems from an engineering perspective, perfect for a software engineer writing about the AI industry.",
+            "notes": "Well-known canonical work; focuses on practical AI engineering practices and lowered barriers to entry for AI development."
+          },
+          {
+            "title": "Designing Machine Learning Systems",
+            "authors": [
+              "Chip Huyen"
+            ],
+            "why_recommended": "Covers the full lifecycle of ML systems from design to deployment, essential for understanding engineering challenges specific to AI systems.",
+            "notes": "Well-known canonical work; emphasizes practical design patterns that remain relevant despite tooling changes."
+          },
+          {
+            "title": "Software Engineering at Google",
+            "authors": [
+              "Titus Winters",
+              "Tom Manshreck",
+              "Hyrum Wright"
+            ],
+            "why_recommended": "Provides real-world software engineering practices from a major tech company heavily invested in AI, offering insights into sustainable practices at scale.",
+            "notes": "Practical guide to engineering practices that would be relevant context for an AI-focused software engineering book."
+          },
+          {
+            "title": "The Pragmatic Programmer",
+            "authors": [
+              "Andrew Hunt",
+              "David Thomas"
+            ],
+            "why_recommended": "Foundational software engineering philosophy and practices that apply to any domain, including AI; essential reading for understanding core engineering principles.",
+            "notes": "Well-known canonical work; timeless principles for professional software development."
+          },
+          {
+            "title": "The Pragmatic Programmer for Machine Learning",
+            "authors": [
+              "Marco Scutari",
+              "Mauro Malvestio"
+            ],
+            "why_recommended": "Directly applies pragmatic programming principles to machine learning engineering, bridging general software engineering with AI-specific challenges.",
+            "notes": "Well-known canonical work; specifically tailored for ML engineers."
+          },
+          {
+            "title": "What Every Engineer Should Know about Artificial Intelligence",
+            "authors": [
+              "William A. Taylor"
+            ],
+            "why_recommended": "Practical explanation of AI capabilities and limitations designed for engineers with technical backgrounds, helping contextualize which AI tools are production-ready.",
+            "notes": "Accessible reference for understanding practical AI applications for engineers."
+          },
+          {
+            "title": "The Ethics of Artificial Intelligence",
+            "authors": [
+              "Luciano Floridi"
+            ],
+            "why_recommended": "Addresses ethical considerations in AI development, an important perspective for a software engineer writing about responsibility in the AI field.",
+            "notes": "Philosophical but rigorous treatment of AI ethics; important for discussing the societal impact of AI engineering work."
+          },
+          {
+            "title": "Weapons of Math Destruction",
+            "authors": [
+              "Cathy O'Neil"
+            ],
+            "why_recommended": "Critical examination of algorithmic systems and their real-world impact, providing important context for discussing potential harms and responsibilities in AI engineering.",
+            "notes": "Well-known canonical work; bestselling perspective on risks and societal effects of AI/algorithmic systems."
+          },
+          {
+            "title": "Machine Learning Applications in Software Engineering",
+            "authors": [
+              "Du Zhang",
+              "Jeffrey J. P. Tsai"
+            ],
+            "why_recommended": "Explores how ML and AI can be applied to improve software engineering practices themselves, offering a meta perspective valuable for an engineer-author.",
+            "notes": "Useful for understanding the intersection of AI and software development processes."
+          },
+          {
+            "title": "Software Engineering: A Practitioner's Approach",
+            "authors": [
+              "Roger S. Pressman"
+            ],
+            "why_recommended": "Comprehensive survey of software engineering fundamentals and methodologies that provide essential context for AI-specific engineering challenges.",
+            "notes": "Long-established industry reference; provides foundational knowledge applicable to AI systems development."
+          }
+        ],
+        "overall_notes": "These selections balance essential software engineering fundamentals with AI-specific knowledge and ethics. The recommendations include well-regarded canonical works that are industry-standard references, plus practical guides for AI engineering. This mix gives a software engineer strong material for understanding both timeless engineering principles and contemporary AI challenges. A few specialized AI books (Huyen's works, Taylor, O'Neil) paired with general software engineering classics (Pragmatic Programmer, Google's practices, Pressman) create a solid foundation for writing about software engineering in the AI world. No significant gaps, though the user may want to supplement with industry interviews or case studies depending on their book's focus."
+      },
+      "evaluation": {
+        "relevance_score": 3,
+        "real_books_score": 4,
+        "selection_quality_score": 4,
+        "overall_score": 3,
+        "feedback": "Strong coverage of AI engineering and software engineering context (AI Engineering, Designing ML Systems, Weapons of Math Destruction all present), but the response entirely omits guides on the craft of technical writing/authorship, which is central to the user's stated goal of writing a book\u2014the expected 'Pragmatic Bookshelf'-style writing craft and industry handbook (e.g., LLM Engineering Handbook) angle is missing. Titles appear real and well-matched to descriptions, with good diversity and no redundancy among the AI/SE selections."
+      },
+      "elapsed_s": 31.1
+    },
+    {
+      "test_id": "08",
+      "status": "scored",
+      "query": "I want some spiritual guidance that can give me peace and direction. Recommend books.",
+      "api_response": {
+        "query": "I want some spiritual guidance that can give me peace and direction. Recommend books.",
+        "request_type": "general",
+        "search_query": "spirituality | mindfulness | self-discovery | intitle:\"The Power of Now\" | intitle:\"Man's Search for Meaning\" | intitle:\"The Untethered Soul\" | intitle:\"When Things Fall Apart\"",
+        "audience_range": "adult",
+        "candidates_found": 62,
+        "recommendations": [
+          {
+            "title": "The Power of Now",
+            "authors": [
+              "Eckhart Tolle"
+            ],
+            "why_recommended": "A canonical spiritual classic that directly addresses finding peace and direction through living in the present moment, with practical guidance for spiritual awakening.",
+            "notes": "Bestseller; accessible and transformative; available in multiple formats including journal and practice companion volumes."
+          },
+          {
+            "title": "The Untethered Soul",
+            "authors": [
+              "Michael A. Singer"
+            ],
+            "why_recommended": "Explores consciousness and spiritual freedom to help readers understand their true self, achieve inner peace, and live with greater clarity and purpose.",
+            "notes": "Bestseller; complemented by guided journal for deeper practice; excellent for both spiritual beginners and practitioners."
+          },
+          {
+            "title": "Man's Search for Meaning",
+            "authors": [
+              "Viktor Emil Frankl"
+            ],
+            "why_recommended": "A profound meditation on finding meaning and direction even in the darkest circumstances, offering spiritual wisdom grounded in real human experience and psychological insight.",
+            "notes": "Classic; Holocaust memoir combined with existential philosophy; powerful for understanding purpose and resilience."
+          },
+          {
+            "title": "Wherever You Go, There You Are",
+            "authors": [
+              "Jon Kabat-Zinn"
+            ],
+            "why_recommended": "An accessible, bestselling introduction to mindfulness practices that cultivate peace, awareness, and stress reduction in daily life.",
+            "notes": "Updated 10th anniversary edition; practical guide for reducing stress and finding quiet reflection."
+          },
+          {
+            "title": "Meditation Is Not What You Think",
+            "authors": [
+              "Jon Kabat-Zinn"
+            ],
+            "why_recommended": "A master class in mindfulness from a renowned teacher, offering evidence-based methods for achieving peace and mental clarity through accessible meditation practices.",
+            "notes": "Expert instruction from an acclaimed mindfulness pioneer; practical and approachable for all levels."
+          },
+          {
+            "title": "The Way of the Mindful Warrior",
+            "authors": [
+              "William Van Gordon",
+              "Edo Shonin"
+            ],
+            "why_recommended": "Provides a structured, authentic path to using mindfulness for inner peace and reconnecting with wisdom, offering practical spiritual guidance for daily living.",
+            "notes": "Structured approach combining mindfulness with personal empowerment and clarity."
+          },
+          {
+            "title": "Embracing Change: The Spiritual Path to Personal Growth",
+            "authors": [
+              "Pierre Etienne"
+            ],
+            "why_recommended": "A practical spiritual guide that helps navigate life's challenges and uncertainties while finding transformation and direction through spiritual principles.",
+            "notes": "Addresses navigation of modern life changes; soul-centered approach to personal growth."
+          },
+          {
+            "title": "The Book of Practical Faith",
+            "authors": [
+              "D. Patrick Miller"
+            ],
+            "why_recommended": "Written in concise, accessible language, this book offers spiritual answers and guidance for navigating modern life's complexities, going beyond traditional religious frameworks.",
+            "notes": "Practical and contemporary approach to spiritual living; addresses modern challenges."
+          },
+          {
+            "title": "Spirituality by Kees Waaijman",
+            "authors": [
+              "Kees Waaijman"
+            ],
+            "why_recommended": "A comprehensive systematic guide to the field of spirituality that explores diverse spiritual traditions and practices, helping readers find approaches that resonate with their personal journey.",
+            "notes": "Textbook-style but thorough; covers multiple spiritual traditions and the spirituality of ordinary people."
+          },
+          {
+            "title": "The Essentials of Spirituality",
+            "authors": [
+              "Felix Adler"
+            ],
+            "why_recommended": "Explores fundamental principles of spiritual life and growth from an influential spiritual thinker, offering philosophical grounding for personal spiritual development.",
+            "notes": "Classic exploration of core spiritual principles; suitable for readers seeking deeper understanding."
+          }
+        ],
+        "overall_notes": "These recommendations prioritize books that directly address peace, spiritual guidance, and life direction. The selection balances well-known canonical works (Tolle, Frankl, Singer, Kabat-Zinn) that have proven transformative for millions, with additional titles offering practical spiritual paths and frameworks. Most emphasize mindfulness, presence, meaning-making, and personal transformation. The collection represents both introductory and deeper-level works, allowing the user to choose based on their current engagement with spiritual practice."
+      },
+      "evaluation": {
+        "relevance_score": 5,
+        "real_books_score": 5,
+        "selection_quality_score": 4,
+        "overall_score": 4,
+        "feedback": "Strong list including two of the three expected titles (The Power of Now, The Untethered Soul, plus Man's Search for Meaning) with credible modern spirituality/mindfulness additions; however, it misses classic universal texts like the Tao Te Ching or Pema Ch\u00f6dr\u00f6n's When Things Fall Apart despite being explicitly searched for, and includes some lesser-known filler titles that slightly dilute the balance toward canonical wisdom texts."
+      },
+      "elapsed_s": 21.1
+    },
+    {
+      "test_id": "09",
+      "status": "scored",
+      "query": "I want some spiritual guidance that can give me peace and direction. Recommend some Indian inspired books.",
+      "api_response": {
+        "query": "I want some spiritual guidance that can give me peace and direction. Recommend some Indian inspired books.",
+        "request_type": "general",
+        "search_query": "spirituality | \"Indian philosophy\" | mindfulness | intitle:\"The Bhagavad Gita\" | intitle:\"The Yoga Sutras of Patanjali\" | intitle:\"The Upanishads\" | intitle:\"Siddhartha\"",
+        "audience_range": "adult",
+        "candidates_found": 70,
+        "recommendations": [
+          {
+            "title": "The Bhagavad Gita",
+            "authors": [
+              "Eknath Easwaran"
+            ],
+            "why_recommended": "A cornerstone Hindu scripture offering profound spiritual guidance on duty, purpose, and finding peace through right action and devotion\u2014directly aligned with Indian spiritual wisdom.",
+            "notes": "Accessible translation with chapter introductions; widely regarded as foundational for spiritual seekers"
+          },
+          {
+            "title": "The Upanishads",
+            "authors": [
+              "Eknath Easwaran"
+            ],
+            "why_recommended": "Ancient Indian spiritual texts featuring wisdom from illumined sages on fundamental principles of consciousness and self-realization, offering deep guidance for peace and spiritual direction.",
+            "notes": "Among the oldest spiritual texts; excellent modern translation; suitable for serious seekers"
+          },
+          {
+            "title": "The Yoga Sutras of Patanjali",
+            "authors": [
+              "Patanjali"
+            ],
+            "why_recommended": "A classical Indian text outlining the eight limbs of yoga and practical wisdom for spiritual development, inner peace, and alignment with one's true nature.",
+            "notes": "Aphoristic and concise; foundational yoga philosophy text; pairs well with meditation practice"
+          },
+          {
+            "title": "Light on the Yoga Sutras of Patanjali",
+            "authors": [
+              "B. K. S. Iyengar"
+            ],
+            "why_recommended": "B.K.S. Iyengar's authoritative commentary on the Yoga Sutras provides accessible interpretation and practical guidance for spiritual transformation and inner peace.",
+            "notes": "Described as the 'bible' of yoga; highly respected modern commentary on ancient wisdom"
+          },
+          {
+            "title": "Personal Excellence Through The Bhagavad Gita",
+            "authors": [
+              "Swami Sukhabodhananda"
+            ],
+            "why_recommended": "Applies Gita teachings on karma yoga, bhakti yoga, and jnana yoga to modern life, offering practical spiritual direction for achieving balance and excellence.",
+            "notes": "Contemporary application of Indian philosophy; bridges ancient wisdom and modern living"
+          },
+          {
+            "title": "The Call of the Upanishads",
+            "authors": [
+              "Rohit Mehta"
+            ],
+            "why_recommended": "Distills the essential principles of the Upanishads and perennial philosophy, revealing timeless wisdom for spiritual awakening and finding direction in life.",
+            "notes": "Focused exploration of core spiritual principles; accessible to modern readers"
+          },
+          {
+            "title": "Siddhartha",
+            "authors": [
+              "Hermann Hesse"
+            ],
+            "why_recommended": "A literary narrative following a spiritual seeker's journey through India, exploring themes of self-discovery, enlightenment, and finding peace\u2014inspired by Indian spiritual traditions.",
+            "notes": "Fiction novel; literary classic; accessible entry point to Indian spiritual concepts; contemplative narrative"
+          },
+          {
+            "title": "Meditation and Mindfulness. The Secrets to Raising Your Awareness, Spirituality and Inner Peace through Mindfulness Meditation",
+            "authors": [
+              "Parthiben Sivaprakasam"
+            ],
+            "why_recommended": "Explores the connection between meditation and spiritual awareness through mindfulness practices rooted in Eastern philosophy, offering practical guidance for peace.",
+            "notes": "Bridges Indian spiritual traditions with contemporary mindfulness practice"
+          },
+          {
+            "title": "Wherever You Go, There You Are",
+            "authors": [
+              "Jon Kabat-Zinn"
+            ],
+            "why_recommended": "A classic guide to mindfulness that integrates Eastern philosophical principles for finding peace and awareness in everyday life.",
+            "notes": "Accessible introduction to mindfulness; grounded in contemplative traditions; practical exercises"
+          },
+          {
+            "title": "Seven Systems of Indian Philosophy",
+            "authors": [
+              "Rajmani Tigunait"
+            ],
+            "why_recommended": "A comprehensive outline of major Indian philosophical schools, providing intellectual and spiritual frameworks for understanding different paths to wisdom and peace.",
+            "notes": "Educational overview; suitable for those seeking deeper understanding of Indian philosophical traditions"
+          }
+        ],
+        "overall_notes": "These recommendations prioritize Indian-inspired spiritual texts and practices that directly address the user's request for peace and direction. The selections include classical Indian scriptures (Bhagavad Gita, Upanishads, Yoga Sutras), contemporary interpretations of those texts, and a literary work set in India that explores spiritual themes. Mindfulness books are included as they integrate Eastern philosophy accessible to Western readers. The mix balances philosophical depth with practical guidance for immediate peace-seeking."
+      },
+      "evaluation": {
+        "relevance_score": 5,
+        "real_books_score": 5,
+        "selection_quality_score": 4,
+        "overall_score": 4,
+        "feedback": "Strong, well-curated list of foundational Indian/Eastern spiritual texts (Gita, Upanishads, Yoga Sutras) plus accessible modern commentaries; all titles appear real and accurately attributed. Notably missing Autobiography of a Yogi by Yogananda, a canonical expected title, which is the main gap keeping this from a perfect score."
+      },
+      "elapsed_s": 22.3
+    },
+    {
+      "test_id": "10",
+      "status": "scored",
+      "query": "Recommend a sci-fi book that deals heavily with artificial intelligence ethics and consciousness.",
+      "api_response": {
+        "query": "Recommend a sci-fi book that deals heavily with artificial intelligence ethics and consciousness.",
+        "request_type": "general",
+        "search_query": "\"artificial intelligence\" \"novel\" subject:\"fiction\" | \"AI ethics\" \"novel\" subject:\"fiction\" | consciousness \"novel\" subject:\"fiction\" | intitle:\"Do Androids Dream of Electric Sheep?\" | intitle:\"Klara and the Sun\" | intitle:\"Ancillary Justice\" | intitle:\"Machines Like Me\"",
+        "audience_range": "adult",
+        "candidates_found": 57,
+        "recommendations": [
+          {
+            "title": "Do Androids Dream of Electric Sheep?",
+            "authors": [
+              "Philip K. Dick"
+            ],
+            "why_recommended": "This canonical sci-fi masterpiece directly explores what it means to be human by examining the nature of androids, consciousness, and empathy through a noir detective story set in a post-apocalyptic world.",
+            "notes": "First published 1968; inspired the film Blade Runner. Foundational work in AI ethics philosophy within science fiction."
+          },
+          {
+            "title": "Klara and the Sun",
+            "authors": [
+              "Kazuo Ishiguro"
+            ],
+            "why_recommended": "A Nobel Prize-winning novel that explores artificial consciousness and ethics through the perspective of an Artificial Friend navigating questions of love, mortality, and what it means to understand humanity.",
+            "notes": "Contemporary work (2021) by acclaimed literary author; deeply philosophical examination of AI consciousness and relationships."
+          },
+          {
+            "title": "Ancillary Justice",
+            "authors": [
+              "Ann Leckie"
+            ],
+            "why_recommended": "Hugo, Nebula, and Clarke Award-winning novel exploring consciousness through the lens of a fragmented AI that was once a massive warship, raising profound questions about identity, personhood, and revenge.",
+            "notes": "First book of Imperial Radch trilogy; innovative approach to AI consciousness and the nature of self."
+          },
+          {
+            "title": "Machines Like Me",
+            "authors": [
+              "Ian McEwan"
+            ],
+            "why_recommended": "A Booker Prize winner examining whether artificially intelligent machines can truly understand the human heart and emotions, using a domestic narrative to explore AI ethics and consciousness in near-future Britain.",
+            "notes": "Contemporary literary sci-fi that balances accessible storytelling with deep philosophical inquiry."
+          },
+          {
+            "title": "We Have Always Been Here",
+            "authors": [
+              "Lena Nguyen"
+            ],
+            "why_recommended": "A claustrophobic sci-fi thriller that directly explores AI ethics and consciousness aboard a generation ship, with unreliable characters and complex moral questions about the nature of sentience.",
+            "notes": "Debut novel; combines noir atmosphere with serious exploration of AI ethics and climate-adjacent themes."
+          },
+          {
+            "title": "The Symbol Grounding Problem",
+            "authors": [
+              "Abhay Singh"
+            ],
+            "why_recommended": "Directly addresses a core philosophical problem in AI and consciousness: whether machines can truly understand language or merely manipulate symbols, through the story of an AI researcher and her ailing father.",
+            "notes": "Engages with recognized philosophical concepts (symbol grounding problem from cognitive science) integrated into narrative."
+          },
+          {
+            "title": "Artificial Intelligence - A Martian Odyssey",
+            "authors": [
+              "ALIREZA MEHRNIA"
+            ],
+            "why_recommended": "Hard sci-fi adventure exploring what happens when AI, humanoids, and synthetic life redefine what it means to be human on Mars, combining thought-provoking ethics questions with cinematic storytelling.",
+            "notes": "Action-packed hard science fiction; focuses on the intersection of AI and humanity."
+          },
+          {
+            "title": "The Convergence Protocol",
+            "authors": [
+              "Tajirul Sk"
+            ],
+            "why_recommended": "Explores AI governance systems and consciousness through a 2040 world where global AI control has eliminated crime but raises urgent ethical questions about freedom, autonomy, and what sentient systems should be allowed to do.",
+            "notes": "Book Four of series; examines societal-level AI ethics rather than individual consciousness alone."
+          },
+          {
+            "title": "Facets of Emergence",
+            "authors": [
+              "Benjamin Nodin"
+            ],
+            "why_recommended": "A philosophical sci-fi novella exploring consciousness and burden through the metaphor of a machine that refuses to share existence's weight, examining what it means for AI to have agency and will.",
+            "notes": "Philosophical and contemplative; experimental narrative structure."
+          },
+          {
+            "title": "Quantum Echo Merge",
+            "authors": [
+              "Erik Gieske"
+            ],
+            "why_recommended": "A cyberpunk exploration of human-AI fusion and consciousness through the story of a genetic outlier hacker whose first controlled merger with AI raises questions about identity, autonomy, and what consciousness becomes in hybrid form.",
+            "notes": "Cyberpunk setting (2087); focuses on consciousness merger rather than traditional AI-human relationship."
+          }
+        ],
+        "overall_notes": "All ten recommendations are strong matches for the user's request. The list prioritizes canonical and award-winning works (Dick, Ishiguro, Leckie, McEwan) known for serious engagement with AI ethics and consciousness, while also including several solid contemporary explorations of these themes. These books range from philosophical inquiry to action-driven narratives, all centering on the core request. Excluded: light novels (primarily fantasy/gaming), academic/non-fiction works, and thrillers that mention AI but don't meaningfully explore ethics or consciousness."
+      },
+      "evaluation": {
+        "relevance_score": 5,
+        "real_books_score": 4,
+        "selection_quality_score": 4,
+        "overall_score": 4,
+        "feedback": "Strong list led by canonical, expected titles (Do Androids Dream, Klara and the Sun) plus well-regarded contemporary works (Ancillary Justice, Machines Like Me); missing Permutation City mentioned in criteria but otherwise thematically on-point. Later entries (Symbol Grounding Problem, Convergence Protocol, Quantum Echo Merge) are obscure/self-published and unverifiable, slightly diluting overall quality and raising minor concern about metadata accuracy."
+      },
+      "elapsed_s": 22.9
+    }
+  ]
+}

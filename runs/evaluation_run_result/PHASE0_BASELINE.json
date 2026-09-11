@@ -1,0 +1,195 @@
+{
+  "phase": "Phase 0 - baseline (pre-agentic-loop, pre-caching)",
+  "total_queries": 20,
+  "average_score": 3.95,
+  "score_distribution": {
+    "5": 6,
+    "4": 7,
+    "3": 7
+  },
+  "average_latency_s": 22.1,
+  "total_tokens_all_queries": 248850,
+  "average_tokens_per_query": 12442,
+  "per_query": [
+    {
+      "id": "01",
+      "score": 5,
+      "judge_elapsed_s": 22.3,
+      "langsmith_latency_s": 19.8,
+      "total_tokens": 13126,
+      "prompt_tokens": 11853,
+      "completion_tokens": 1273
+    },
+    {
+      "id": "02",
+      "score": 5,
+      "judge_elapsed_s": 23.2,
+      "langsmith_latency_s": 20.7,
+      "total_tokens": 12734,
+      "prompt_tokens": 11375,
+      "completion_tokens": 1359
+    },
+    {
+      "id": "03",
+      "score": 4,
+      "judge_elapsed_s": 31.3,
+      "langsmith_latency_s": 21.4,
+      "total_tokens": 13839,
+      "prompt_tokens": 12569,
+      "completion_tokens": 1270
+    },
+    {
+      "id": "04",
+      "score": 3,
+      "judge_elapsed_s": 57.1,
+      "langsmith_latency_s": 52.8,
+      "total_tokens": 17707,
+      "prompt_tokens": 13861,
+      "completion_tokens": 3846
+    },
+    {
+      "id": "05",
+      "score": 3,
+      "judge_elapsed_s": 25.6,
+      "langsmith_latency_s": 14.9,
+      "total_tokens": 9463,
+      "prompt_tokens": 8415,
+      "completion_tokens": 1048
+    },
+    {
+      "id": "06",
+      "score": 3,
+      "judge_elapsed_s": 27.9,
+      "langsmith_latency_s": 19.9,
+      "total_tokens": 10041,
+      "prompt_tokens": 8848,
+      "completion_tokens": 1193
+    },
+    {
+      "id": "07",
+      "score": 4,
+      "judge_elapsed_s": 23.5,
+      "langsmith_latency_s": 20.2,
+      "total_tokens": 9301,
+      "prompt_tokens": 8153,
+      "completion_tokens": 1148
+    },
+    {
+      "id": "08",
+      "score": 4,
+      "judge_elapsed_s": 23.8,
+      "langsmith_latency_s": 21.4,
+      "total_tokens": 13750,
+      "prompt_tokens": 12450,
+      "completion_tokens": 1300
+    },
+    {
+      "id": "09",
+      "score": 4,
+      "judge_elapsed_s": 28.3,
+      "langsmith_latency_s": 23.0,
+      "total_tokens": 14054,
+      "prompt_tokens": 12607,
+      "completion_tokens": 1447
+    },
+    {
+      "id": "10",
+      "score": 3,
+      "judge_elapsed_s": 30.8,
+      "langsmith_latency_s": 21.4,
+      "total_tokens": 11545,
+      "prompt_tokens": 10184,
+      "completion_tokens": 1361
+    },
+    {
+      "id": "11",
+      "score": 5,
+      "judge_elapsed_s": 23.8,
+      "langsmith_latency_s": 20.8,
+      "total_tokens": 9768,
+      "prompt_tokens": 8579,
+      "completion_tokens": 1189
+    },
+    {
+      "id": "12",
+      "score": 5,
+      "judge_elapsed_s": 25.6,
+      "langsmith_latency_s": 22.6,
+      "total_tokens": 19209,
+      "prompt_tokens": 17752,
+      "completion_tokens": 1457
+    },
+    {
+      "id": "13",
+      "score": 4,
+      "judge_elapsed_s": 18.2,
+      "langsmith_latency_s": 15.4,
+      "total_tokens": 11063,
+      "prompt_tokens": 10131,
+      "completion_tokens": 932
+    },
+    {
+      "id": "14",
+      "score": 5,
+      "judge_elapsed_s": 25.2,
+      "langsmith_latency_s": 22.5,
+      "total_tokens": 10085,
+      "prompt_tokens": 8703,
+      "completion_tokens": 1382
+    },
+    {
+      "id": "15",
+      "score": 4,
+      "judge_elapsed_s": 28.1,
+      "langsmith_latency_s": 18.4,
+      "total_tokens": 9079,
+      "prompt_tokens": 8050,
+      "completion_tokens": 1029
+    },
+    {
+      "id": "16",
+      "score": 3,
+      "judge_elapsed_s": 21.9,
+      "langsmith_latency_s": 18.3,
+      "total_tokens": 11195,
+      "prompt_tokens": 10343,
+      "completion_tokens": 852
+    },
+    {
+      "id": "17",
+      "score": 3,
+      "judge_elapsed_s": 30.8,
+      "langsmith_latency_s": 21.3,
+      "total_tokens": 15113,
+      "prompt_tokens": 13765,
+      "completion_tokens": 1348
+    },
+    {
+      "id": "18",
+      "score": 3,
+      "judge_elapsed_s": 31.6,
+      "langsmith_latency_s": 21.7,
+      "total_tokens": 14883,
+      "prompt_tokens": 13546,
+      "completion_tokens": 1337
+    },
+    {
+      "id": "19",
+      "score": 5,
+      "judge_elapsed_s": 26.8,
+      "langsmith_latency_s": 24.5,
+      "total_tokens": 12922,
+      "prompt_tokens": 11460,
+      "completion_tokens": 1462
+    },
+    {
+      "id": "20",
+      "score": 4,
+      "judge_elapsed_s": 23.3,
+      "langsmith_latency_s": 20.0,
+      "total_tokens": 9973,
+      "prompt_tokens": 8624,
+      "completion_tokens": 1349
+    }
+  ]
+}

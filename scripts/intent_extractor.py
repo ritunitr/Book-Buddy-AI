@@ -18,13 +18,18 @@ from dotenv import load_dotenv
 from anthropic import Anthropic
 
 try:
-    from prompts import INTENT_EXTRACTION_SYSTEM_PROMPT
+    from prompts import INTENT_EXTRACTION_SYSTEM_PROMPT, BROADEN_SEARCH_SYSTEM_PROMPT
+    from observability import traced_anthropic_client
 except ImportError:
-    from .prompts import INTENT_EXTRACTION_SYSTEM_PROMPT
+    from .prompts import INTENT_EXTRACTION_SYSTEM_PROMPT, BROADEN_SEARCH_SYSTEM_PROMPT
+    from .observability import traced_anthropic_client
 
 load_dotenv()
 
-anthropic_client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+# Traces every messages.create() call (latency, input/output tokens, model)
+# to LangSmith automatically - no per-call instrumentation needed below.
+# No-ops safely if LANGSMITH_API_KEY isn't set.
+anthropic_client = traced_anthropic_client(Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY")))
 
 
 def extract_text(message) -> str:
@@ -33,6 +38,16 @@ def extract_text(message) -> str:
         if block.type == "text":
             return block.text
     raise ValueError(f"No text block found — got: {[b.type for b in message.content]}")
+
+
+def _parse_json_response(response_text: str) -> dict:
+    """Strip optional markdown code fences and parse JSON."""
+    text = response_text.strip()
+    if text.startswith("```"):
+        text = text.split("```")[1]
+        if text.startswith("json"):
+            text = text[4:]
+    return json.loads(text.strip())
 
 
 def extract_intent(user_query: str) -> dict:
@@ -59,17 +74,9 @@ def extract_intent(user_query: str) -> dict:
         messages=[{"role": "user", "content": user_query}]
     )
 
-    response_text = extract_text(message).strip()
-
     try:
-        if response_text.startswith("```"):
-            response_text = response_text.split("```")[1]
-            if response_text.startswith("json"):
-                response_text = response_text[4:]
-
-        intent = json.loads(response_text.strip())
-        return intent
-    except json.JSONDecodeError as e:
+        return _parse_json_response(extract_text(message))
+    except (json.JSONDecodeError, IndexError) as e:
         print(f"Error parsing intent: {e}")
         return {
             "themes": [],
@@ -82,6 +89,43 @@ def extract_intent(user_query: str) -> dict:
             "known_titles": [],
             "error": str(e)
         }
+
+
+def broaden_search_with_llm(original_query: str, themes_tried: list, known_titles_tried: list, bad_reason: str) -> dict:
+    """
+    Phase 2 tier-2 retry: called only when the cheap tier-1 retry (dropping
+    the subject: filter and re-searching with the same themes) still didn't
+    find enough candidates. Given the full history of what's been tried,
+    asks Claude to propose a genuinely broader search rather than a small
+    tweak on the same narrow keywords.
+
+    Returns dict with "themes" (exactly 3) and "known_titles" (up to 4).
+    Falls back to the original themes/titles unchanged if parsing fails,
+    so a broaden failure never leaves the caller with nothing to search.
+    """
+    history = (
+        f"Original request: {original_query}\n"
+        f"Themes already tried: {themes_tried}\n"
+        f"Known titles already tried: {known_titles_tried}\n"
+        f"Why it's still insufficient: {bad_reason}"
+    )
+
+    message = anthropic_client.messages.create(
+        model="claude-haiku-4-5",
+        max_tokens=512,
+        system=BROADEN_SEARCH_SYSTEM_PROMPT,
+        messages=[{"role": "user", "content": history}]
+    )
+
+    try:
+        result = _parse_json_response(extract_text(message))
+        return {
+            "themes": result.get("themes", themes_tried)[:3],
+            "known_titles": result.get("known_titles", known_titles_tried)[:4],
+        }
+    except (json.JSONDecodeError, IndexError) as e:
+        print(f"Error parsing broaden-search response: {e}")
+        return {"themes": themes_tried, "known_titles": known_titles_tried}
 
 
 if __name__ == "__main__":

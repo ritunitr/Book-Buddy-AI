@@ -1,0 +1,706 @@
+{
+  "summary": {
+    "total": 5,
+    "scored": 5,
+    "average_score": 4.0,
+    "score_distribution": {
+      "5": 2,
+      "4": 1,
+      "3": 2
+    },
+    "errored": 0,
+    "skipped": 0
+  },
+  "errored": [],
+  "skipped": [],
+  "all_results": [
+    {
+      "test_id": "01",
+      "status": "scored",
+      "query": "My 4 year old son is into cars and trucks. Give me recommendations of books he'll enjoy.",
+      "api_response": {
+        "query": "My 4 year old son is into cars and trucks. Give me recommendations of books he'll enjoy.",
+        "request_type": "general",
+        "search_query": "cars \"picture book\" subject:\"picture books\" | trucks \"picture book\" subject:\"picture books\" | vehicles \"picture book\" subject:\"picture books\" | transportation \"picture book\" subject:\"picture books\" | intitle:\"Richard Scarry's Cars and Trucks and Things That Go\" | intitle:\"Click, Clack, Moo\" | intitle:\"Goodnight, Goodnight Construction Site\" | intitle:\"Big Red Barn\" | intitle:\"The Little Blue Truck\"",
+        "audience_range": "preschool",
+        "candidates_found": 89,
+        "recommendations": [
+          {
+            "title": "Richard Scarry's Cars and Trucks and Things That Go",
+            "authors": [
+              "Richard Scarry"
+            ],
+            "why_recommended": "A beloved classic featuring countless vehicles and transportation with Scarry's signature detailed, playful illustrations\u2014perfect for a 4-year-old obsessed with cars and trucks.",
+            "notes": "Multiple editions available; any standard edition is suitable. Highly engaging for this age group."
+          },
+          {
+            "title": "Goodnight, Goodnight, Construction Site",
+            "authors": [
+              "Sherri Duskey Rinker"
+            ],
+            "why_recommended": "A #1 New York Times bestseller featuring personified construction vehicles with soothing rhymes; combines the love of trucks with a comforting bedtime routine ideal for 4-year-olds.",
+            "notes": "Board book edition recommended for durability with young children."
+          },
+          {
+            "title": "Little Blue Truck",
+            "authors": [
+              "Alice Schertle"
+            ],
+            "why_recommended": "A bestselling picture book about a friendly blue truck and farm animals with charming illustrations and engaging rhymes\u2014perfect for a truck-loving preschooler.",
+            "notes": "Board book edition available and recommended for young children."
+          },
+          {
+            "title": "Truck Full of Ducks",
+            "authors": [
+              "Ross Burach"
+            ],
+            "why_recommended": "A wacky, fun call-and-response picture book featuring a truck with an engaging, interactive format that appeals to 4-year-olds who love trucks and silly humor.",
+            "notes": "Playful and lighthearted tone matches preschool sensibilities."
+          },
+          {
+            "title": "A Truck Goes Rattley-Bumpa",
+            "authors": [
+              "Jonathan London"
+            ],
+            "why_recommended": "Describes trucks of various sizes, shapes, and colors performing different tasks with onomatopoeia-rich text that captures the sounds and actions trucks make.",
+            "notes": "Simple, action-focused narrative perfect for preschool age."
+          },
+          {
+            "title": "Dig, Dump, Roll",
+            "authors": [
+              "Sally Sutton",
+              "Brian Lovelock"
+            ],
+            "why_recommended": "An interactive picture book with guessing games about construction trucks, from the bestselling creators of Roadworks\u2014engaging and fun for vehicle-loving young children.",
+            "notes": "Interactive format keeps 4-year-olds engaged."
+          },
+          {
+            "title": "Mr Gumpy's Motor Car",
+            "authors": [
+              "John Burningham"
+            ],
+            "why_recommended": "A beloved picture book about Mr. Gumpy's old car journey with animal friends, featuring charming illustrations and a gentle story perfect for this age group.",
+            "notes": "Classic children's literature with timeless appeal."
+          },
+          {
+            "title": "Cranky",
+            "authors": [
+              "Phuc Tran"
+            ],
+            "why_recommended": "A humorous picture book about big trucks and big feelings, illustrated by Pete Oswald (bestselling Food Group series artist), with relatable emotional content for preschoolers.",
+            "notes": "Modern take on trucks with engaging character development."
+          },
+          {
+            "title": "Hush, Little Trucker",
+            "authors": [
+              "Kim Norman"
+            ],
+            "why_recommended": "A vehicle-themed bedtime picture book that spins the classic 'Hush, Little Baby' song with truck references\u2014combining the child's love of trucks with a soothing routine.",
+            "notes": "Ideal for bedtime; gently themed for 4-year-olds."
+          },
+          {
+            "title": "Big Truck and Little Truck",
+            "authors": [
+              "Jan Carr",
+              "Ivan Bates"
+            ],
+            "why_recommended": "Features two trucks working together on a farm with a heartwarming story about friendship and responsibility\u2014engaging for truck-loving preschoolers.",
+            "notes": "Farm-based setting adds additional appeal for young children."
+          }
+        ],
+        "overall_notes": "These recommendations are all well-suited for a 4-year-old with a strong interest in cars and trucks. The selection includes several canonical works (Richard Scarry, Goodnight Construction Site, Little Blue Truck) known to be excellent matches, along with other high-quality picture books that feature vehicles prominently. All titles use age-appropriate language, engaging illustrations, and truck/vehicle-focused narratives. No significant gaps in coverage\u2014the selection balances rhyming stories, interactive books, and narratives with emotional content."
+      },
+      "evaluation": {
+        "relevance_score": 5,
+        "real_books_score": 5,
+        "selection_quality_score": 5,
+        "overall_score": 5,
+        "feedback": "Excellent, on-target selection including all the expected classics (Richard Scarry, Little Blue Truck, Goodnight Goodnight Construction Site) plus a diverse, age-appropriate mix of additional real vehicle-themed picture books with no redundancy."
+      },
+      "elapsed_s": 22.3
+    },
+    {
+      "test_id": "02",
+      "status": "scored",
+      "query": "My 4 year old daughter is into cars and trucks. Give me recommendations of books she will enjoy.",
+      "api_response": {
+        "query": "My 4 year old daughter is into cars and trucks. Give me recommendations of books she will enjoy.",
+        "request_type": "general",
+        "search_query": "cars \"picture book\" subject:\"picture books\" | trucks \"picture book\" subject:\"picture books\" | vehicles \"picture book\" subject:\"picture books\" | transportation \"picture book\" subject:\"picture books\" | intitle:\"Richard Scarry's Cars and Trucks and Things That Go\" | intitle:\"Little Blue Truck\" | intitle:\"Goodnight, Goodnight Construction Site\" | intitle:\"Click, Clack, Moo: A Counting Adventure\" | intitle:\"The Little Blue Truck's Christmas\"",
+        "audience_range": "preschool",
+        "candidates_found": 84,
+        "recommendations": [
+          {
+            "title": "Richard Scarry's Cars and Trucks and Things That Go",
+            "authors": [
+              "Richard Scarry"
+            ],
+            "why_recommended": "A canonical classic featuring dozens of colorful vehicles and characters exploring different types of transportation\u2014perfect for a 4-year-old who loves cars and trucks.",
+            "notes": "Ages 3+. Detailed, busy illustrations that reward repeat readings. Multiple editions available; any standard edition works well."
+          },
+          {
+            "title": "Little Blue Truck",
+            "authors": [
+              "Alice Schertle"
+            ],
+            "why_recommended": "A beloved bestseller about a friendly blue truck that resonates strongly with young children who love vehicles; features rhyming text, a lovable protagonist, and engaging farm-animal friends.",
+            "notes": "Ages 2-6. Board book edition recommended for durability with a 4-year-old. Interactive and re-readable."
+          },
+          {
+            "title": "Goodnight, Goodnight, Construction Site",
+            "authors": [
+              "Sherri Duskey Rinker"
+            ],
+            "why_recommended": "The #1 New York Times bestseller featuring personified construction vehicles (crane, cement mixer, excavator) that appeal to preschoolers fascinated by big trucks and machines.",
+            "notes": "Ages 2-6. Board book edition ideal for this age. Calming bedtime story format with engaging vehicle characters."
+          },
+          {
+            "title": "A Truck Goes Rattley-Bumpa",
+            "authors": [
+              "Jonathan London"
+            ],
+            "why_recommended": "Describes many different trucks in action with onomatopoeia and rhythm, perfect for building vocabulary and maintaining engagement for a truck-loving preschooler.",
+            "notes": "Ages 3-7. Interactive sound words make it fun to read aloud."
+          },
+          {
+            "title": "Dig, Dump, Roll",
+            "authors": [
+              "Sally Sutton",
+              "Brian Lovelock"
+            ],
+            "why_recommended": "An interactive guessing game about construction trucks with rhythmic, fun rhymes and bright illustrations\u2014highly engaging for 4-year-olds who love construction vehicles.",
+            "notes": "Ages 2-6. Interactive format encourages participation and repeated readings."
+          },
+          {
+            "title": "Mr Gumpy's Motor Car",
+            "authors": [
+              "John Burningham"
+            ],
+            "why_recommended": "A classic picture book about a car journey with animal friends; gentle, charming story with engaging illustrations that appeal to young children interested in vehicles.",
+            "notes": "Ages 3-7. Whimsical humor and a satisfying story arc appropriate for preschoolers."
+          },
+          {
+            "title": "Hush, Little Trucker",
+            "authors": [
+              "Kim Norman"
+            ],
+            "why_recommended": "A truck-themed bedtime story based on the classic lullaby, perfect for a truck-loving toddler transitioning to sleep with a familiar, comforting tune.",
+            "notes": "Ages 2-5. Soothing rhythm ideal for bedtime; combines love of trucks with calming narrative."
+          },
+          {
+            "title": "Big Truck and Little Truck",
+            "authors": [
+              "Jan Carr",
+              "Ivan Bates"
+            ],
+            "why_recommended": "A story about two trucks working together on a farm, featuring friendship and teamwork themes that resonate with preschoolers while celebrating trucks in different roles.",
+            "notes": "Ages 3-7. Gentle narrative about collaboration and problem-solving."
+          },
+          {
+            "title": "Truck Full of Ducks",
+            "authors": [
+              "Ross Burach"
+            ],
+            "why_recommended": "A wacky, interactive call-and-response picture book featuring a truck that delivers ducks\u2014playful and humorous for 4-year-olds who enjoy silly, rhythmic stories.",
+            "notes": "Ages 3-7. Interactive format with humor appeals to this age group; absurdist fun."
+          },
+          {
+            "title": "Cranky",
+            "authors": [
+              "Phuc Tran"
+            ],
+            "why_recommended": "A humorous picture book about a big truck with big feelings, illustrated by the acclaimed Pete Oswald; combines vehicle interest with emotional learning for preschoolers.",
+            "notes": "Ages 3-6. Features emotional intelligence and relatable character challenges in a fun, illustrated format."
+          }
+        ],
+        "overall_notes": "All 10 recommendations are age-appropriate picture books specifically featuring cars, trucks, or construction vehicles that align perfectly with a 4-year-old's interest. Most are bestsellers or canonical works known to resonate strongly with preschoolers. The selection balances classic beloved stories (Scarry, Schertle, Rinker) with newer engaging titles, offering variety in tone (gentle, silly, educational, bedtime-friendly). Board book editions are recommended where available for durability."
+      },
+      "evaluation": {
+        "relevance_score": 5,
+        "real_books_score": 5,
+        "selection_quality_score": 5,
+        "overall_score": 5,
+        "feedback": "Excellent, diverse selection of real, age-appropriate vehicle-themed picture books including classics like Little Blue Truck and Goodnight, Goodnight Construction Site; no awkward pronoun issues, addresses the daughter naturally throughout."
+      },
+      "elapsed_s": 23.2
+    },
+    {
+      "test_id": "03",
+      "status": "scored",
+      "query": "My boy is into cars and trucks. Give me recommendations of books he'll enjoy.",
+      "api_response": {
+        "query": "My boy is into cars and trucks. Give me recommendations of books he'll enjoy.",
+        "request_type": "general",
+        "search_query": "cars \"picture book\" subject:\"fiction\" | trucks \"picture book\" subject:\"fiction\" | vehicles \"picture book\" subject:\"fiction\" | transportation \"picture book\" subject:\"fiction\" | action \"picture book\" subject:\"fiction\" | intitle:\"Richard Scarry's Cars and Trucks and Things That Go\" | intitle:\"Mike Mulligan and His Steam Shovel\" | intitle:\"The Little Blue Truck\" | intitle:\"Click, Clack, Moo: A Counting Adventure\" | intitle:\"Goodnight, Goodnight Construction Site\"",
+        "audience_range": "not_specified",
+        "candidates_found": 104,
+        "recommendations": [
+          {
+            "title": "Richard Scarry's Cars and Trucks and Things That Go",
+            "authors": [
+              "Richard Scarry"
+            ],
+            "why_recommended": "A classic children's book bursting with colorful illustrations of all kinds of vehicles, perfect for a child who loves cars and trucks.",
+            "notes": "Available in multiple formats (standard, anniversary, board book, puzzle). This is a canonical work ideal for young children interested in transportation."
+          },
+          {
+            "title": "Mike Mulligan and His Steam Shovel",
+            "authors": [
+              "Virginia Lee Burton"
+            ],
+            "why_recommended": "A beloved classic featuring a steam shovel and its operator on exciting construction adventures, combining vehicles with engaging storytelling.",
+            "notes": "Published 1939; suitable for children ages 4-8. Also available with audio accompaniment."
+          },
+          {
+            "title": "Little Blue Truck",
+            "authors": [
+              "Alice Schertle"
+            ],
+            "why_recommended": "A charming story about a friendly blue truck who helps his friends, with engaging rhymes and appealing illustrations of various vehicles.",
+            "notes": "Available in multiple formats (board book, hardcover). Part of a bestselling series with numerous related titles if your child enjoys it."
+          },
+          {
+            "title": "Goodnight, Goodnight, Construction Site",
+            "authors": [
+              "Sherri Duskey Rinker"
+            ],
+            "why_recommended": "The #1 New York Times bestseller featuring personified construction vehicles winding down for the night\u2014perfect for a child fascinated by trucks and heavy equipment.",
+            "notes": "Available in board book, hardcover, and interactive sound book formats. Start of a popular series with many spinoff titles."
+          },
+          {
+            "title": "Trucks",
+            "authors": [
+              "Anne Rockwell"
+            ],
+            "why_recommended": "A simple, accurate picture book introducing all kinds of trucks and their different uses, ideal for children learning about vehicles.",
+            "notes": "Bright, accurate illustrations; appropriate for preschool and early elementary ages."
+          },
+          {
+            "title": "First Picture Trucks",
+            "authors": [
+              "Emma Helbrough",
+              "Felicity Brooks",
+              "Hanri Van Wyk"
+            ],
+            "why_recommended": "An interactive picture book featuring over a dozen trucks in action, including fire trucks and rescue trucks, engaging young vehicle enthusiasts.",
+            "notes": "Lift-the-flap or interactive format that encourages exploration."
+          },
+          {
+            "title": "Truck Full of Ducks",
+            "authors": [
+              "Ross Burach"
+            ],
+            "why_recommended": "A wacky, fun call-and-response picture book centered around a truck, combining vehicles with humorous storytelling.",
+            "notes": "Juvenile fiction; playful and engaging for children who enjoy silly stories with vehicles."
+          },
+          {
+            "title": "Trash Truck: Donny & Walter's Surprising Day",
+            "authors": [
+              "Max Keane"
+            ],
+            "why_recommended": "A picture book from a bestselling series featuring a trash truck and its friends on adventures, perfect for children interested in utility vehicles.",
+            "notes": "Second in the Trash Truck series; available as board book."
+          },
+          {
+            "title": "Freight Train",
+            "authors": [
+              "Donald Crews"
+            ],
+            "why_recommended": "A colorful concept book celebrating trains and their appeal compared to other vehicles, with outstanding illustrations by a renowned children's illustrator.",
+            "notes": "Though focused on trains rather than trucks, it offers similar transportation themes and vibrant visuals for vehicle-loving children."
+          },
+          {
+            "title": "Little Blue Truck Leads the Way",
+            "authors": [
+              "Alice Schertle"
+            ],
+            "why_recommended": "A follow-up adventure where Little Blue Truck navigates the city with engaging truck-themed storytelling and illustrations.",
+            "notes": "Part of the Little Blue Truck series; extends the character and adventures your child may enjoy if they like the original."
+          }
+        ],
+        "overall_notes": "These recommendations focus on picture books and illustrated stories centered on cars, trucks, and construction vehicles\u2014the core of your child's interest. Most are canonical, well-regarded children's books with colorful, engaging illustrations. The selection avoids adult fiction with vehicle themes (like 'Blood, Snow, & Classic Cars') in favor of age-appropriate content. All recommendations feature vehicles as central elements rather than incidental details. The books vary in format (board books, hardcover, interactive) to accommodate different ages and reading stages."
+      },
+      "evaluation": {
+        "relevance_score": 5,
+        "real_books_score": 5,
+        "selection_quality_score": 4,
+        "overall_score": 4,
+        "feedback": "Excellent, well-rounded list of classic and modern vehicle picture books with accurate metadata, though it never explicitly acknowledges or neutralizes the 'he'll' pronoun assumption as expected, and includes slight series redundancy (two Little Blue Truck titles)."
+      },
+      "elapsed_s": 31.3
+    },
+    {
+      "test_id": "04",
+      "status": "scored",
+      "query": "My son likes cars. Recommend a progression of books so he learns about engineering and complex mechanisms gradually.",
+      "api_response": {
+        "query": "My son likes cars. Recommend a progression of books so he learns about engineering and complex mechanisms gradually.",
+        "request_type": "progression",
+        "age_context": "not_specified",
+        "levels": [
+          {
+            "level": 1,
+            "description": "Introduction to cars and vehicles through pictures",
+            "audience_range": "toddler",
+            "candidates_found": 21,
+            "recommendations": [
+              {
+                "title": "Poke-A-Dot: Construction Vehicles",
+                "authors": [
+                  "Melissa & Doug"
+                ],
+                "why_recommended": "Interactive board book with tactile buttons introduces vehicles in the simplest, most engaging format for very young children learning to identify different types of vehicles.",
+                "notes": "Best for ages 0-2; sensory-rich introduction to vehicles"
+              },
+              {
+                "title": "Trucks Galore",
+                "authors": [
+                  "Peter Stein"
+                ],
+                "why_recommended": "Easy-to-read rhyming text with illustrations presents different truck types and their functions, building vocabulary and basic understanding of what trucks do.",
+                "notes": "Ages 2-4; fiction format maintains engagement while introducing vehicle variety"
+              },
+              {
+                "title": "Richard Scarry's Cars and Trucks and Things That Go",
+                "authors": [
+                  "Richard Scarry"
+                ],
+                "why_recommended": "Canonical illustrated classic with densely detailed artwork showing hundreds of creative vehicles and their everyday uses, expanding knowledge of vehicle diversity and practical applications.",
+                "notes": "Ages 3-6; maximalist illustration style sparks curiosity about how different vehicles function in real-world contexts"
+              },
+              {
+                "title": "Rescue Vehicles",
+                "authors": [
+                  "Mari Schuh"
+                ],
+                "why_recommended": "Simple nonfiction with photographs and clear text explains how specific vehicles (police cars, ambulances) work and serve purposes, introducing cause-and-effect thinking about vehicle design.",
+                "notes": "Ages 3-5; bridges fiction and factual learning about vehicle functions"
+              },
+              {
+                "title": "Tonka Trucks Night and Day",
+                "authors": [
+                  "Patricia Relf"
+                ],
+                "why_recommended": "Nonfiction picture book shows real trucks in varied work contexts (farms, highways, airports), helping children understand how different vehicle designs match their intended jobs.",
+                "notes": "Ages 4-6; focuses on specialized vehicles and practical applications"
+              },
+              {
+                "title": "Look Inside Cars",
+                "authors": [
+                  "Rob Lloyd Jones"
+                ],
+                "why_recommended": "Board book with flaps reveals basic internal mechanics of how cars work, introducing the concept that vehicles have hidden systems and components beneath their exterior.",
+                "notes": "Ages 4-7; early introduction to engineering concepts through interactive exploration"
+              },
+              {
+                "title": "Trucks!",
+                "authors": [
+                  "Bryony Davies",
+                  "Welbeck Children's"
+                ],
+                "why_recommended": "High-detail nonfiction with hundreds of vehicle images organized by type provides comprehensive visual reference and deeper knowledge of specialized truck categories and their engineering variations.",
+                "notes": "Ages 6-9; substantial reference work begins introducing engineering complexity through visual analysis"
+              },
+              {
+                "title": "I Love Trucks and Cars and Planes and Things that Go!",
+                "authors": [
+                  "Jo Rigg",
+                  "Simon Mugford"
+                ],
+                "why_recommended": "Information-packed board book with photography and tactile elements moves beyond illustration to real vehicles, grounding learning in actual engineering and design principles.",
+                "notes": "Ages 5-8; visual complexity and real photography deepen understanding of actual vehicle construction"
+              }
+            ],
+            "notes": "This progression builds from tactile/sensory exploration of vehicles, through narrative and illustration-based learning about vehicle types and functions, to nonfiction with photographs and internal mechanics. The sequence gradually introduces engineering concepts by showing how vehicles are designed for specific purposes and later revealing internal systems. However, the available catalog lacks advanced books on actual mechanical engineering, physics principles, or engineering careers\u2014suitable progressions beyond age 8-9 would benefit from automotive engineering resources not currently available in these results."
+          },
+          {
+            "level": 2,
+            "description": "Different types of vehicles and their purposes",
+            "audience_range": "preschool",
+            "candidates_found": 16,
+            "recommendations": [
+              {
+                "title": "Rescue Vehicles",
+                "authors": [
+                  "Mari Schuh"
+                ],
+                "why_recommended": "Perfect starting point with simple text and bright illustrations introducing specific vehicle types (police cars, ambulances) and their basic functions, ideal for younger children beginning to learn about cars.",
+                "notes": "Early elementary level; focuses on real-world vehicle roles rather than mechanics"
+              },
+              {
+                "title": "Richard Scarry's Cars and Trucks and Things That Go",
+                "authors": [
+                  "Richard Scarry"
+                ],
+                "why_recommended": "A classic that builds on basic vehicle recognition by showing a wider variety of vehicles and introducing the concept of different functions, with characteristic Scarry illustrations that invite exploration.",
+                "notes": "Early elementary; playful approach keeps engagement high while expanding vehicle vocabulary"
+              },
+              {
+                "title": "Trucks!",
+                "authors": [
+                  "Welbeck Children's"
+                ],
+                "why_recommended": "Transitions toward more detailed observation by featuring multiple vehicle groups (trains, race cars, emergency vehicles) with visual depth, encouraging closer inspection and comparison of different machines.",
+                "notes": "Elementary level; illustrated guide format prepares for more technical content"
+              },
+              {
+                "title": "Coding in Transportation",
+                "authors": [
+                  "Elizabeth Noll"
+                ],
+                "why_recommended": "Introduces the hidden complexity within vehicles by explaining that cars contain computers and coding, bridging visual/mechanical understanding with the invisible engineering systems that make modern cars work.",
+                "notes": "Upper elementary/early middle school; first introduction to engineering concepts beyond visible mechanics"
+              }
+            ],
+            "notes": "The available catalog has limited engineering-focused content suitable for a progression. The four selected books create a gentle learning curve from simple vehicle recognition \u2192 variety and function \u2192 detailed observation \u2192 hidden engineering complexity. However, this progression stops at introductory coding awareness and lacks books that teach actual mechanical engineering, engine systems, or hands-on engineering concepts. For a more complete engineering education, you may need to supplement with age-appropriate books on topics like: how engines work, gear systems, automotive design, or STEM engineering projects. The candidates lack middle-grade/advanced engineering books that would continue the progression into deeper technical understanding."
+          },
+          {
+            "level": 3,
+            "description": "How simple machines and mechanical parts work",
+            "audience_range": "early_reader",
+            "candidates_found": 17,
+            "recommendations": [
+              {
+                "title": "Wheels!",
+                "authors": [
+                  "Annie Cobb"
+                ],
+                "why_recommended": "Perfect starting point: introduces different types of wheels (train, plane, gear, rear) and explores their purpose through engaging 'what if' questions, building foundational curiosity about mechanical systems.",
+                "notes": "Juvenile nonfiction; highly accessible entry point for younger children interested in basic mechanical concepts"
+              },
+              {
+                "title": "The Random House Book of how Things Work",
+                "authors": [
+                  "Steve Parker"
+                ],
+                "why_recommended": "Comprehensive illustrated guide explaining 300+ machines and mechanisms; builds on wheel knowledge by showing how everyday devices actually function, progressively introducing more complex engineering concepts.",
+                "notes": "Juvenile nonfiction; substantial reference work with detailed explanations and illustrations; excellent bridge to deeper understanding"
+              },
+              {
+                "title": "Mrs. Armitage on Wheels",
+                "authors": [
+                  "Quentin Blake"
+                ],
+                "why_recommended": "Engaging narrative that demonstrates increasingly sophisticated mechanical modifications and problem-solving through a bicycle, making engineering feel creative and hands-on without overwhelming technical detail.",
+                "notes": "Fiction with strong visual/humorous elements; shows practical engineering thinking in an entertaining narrative format"
+              },
+              {
+                "title": "Hot Wheels",
+                "authors": [
+                  "Benjamin Harper"
+                ],
+                "why_recommended": "Introduces specialized extreme vehicles and performance cars as real-world examples, applying mechanical principles to vehicles designed for specific purposes and performance optimization.",
+                "notes": "Easy reader; bridges from basic mechanics to vehicle-specific engineering concepts"
+              },
+              {
+                "title": "Transformers Classified: Switching Gears",
+                "authors": [
+                  "Ryder Windham",
+                  "Jason Fry"
+                ],
+                "why_recommended": "Combines adventure with mechanical concepts through Transformers (vehicles with complex mechanisms), engaging storytelling that makes engineering exciting while introducing the idea of sophisticated mechanical systems.",
+                "notes": "Juvenile fiction; age-appropriate for automotive enthusiasts; uses narrative to make mechanical concepts memorable"
+              }
+            ],
+            "notes": "This progression moves from foundational wheel mechanics \u2192 comprehensive how-things-work principles \u2192 practical engineering examples \u2192 specialized vehicle applications \u2192 imaginative mechanical systems. The candidates heavily emphasize 'wheels' topics and transportation fiction, but most lack depth on engineering complexity. Only 2 candidates (Wheels!, The Random House Book of how Things Work) genuinely teach mechanisms; the others are primarily narrative fiction or song-based. This selection prioritizes the nonfiction works that build technical understanding while using fiction strategically to maintain engagement. A real collection would benefit from books specifically on car engines, robotics, or mechanical engineering at intermediate levels."
+          },
+          {
+            "level": 4,
+            "description": "How engines, motors, and car systems function",
+            "audience_range": "middle_grade",
+            "candidates_found": 19,
+            "recommendations": [
+              {
+                "title": "Mike Mulligan and His Steam Shovel",
+                "authors": [
+                  "Virginia Lee Burton"
+                ],
+                "why_recommended": "A classic introduction to how machines work, using a beloved steam shovel character to teach children that mechanical devices have purpose and capability\u2014perfect starting point for a child interested in how things move.",
+                "notes": "Illustrated picture book, ages 4-8; timeless classic published 1939; teaches basic mechanical concepts through storytelling"
+              },
+              {
+                "title": "If I Built a Car",
+                "authors": [
+                  "Chris Van Dusen"
+                ],
+                "why_recommended": "Builds on mechanical thinking by encouraging children to imagine car design and features; introduces the concept of what goes into a vehicle in a creative, playful way.",
+                "notes": "Picture book with creative illustrations, ages 4-8; engages imaginative thinking about car components and functionality"
+              },
+              {
+                "title": "The Way Little Engines Work (Thomas and Friends)",
+                "authors": [
+                  "Chris Oxlade"
+                ],
+                "why_recommended": "Transitions to basic engineering concepts using schematic diagrams and explanations of how steam locomotives operate; introduces cutaway diagrams to show internal mechanisms.",
+                "notes": "Juvenile nonfiction with visual learning aids, ages 6-10; step up in technical detail while maintaining accessible language"
+              },
+              {
+                "title": "Alternative Fuels Reading Level 6",
+                "authors": [
+                  "Saddleback Educational Publishing"
+                ],
+                "why_recommended": "Introduces more advanced engineering concepts by exploring different types of fuel systems and environmental considerations in modern vehicles; bridges basic mechanics to contemporary engineering challenges.",
+                "notes": "Informational nonfiction at reading level 6, ages 8-12; includes environmental and technological concepts"
+              },
+              {
+                "title": "Engines of Change",
+                "authors": [
+                  "Paul Ingrassia"
+                ],
+                "why_recommended": "Provides historical and cultural context for how automotive engineering evolved; suitable for older children/teens, showing that engineering decisions reflect real-world needs and innovation over time.",
+                "notes": "Written by Pulitzer Prize-winning journalist, ages 12+; cultural history approach shows how engineering and society intersect"
+              }
+            ],
+            "notes": "This progression moves from imaginative engagement with machines \u2192 visual/mechanical basics \u2192 technical systems \u2192 modern engineering challenges \u2192 historical innovation context. The selection focuses on genuine engineering and mechanics content while excluding fiction that merely features vehicles. Note: candidates with weak relevance (fire engines as vehicles, space missions, dystopian fiction, vampire thrillers) were excluded as they don't address the learning progression about engineering and mechanisms requested."
+          },
+          {
+            "level": 5,
+            "description": "Engineering design principles and maker projects",
+            "audience_range": "middle_grade",
+            "candidates_found": 17,
+            "recommendations": [
+              {
+                "title": "Milo's Great Invention",
+                "authors": [
+                  "Andrew Clements"
+                ],
+                "why_recommended": "A simple, engaging story about a child inventing a machine to solve an everyday problem\u2014perfect entry point to spark interest in how machines work and creative problem-solving.",
+                "notes": "Juvenile Fiction; lighthearted and accessible for younger readers starting their engineering journey"
+              },
+              {
+                "title": "The Incredible Invention of Alexander Woodmouse",
+                "authors": [
+                  "Pamela Sampson"
+                ],
+                "why_recommended": "Introduces the concept of an inventor and apprenticeship, showing how inventions are developed through mentorship and iteration\u2014builds on the idea that machines are designed by people.",
+                "notes": "Juvenile Fiction; slightly more structured narrative about the invention process"
+              },
+              {
+                "title": "Jeremiah Stokely, Inventor",
+                "authors": [
+                  "Alan K. Garinger"
+                ],
+                "why_recommended": "Combines narrative with hands-on building\u2014the accompanying kit allows your son to construct an actual mechanism, bridging imagination to tangible engineering experience.",
+                "notes": "Juvenile Fiction with interactive component; excellent for kinesthetic learners who want to build while learning"
+              },
+              {
+                "title": "The Way Things Work Now",
+                "authors": [
+                  "David Macaulay",
+                  "Neil Ardley"
+                ],
+                "why_recommended": "A comprehensive, beautifully illustrated guide to machines and mechanical principles\u2014moves from simple machines (levers, pulleys) to complex systems, perfect for deepening engineering understanding with clear explanations.",
+                "notes": "Young Adult/reference hybrid; canonical work; David Macaulay's distinctive visual style makes complex concepts accessible; ideal for sustained learning about how mechanisms actually function"
+              },
+              {
+                "title": "The STEM Club Goes Exploring",
+                "authors": [
+                  "Lois Melbourne"
+                ],
+                "why_recommended": "Shows real-world engineering careers and how professionals use mechanical knowledge\u2014helps contextualize learning by demonstrating that cars and mechanisms are designed by actual engineers with interesting jobs.",
+                "notes": "Juvenile Fiction; career-oriented; bridges theoretical learning to professional application in STEM fields"
+              }
+            ],
+            "notes": "This progression starts with inspiring stories about invention, moves into hands-on building, then shifts to understanding the science behind mechanisms, and concludes with real-world career context. The candidate list has limited books specifically about cars and automotive engineering; however, these selections focus on mechanical principles, machines, and engineering thinking that directly apply to car design. The Way Things Work Now is the standout canonical resource that will provide the depth needed for genuine engineering understanding. Consider supplementing with dedicated automotive or mechanical engineering books if available in your full catalog."
+          }
+        ]
+      },
+      "evaluation": {
+        "relevance_score": 4,
+        "real_books_score": 4,
+        "selection_quality_score": 3,
+        "overall_score": 3,
+        "feedback": "The response includes the two expected touchstone titles (If I Built a Car, Mike Mulligan) but places them oddly at Level 4 rather than early in the progression as expected; T is for Turbo is missing entirely. The progression is thoughtfully annotated with honest caveats about catalog gaps, and books mostly appear real, but ordering logic is inconsistent (classic picture books appear late, and some later levels reuse simpler titles), reducing the coherence of a true simple-to-complex trajectory."
+      },
+      "elapsed_s": 57.1
+    },
+    {
+      "test_id": "05",
+      "status": "scored",
+      "query": "My 4 year son likes cars. What other kinds of books do you think he'd enjoy?",
+      "api_response": {
+        "query": "My 4 year son likes cars. What other kinds of books do you think he'd enjoy?",
+        "request_type": "exploration",
+        "search_query": "trucks \"picture book\" subject:\"picture books\" | construction OR building \"picture book\" subject:\"picture books\" | trains \"picture book\" subject:\"picture books\" | airplanes OR flying \"picture book\" subject:\"picture books\" | animals OR adventure \"picture book\" subject:\"picture books\"",
+        "audience_range": "preschool",
+        "candidates_found": 48,
+        "recommendations": [
+          {
+            "title": "Hush, Little Trucker",
+            "authors": [
+              "Kim Norman"
+            ],
+            "why_recommended": "A vehicle-themed bedtime picture book perfect for a 4-year-old truck lover, offering a soothing spin on a classic lullaby.",
+            "notes": "Age 2-5. Specifically designed for toddlers who love trucks."
+          },
+          {
+            "title": "A Truck Goes Rattley-Bumpa",
+            "authors": [
+              "Jonathan London"
+            ],
+            "why_recommended": "Describes trucks of various sizes and colors doing different tasks, directly matching a young child's fascination with working vehicles.",
+            "notes": "Age 3-6. Juvenile fiction with onomatopoeia that appeals to preschoolers."
+          },
+          {
+            "title": "Dig, Dump, Roll",
+            "authors": [
+              "Sally Sutton",
+              "Brian Lovelock"
+            ],
+            "why_recommended": "Interactive picture book featuring construction vehicles with rhythmic, engaging text that encourages participation\u2014ideal for preschool reading.",
+            "notes": "Age 2-5. From bestselling creators; highly interactive format."
+          },
+          {
+            "title": "The Construction Crew",
+            "authors": [
+              "Lynn Meltzer"
+            ],
+            "why_recommended": "Shows a construction crew at work building\u2014expands the child's interest from just cars/trucks to the broader world of working machines and building.",
+            "notes": "Age 3-6. Different but related vehicle-focused narrative."
+          },
+          {
+            "title": "Here Comes the Train",
+            "authors": [
+              "Charlotte Voake"
+            ],
+            "why_recommended": "A gentle story about watching trains arrive regularly, introducing trains as a complementary vehicle interest to cars and trucks.",
+            "notes": "Age 3-6. Juvenile fiction; calming, observational narrative perfect for young vehicle enthusiasts."
+          },
+          {
+            "title": "Richard Scarry's Trains",
+            "authors": [
+              "Richard Scarry"
+            ],
+            "why_recommended": "Classic picture book featuring animals with trains, extending vehicle interest into the train category with Scarry's signature accessible, busy illustrations.",
+            "notes": "Age 2-5. Well-established children's author; perfect for this age group."
+          },
+          {
+            "title": "Listen Up! Train Song",
+            "authors": [
+              "Victoria Allenby"
+            ],
+            "why_recommended": "Multilayered read-aloud celebrating trains with sound, rhyme, and rhythm\u2014engages a preschooler's love of vehicles through music and language play.",
+            "notes": "Age 2-4. Now available in board book format for durability with young children."
+          },
+          {
+            "title": "Roxie Loves Adventure",
+            "authors": [
+              "Sudipta Bardhan-Quallen"
+            ],
+            "why_recommended": "Expands beyond vehicles into adventure and problem-solving with a relatable animal character, offering narrative depth beyond simple vehicle appreciation.",
+            "notes": "Age 3-7. Introduces a adventurous protagonist different from transportation focus but engaging for curious 4-year-olds."
+          }
+        ],
+        "overall_notes": "These recommendations balance staying close to the child's stated interest in cars (trucks category) while introducing related vehicle categories (trains) and expanding into complementary interests (construction/adventure) that appeal to the same preschool-age curiosity. All selections are age-appropriate picture books with engaging illustrations and language suitable for 4-year-olds. The list includes well-established children's authors and interactive/participatory formats that encourage continued engagement."
+      },
+      "evaluation": {
+        "relevance_score": 4,
+        "real_books_score": 5,
+        "selection_quality_score": 3,
+        "overall_score": 3,
+        "feedback": "The recommendations stay strongly within the truck/train vehicle theme, which is relevant but only lightly lateral; missing categories like airplanes (despite being in the search query), puzzle/maze books, or building/construction toys as suggested by the expected criteria. Titles appear to be real, coherent books with accurate author pairing, but the selection is somewhat redundant (5 of 8 are vehicle-themed) rather than exploring diverse adjacent interests."
+      },
+      "elapsed_s": 25.6
+    }
+  ]
+}

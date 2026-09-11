@@ -28,8 +28,10 @@ Return ONLY a JSON object with EXACTLY these fields (no markdown, no explanation
 
 ## FIELD DEFINITIONS
 
-**themes**: 4-5 CONCRETE, SEARCHABLE keywords - terms that plausibly appear in a
-real book's title, description, or subject category on Google Books. NOT
+**themes**: EXACTLY 3 CONCRETE, SEARCHABLE keywords - terms that plausibly appear in a
+real book's title, description, or subject category on Google Books. Each becomes
+an independent search, so pick the 3 that matter most rather than listing more;
+extra themes beyond 3 are never used. NOT
 abstract reasoning about what the reader needs.
 
 Translate the user's underlying need into concrete descriptors, don't pass
@@ -150,14 +152,23 @@ Examples:
 - "Recent books about..." → false
 
 **known_titles**: ONLY populate when use_canonical_search is true. An array
-of 3-6 SPECIFIC, REAL book titles (include the author if it helps
-disambiguate, e.g. "Klara and the Sun by Kazuo Ishiguro") that you already
-know are well-regarded, canonical works fitting this request. These get
-searched directly by title on Google Books to guarantee they're considered
-as candidates, supplementing (not replacing) the topical keyword search.
-Only name titles/authors you're confident actually exist - if you aren't
-sure a title is real, leave it out rather than guessing. Empty array if
-use_canonical_search is false or you can't confidently name any.
+of UP TO 4 SPECIFIC, REAL book titles that you already know are
+well-regarded, canonical works fitting this request. These get searched
+directly by title on Google Books to guarantee they're considered as
+candidates, supplementing (not replacing) the topical keyword search.
+
+FORMAT EACH ENTRY EXACTLY AS: `<Title> by <Author>` - title first, then the
+literal word "by", then the author. Always include the author in this exact
+form when you know it. Do NOT use a possessive ("Rupi Kaur's The Sun and Her
+Flowers") or a dash ("The Sun and Her Flowers - Rupi Kaur") or any other
+phrasing - only "Title by Author". Correct: "The Sun and Her Flowers by
+Rupi Kaur". Wrong: "Rupi Kaur's The Sun and Her Flowers".
+
+If you're confident about more than 4, pick the 4 you're most confident are
+both real and central to this specific request. Only name titles/authors
+you're confident actually exist - if you aren't sure a title is real, leave
+it out rather than guessing. Empty array if use_canonical_search is false or
+you can't confidently name any.
 
 **audience_range**: Reader age/development level (maps directly to Google Books audience):
 - "toddler" = 1-3 years (board books, touch-and-feel)
@@ -308,6 +319,40 @@ Note: top-level "known_titles" stays empty for progression - canonical fit is
 level-specific here, so titles are named per-level instead. Not every level
 needs one; Levels 2 and 3 above have no confident canonical match, which is
 normal and fine.
+"""
+
+
+# Tier-2 broaden-retrieval prompt (Phase 2 retry loop). Only reached when the
+# cheap tier-1 retry (dropping the subject: filter and re-searching) still
+# produced too few candidates. Given the full history of what's been tried,
+# propose a genuinely different search, not a small tweak - if narrower
+# keywords starved the pool, more of the same narrow logic won't fix it.
+BROADEN_SEARCH_SYSTEM_PROMPT = """You are helping recover a book search that returned too few results.
+
+The original search (topic keywords, optionally narrowed further after a first
+retry) didn't find enough candidates. You'll be given the original request and
+exactly what's been tried so far. Propose a BROADER search: themes that are
+more general or take a different angle, and any additional well-known/
+canonical titles you're confident actually exist that weren't already tried.
+
+Guidance:
+- If the failed keywords were narrow/specific (e.g. a sub-genre, a specific
+  technique), widen to the parent category or a more common way people
+  actually search for this (e.g. "hard magic fantasy" -> "epic fantasy" if
+  the narrower term starved the pool).
+- Don't just resubmit the same themes with minor spelling variations - that
+  won't find new results. Change the angle.
+- Only add known_titles you're genuinely confident are real, existing books.
+  It's fine to return an empty list if you can't think of any beyond what's
+  already been tried.
+- EXACTLY 3 new themes, up to 4 known_titles total (including any worth
+  keeping from what was already tried).
+
+Return ONLY a JSON object (no markdown, no explanation):
+{
+  "themes": ["broader theme 1", "broader theme 2", "broader theme 3"],
+  "known_titles": ["Title by Author", ...]
+}
 """
 
 

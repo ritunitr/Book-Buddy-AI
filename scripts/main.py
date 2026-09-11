@@ -16,6 +16,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import RedirectResponse
 from pydantic import BaseModel, Field
 from dotenv import load_dotenv
+from langsmith import traceable
 
 from intent_extractor import extract_intent
 from fetch_candidate_books import fetch_candidate_books
@@ -159,6 +160,7 @@ async def health_check():
 
 
 @app.post("/recommend")
+@traceable(name="recommend_request")
 async def recommend_books_endpoint(request: RecommendationRequest):
     """
     Get book recommendations based on natural language query.
@@ -170,12 +172,19 @@ async def recommend_books_endpoint(request: RecommendationRequest):
 
     Handles both general and progression queries.
     Saves all intermediate results if enabled.
+
+    @traceable makes this the root LangSmith trace for the whole request -
+    the wrapped Anthropic clients (intent_extractor, book_recommender) and
+    the @traceable google_books_search calls all nest under it automatically,
+    giving one trace per request with total latency, LLM call count, tool
+    call count, and token usage all visible together.
     """
     try:
         # Only save to aggregated files, not individual run directories
         # Step 1: Extract structured recommendation intent
         print(f"\n[Step 1] Extracting recommendation intent...")
         intent = extract_intent(request.query)
+        intent["original_query"] = request.query  # needed by Phase 2's tier-2 broaden call for context
         append_to_aggregated(request.query, "intent_extracted", intent, request.save_results)
         print(f"  ✓ Intent: {intent.get('recommendation_type')} - Genre: {intent.get('genre')} - Format: {intent.get('format')}")
 
@@ -205,7 +214,7 @@ async def recommend_books_endpoint(request: RecommendationRequest):
         if request_type == "progression":
             levels = []
             for level in recommendations.get("levels", []):
-                levels.append({
+                level_out = {
                     "level": level["level"],
                     "description": level["description"],
                     "audience_range": level["audience_range"],
@@ -220,7 +229,12 @@ async def recommend_books_endpoint(request: RecommendationRequest):
                         for rec in level["recommendations"]
                     ],
                     "notes": level.get("notes", "")
-                })
+                }
+                # Phase 2: only present if this level's retrieval actually retried
+                if level.get("retrieval_attempts"):
+                    level_out["retrieval_debug"] = level.get("retrieval_debug", [])
+                    level_out["retrieval_attempts"] = level["retrieval_attempts"]
+                levels.append(level_out)
 
             return {
                 "query": request.query,
@@ -229,7 +243,7 @@ async def recommend_books_endpoint(request: RecommendationRequest):
                 "levels": levels
             }
         else:
-            return {
+            response = {
                 "query": request.query,
                 "request_type": request_type,
                 "search_query": recommendations.get("search_query", ""),
@@ -246,6 +260,11 @@ async def recommend_books_endpoint(request: RecommendationRequest):
                 ],
                 "overall_notes": recommendations.get("overall_notes", "")
             }
+            # Phase 2: only present if retrieval actually retried
+            if recommendations.get("retrieval_attempts"):
+                response["retrieval_debug"] = recommendations.get("retrieval_debug", [])
+                response["retrieval_attempts"] = recommendations["retrieval_attempts"]
+            return response
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error: {str(e)}")

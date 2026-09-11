@@ -5,6 +5,12 @@ uvicorn[standard]>=0.27.0
 # LLM - Anthropic SDK for Claude API
 anthropic>=0.18.0
 
+# Observability - traces LLM calls (tokens, latency) and tool calls to LangSmith
+langsmith>=0.12.0
+
+# Phase 2 - bounded retry graph for agentic retrieval on bad results
+langgraph>=1.0.0
+
 # Data Processing
 pandas>=2.0.0
 
@@ -14,3 +20,6 @@ pydantic>=2.5.0
 pydantic-settings>=2.1.0
 requests>=2.31.0
 httpx>=0.26.0
+
+# Testing
+pytest>=7.4.0

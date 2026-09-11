@@ -1,0 +1,473 @@
+{
+  "summary": {
+    "total": 5,
+    "scored": 5,
+    "average_score": 3.2,
+    "score_distribution": {
+      "5": 1,
+      "3": 3,
+      "2": 1
+    },
+    "errored": 0,
+    "skipped": 0
+  },
+  "errored": [],
+  "skipped": [],
+  "all_results": [
+    {
+      "test_id": "16",
+      "status": "scored",
+      "query": "What are some beginner-friendly poetry books for someone who usually finds poetry pretentious?",
+      "api_response": {
+        "query": "What are some beginner-friendly poetry books for someone who usually finds poetry pretentious?",
+        "request_type": "general",
+        "search_query": "poetry \"anthology\" subject:\"fiction\" | \"accessible poetry\" \"anthology\" subject:\"fiction\" | humor \"anthology\" subject:\"fiction\" | intitle:\"Rupi Kaur's The Sun and Her Flowers\" | intitle:\"Mary Oliver's Wild Geese and Other Poems\" | intitle:\"Billy Collins' Sailing Alone Around the Room\" | intitle:\"Shel Silverstein's Where the Sidewalk Ends\"",
+        "audience_range": "adult",
+        "candidates_found": 28,
+        "recommendations": [
+          {
+            "title": "Medicine",
+            "authors": [
+              "Amy Gerstler"
+            ],
+            "why_recommended": "Gerstler is known for 'complex yet accessible poetry' that is playful and subversive\u2014perfect for someone intimidated by pretentious poetry, as her work balances sophistication with approachability and humor.",
+            "notes": "Award-winning contemporary poet; described as accessible despite complexity. Excellent entry point for skeptical readers."
+          },
+          {
+            "title": "In the Clear",
+            "authors": [
+              "Allan Forrie",
+              "Patrick O'Rourke",
+              "Glen A. Sorestad"
+            ],
+            "why_recommended": "This anthology explicitly showcases 'accessible and wide-ranging' contemporary Canadian poetry, directly addressing the need for beginner-friendly verse that won't feel pretentious.",
+            "notes": "Award-winning anthology; curated specifically for accessibility across varied perspectives and content."
+          },
+          {
+            "title": "When She Named Fire",
+            "authors": [
+              "Andrea Hollander Budy"
+            ],
+            "why_recommended": "This anthology compiles talented female poets exploring 'a wide variety of themes and tones ranging from darkly passionate to humorous,' offering approachable diversity that avoids a single intimidating voice or style.",
+            "notes": "Good variety of tones including humor helps demystify poetry for skeptical readers."
+          },
+          {
+            "title": "The Noisy Silence",
+            "authors": [
+              "Bernard Gabriel Okurut"
+            ],
+            "why_recommended": "Described as grounded in African oral tradition, this collection emphasizes storytelling and connection over technical obscurity\u2014a natural, conversational approach to poetry that feels less pretentious.",
+            "notes": "African poetry collection; oral tradition emphasis makes it inherently accessible and grounded."
+          },
+          {
+            "title": "Falling Leaves",
+            "authors": [
+              "Robert Bettmann",
+              "Susan Meehan"
+            ],
+            "why_recommended": "An interfaith poetry anthology on consolation and loss, assembled by local poets from Washington, D.C. The focus on universal human experiences (grief, comfort) makes poetry feel relatable rather than elite.",
+            "notes": "Thematic focus on accessible emotions and experiences; community-based rather than canonically intimidating."
+          },
+          {
+            "title": "And We All Breathe the Same Air: A Poetry Anthology",
+            "authors": [
+              "Augie's Bookshelf"
+            ],
+            "why_recommended": "This collection features 54 poets discovered through Instagram submissions, representing diverse voices and contemporary styles that feel fresh and unpretentious compared to traditional literary canon.",
+            "notes": "Modern, crowdsourced approach; diverse contemporary voices help readers connect with poetry as a living, accessible art form."
+          }
+        ],
+        "overall_notes": "The candidate list is heavy on anthologies, which is advantageous for a beginner wary of pretentiousness\u2014multiple voices, varied tones, and community-based collections feel more approachable than a single author's dense work. The six recommendations prioritize books explicitly described as 'accessible,' grounded in oral/conversational traditions, focused on universal emotions, or featuring contemporary/diverse voices. Several candidates were excluded for being either too specialized (Ottoman lyric poetry), humorous short fiction rather than poetry, or lacking clear beginner-friendly framing. The selections emphasize that poetry can be contemporary, relatable, and fun rather than obscure or elite."
+      },
+      "evaluation": {
+        "relevance_score": 3,
+        "real_books_score": 4,
+        "selection_quality_score": 2,
+        "overall_score": 2,
+        "feedback": "The search query correctly targeted well-known accessible poets (Mary Oliver, Billy Collins, Rupi Kaur, Shel Silverstein), but none of these made it into the final six recommendations, which instead consist entirely of obscure small-press anthologies. This is a major gap against the expected canonical picks that a domain expert would surface for someone new to poetry, even though the chosen books are plausible and thematically on-topic for 'accessibility.'"
+      },
+      "elapsed_s": 30.7
+    },
+    {
+      "test_id": "17",
+      "status": "scored",
+      "query": "Recommend fiction books that feature complex corporate strategy and office politics similar to Succession.",
+      "api_response": {
+        "query": "Recommend fiction books that feature complex corporate strategy and office politics similar to Succession.",
+        "request_type": "general",
+        "search_query": "\"corporate strategy\" \"novel\" subject:\"fiction\" | \"office politics\" \"novel\" subject:\"fiction\" | \"power dynamics\" \"novel\" subject:\"fiction\" | intitle:\"Barbarians at the Gate\" | intitle:\"The Firm\" | intitle:\"American Psycho\" | intitle:\"Moneyball\"",
+        "audience_range": "adult",
+        "candidates_found": 59,
+        "recommendations": [
+          {
+            "title": "The Competence Tax",
+            "authors": [
+              "Robert Semakula"
+            ],
+            "why_recommended": "Directly addresses corporate ambition and the personal cost of climbing the corporate ladder as a newly appointed CEO navigates power dynamics and organizational challenges.",
+            "notes": "Contemporary corporate fiction exploring themes of ambition and executive responsibility"
+          },
+          {
+            "title": "Boardroom Heat",
+            "authors": [
+              "Isabella Rose Sterling"
+            ],
+            "why_recommended": "Features Silicon Valley rivals-to-lovers arc with emphasis on corporate strategy, competitive business dynamics, and the personal stakes of high-level business decisions.",
+            "notes": "Workplace romance with substantial corporate strategy elements"
+          },
+          {
+            "title": "Office Politics",
+            "authors": [
+              "Wilfrid Sheed"
+            ],
+            "why_recommended": "Directly titled work exploring office dynamics and professional ambition at a prestigious media organization, capturing interpersonal maneuvering and career navigation.",
+            "notes": "Classic literary fiction praised for its comedic take on workplace culture"
+          },
+          {
+            "title": "American Psycho",
+            "authors": [
+              "Bret Easton Ellis"
+            ],
+            "why_recommended": "Iconic Wall Street novel that dissects corporate culture, ambition, and the ruthlessness of high-finance professionals, featuring dark explorations of power and status obsession.",
+            "notes": "Sophisticated satire of 1980s corporate excess; contains mature and graphic content"
+          },
+          {
+            "title": "The Firm",
+            "authors": [
+              "John Grisham"
+            ],
+            "why_recommended": "Thriller centered on a young lawyer navigating a corrupt law firm, featuring organizational intrigue, power dynamics, and institutional strategy akin to Succession's internal conflicts.",
+            "notes": "Legal thriller with emphasis on corporate structure and organizational deception"
+          },
+          {
+            "title": "Barbarians at the Gate",
+            "authors": [
+              "Bryan Burrough",
+              "John Helyar"
+            ],
+            "why_recommended": "Definitive narrative of a major corporate takeover battle in the 1980s, featuring intense boardroom strategy, ego clashes, and the human drama behind Wall Street power plays.",
+            "notes": "Nonfiction narrative that reads like a novel; exemplary corporate drama and strategy"
+          },
+          {
+            "title": "The Main Chance",
+            "authors": [
+              "Meredith Nicholson"
+            ],
+            "why_recommended": "Early 20th-century novel capturing American entrepreneurial ambition and character studies of business-minded individuals navigating competitive markets and personal ambition.",
+            "notes": "Literary historical fiction exploring themes of ambition and the American business spirit"
+          },
+          {
+            "title": "Good Company",
+            "authors": [
+              "Kate Christensen"
+            ],
+            "why_recommended": "Award-winning novel examining women, power, and self-reckoning in professional contexts, with sharp exploration of workplace dynamics and personal stakes.",
+            "notes": "Literary fiction with emphasis on female perspective in competitive environments"
+          },
+          {
+            "title": "When We Were Bright and Beautiful",
+            "authors": [
+              "Jillian Medoff"
+            ],
+            "why_recommended": "Complex narrative about power dynamics and moral ambiguity in a high-stakes environment, playing with reader expectations about villainy and victim status.",
+            "notes": "Contemporary psychological drama featuring unreliable perspectives and power games"
+          },
+          {
+            "title": "The Coyotes of Carthage",
+            "authors": [
+              "Steven Wright"
+            ],
+            "why_recommended": "Political thriller featuring complex power maneuvering and strategic conflict, with the intricate character work and high-stakes tension similar to Succession's narrative style.",
+            "notes": "Acclaimed debut political thriller with literary quality"
+          }
+        ],
+        "overall_notes": "These selections prioritize fiction with genuine corporate strategy, office politics, and power dynamics similar to Succession's focus on institutional intrigue and personal ambition. The list includes literary classics (Sheed, Nicholson), contemporary corporate fiction (Semakula, Sterling), celebrated thrillers (Grisham, Ellis), and narrative nonfiction (Burrough/Helyar) that explore Wall Street culture and boardroom conflict. Excluded were romance-heavy titles, sci-fi/fantasy, light novels, and works lacking substantive engagement with corporate or organizational complexity. Quality varies, with canonical works (American Psycho, The Firm, Barbarians at the Gate) anchoring the recommendations alongside strong contemporary matches."
+      },
+      "evaluation": {
+        "relevance_score": 3,
+        "real_books_score": 4,
+        "selection_quality_score": 3,
+        "overall_score": 3,
+        "feedback": "The list captures some solid Succession-adjacent picks (American Psycho, The Firm, The Coyotes of Carthage) but strays with a nonfiction title (Barbarians at the Gate) and a romance novel (Boardroom Heat) despite claiming to exclude romance-heavy works, showing inconsistency with the fiction-only request. It also misses iconic satirical corporate fiction like A Man in Full or Disgrace that a domain expert would include, leaving noticeable gaps against the expected canon."
+      },
+      "elapsed_s": 29.5
+    },
+    {
+      "test_id": "18",
+      "status": "scored",
+      "query": "I'm looking for high-fantasy books with hard magic systems and intricate political world-building.",
+      "api_response": {
+        "query": "I'm looking for high-fantasy books with hard magic systems and intricate political world-building.",
+        "request_type": "general",
+        "search_query": "\"hard magic systems\" \"novel\" subject:\"fiction\" | \"political intrigue\" \"novel\" subject:\"fiction\" | \"complex world-building\" \"novel\" subject:\"fiction\" | intitle:\"Mistborn\" | intitle:\"The Name of the Wind\" | intitle:\"The Poppy War\" | intitle:\"A Song of Ice and Fire\"",
+        "audience_range": "adult",
+        "candidates_found": 55,
+        "recommendations": [
+          {
+            "title": "Mistborn",
+            "authors": [
+              "Brandon Sanderson"
+            ],
+            "why_recommended": "Features one of fantasy's most acclaimed hard magic systems (Allomancy) with intricate rules and limitations, set in a richly detailed world with complex political machinations and a heist narrative.",
+            "notes": "Epic fantasy; first in trilogy. Sanderson is renowned for hard magic systems with clear costs and constraints."
+          },
+          {
+            "title": "The Name of the Wind",
+            "authors": [
+              "Patrick Rothfuss"
+            ],
+            "why_recommended": "Presents a deeply explored magic system with strict laws and costs, paired with sophisticated political intrigue and world-building across multiple factions and kingdoms.",
+            "notes": "Epic fantasy; first in The Kingkiller Chronicle series. Over 1 million copies sold; widely praised for both magic system and narrative complexity."
+          },
+          {
+            "title": "The Poppy War",
+            "authors": [
+              "R.F. Kuang"
+            ],
+            "why_recommended": "Combines a hard magic system with shamanism rooted in real-world history, set against complex political warfare and empire-building with deep world-building inspired by 20th-century China.",
+            "notes": "Epic fantasy; first in trilogy. Winner of Reddit Fantasy Award for Best Debut 2018; features militaristic political intrigue."
+          },
+          {
+            "title": "A Game of Thrones",
+            "authors": [
+              "George R.R. Martin"
+            ],
+            "why_recommended": "Masterful political world-building with multiple factions vying for power, intricate character networks, and a magic system that operates under clear constraints rather than arbitrary rules.",
+            "notes": "Epic fantasy; first in A Song of Ice and Fire series. Dense political intrigue and strategic warfare are central to the narrative."
+          },
+          {
+            "title": "Whispers of Ruin",
+            "authors": [
+              "J.D.L. Rosell"
+            ],
+            "why_recommended": "Explicitly described as featuring intricate scheming, treachery, and a city divided by political conflict, with a structured magic system and high-stakes world-building.",
+            "notes": "Epic fantasy; first in The Famine Cycle. Features dragon mythology and a detailed magic system within political complexity."
+          },
+          {
+            "title": "House of Bastiion",
+            "authors": [
+              "K.L. Kolarich"
+            ],
+            "why_recommended": "Praised by New York Times bestselling authors for having some of the best and most complex world-building available, with dualities of power and political structures woven throughout.",
+            "notes": "Young adult fantasy; features intricate political dynamics with strong world-building foundations."
+          },
+          {
+            "title": "The Rightful Queen",
+            "authors": [
+              "Isabelle Steiger"
+            ],
+            "why_recommended": "Second book in an epic series weaving together political factions fighting to reassemble a fallen empire, combining the lives of different social strata in a complex political landscape.",
+            "notes": "Epic fantasy; part of Paths of Lantistyne series; focuses on power dynamics and political reconstruction."
+          },
+          {
+            "title": "The Trials of Ashmount",
+            "authors": [
+              "John Palladino"
+            ],
+            "why_recommended": "A debut novel specifically praised for immersing readers in a fresh fantasy world with a well-developed new magic system and complex world-building alongside fluid action.",
+            "notes": "Epic fantasy debut; explicitly noted for its magic system development and world-building quality."
+          },
+          {
+            "title": "Strangling of the Ocean Serpent",
+            "authors": [
+              "Seth Hobbs"
+            ],
+            "why_recommended": "Praised for complex world-building with vast realm intricacy, combining sophisticated magical elements with political/strategic conflict in a richly detailed secondary world.",
+            "notes": "Epic fantasy; described as 'well-written and complex' with extensive world-building and action sequences."
+          },
+          {
+            "title": "Black Powder, Black Heart",
+            "authors": [
+              "Seth Hobbs"
+            ],
+            "why_recommended": "Features a protagonist navigating complex political and military structures with world-building that emphasizes political scheming and power dynamics in a foreign setting.",
+            "notes": "Epic fantasy; explores themes of political entanglement and survival within structured hierarchies."
+          }
+        ],
+        "overall_notes": "The recommendations prioritize books with explicit attention to both hard/structured magic systems and intricate political world-building. The canonical works (Mistborn, The Name of the Wind, The Poppy War, A Game of Thrones) are included because they are genuinely exceptional fits that define the subgenre. Lesser-known titles (Hobbs, Steiger, Rosell, Palladino, Kolarich) were selected based on specific praise for world-building complexity and magic system development mentioned in their descriptions. Avoided: light novels, historical fiction, science fiction, graphic novels, and works focused primarily on romance or slasher horror. All recommended titles are fiction novels with available, verifiable authors."
+      },
+      "evaluation": {
+        "relevance_score": 3,
+        "real_books_score": 3,
+        "selection_quality_score": 2,
+        "overall_score": 3,
+        "feedback": "Strong core picks (Mistborn, The Poppy War) fit well, but The Name of the Wind and especially A Game of Thrones are debatable as 'hard magic' examples, and the expected staple Wheel of Time is missing entirely. The list is padded with six obscure/possibly self-published titles (including a suspicious typo 'Bastiion' and two books by the same author), diluting quality and diversity rather than offering well-vetted picks."
+      },
+      "elapsed_s": 33.8
+    },
+    {
+      "test_id": "19",
+      "status": "scored",
+      "query": "Suggest books on habit formation and behavioral psychology that are backed by actual scientific research.",
+      "api_response": {
+        "query": "Suggest books on habit formation and behavioral psychology that are backed by actual scientific research.",
+        "request_type": "general",
+        "search_query": "\"habit formation\" | \"behavioral psychology\" | neuroscience | intitle:\"Atomic Habits\" | intitle:\"The Power of Habit\" | intitle:\"Thinking, Fast and Slow\" | intitle:\"Nudge\"",
+        "audience_range": "adult",
+        "candidates_found": 66,
+        "recommendations": [
+          {
+            "title": "Atomic Habits",
+            "authors": [
+              "James Clear"
+            ],
+            "why_recommended": "A bestselling, research-backed guide to habit formation that explains how small incremental changes lead to significant results, grounded in behavioral psychology and neuroscience.",
+            "notes": "Available in multiple languages; includes practical frameworks (cue, routine, reward) based on scientific research. This is the primary English-language edition."
+          },
+          {
+            "title": "The Power of Habit",
+            "authors": [
+              "Charles Duhigg"
+            ],
+            "why_recommended": "A New York Times bestseller that explores habit loops through case studies and scientific research, examining how habits work at individual, organizational, and social levels.",
+            "notes": "Written by a business reporter with research in psychology and neuroscience; extensively documented with real-world examples."
+          },
+          {
+            "title": "Nudge",
+            "authors": [
+              "Richard H. Thaler",
+              "Cass R. Sunstein"
+            ],
+            "why_recommended": "Groundbreaking work on behavioral economics and decision-making that explains how choice architecture and subtle interventions ('nudges') influence human behavior based on psychological research.",
+            "notes": "Nobel Prize-winning research; focuses on practical applications of behavioral science to improve decision-making."
+          },
+          {
+            "title": "Inside the Nudge Unit",
+            "authors": [
+              "David Halpern"
+            ],
+            "why_recommended": "Written by a behavioral scientist leading government's Behavioural Insights Team; demonstrates real-world applications of behavioral psychology and habit change in policy and practice.",
+            "notes": "Foreword by Richard Thaler (Nobel laureate); bridges academic research and practical implementation."
+          },
+          {
+            "title": "Thinking, Fast and Slow",
+            "authors": [
+              "Daniel Kahneman"
+            ],
+            "why_recommended": "Nobel Prize-winning research on cognitive psychology and decision-making; explains how automatic (fast) and deliberate (slow) thinking shape behavior and habitual responses.",
+            "notes": "Authoritative scientific work by leading psychologist; foundational for understanding behavioral patterns and biases."
+          },
+          {
+            "title": "Specialty Competencies in Cognitive and Behavioral Psychology",
+            "authors": [
+              "Christine Maguth Nezu",
+              "Christopher R. Martell",
+              "Arthur M. Nezu"
+            ],
+            "why_recommended": "Written by recognized psychology experts; provides comprehensive, research-based coverage of cognitive and behavioral approaches to understanding and modifying behavior.",
+            "notes": "Professional-level text; more technical than popular science, suitable for deeper academic understanding."
+          },
+          {
+            "title": "Cognitive Neuroscience",
+            "authors": [
+              "Michael Gazzaniga",
+              "Richard B. Ivry",
+              "George R. Mangun"
+            ],
+            "why_recommended": "Gold-standard neuroscience text by world-renowned researchers covering the neural basis of behavior, cognition, and learning\u2014essential for understanding the brain mechanisms underlying habit formation.",
+            "notes": "Advanced scientific text; includes latest research discoveries and clinical applications."
+          },
+          {
+            "title": "The Cognitive Neuroscience of Memory",
+            "authors": [
+              "Howard Eichenbaum"
+            ],
+            "why_recommended": "Explores the biological and neural basis of memory, which is fundamental to understanding how habits are formed, stored, and retrieved in the brain.",
+            "notes": "Rigorous scientific overview; bridges cognitive science and neurobiology related to habit systems."
+          }
+        ],
+        "overall_notes": "The recommendations prioritize well-known canonical works backed by rigorous research (Atomic Habits, The Power of Habit, Nudge, Thinking Fast and Slow) alongside specialized academic texts for deeper scientific understanding. Excluded: superficial self-help books without scientific grounding (e.g., 'Gentle Habit Formation'), finance-focused papers (asset portfolio holdings), unverifiable authors, and notebook/journal products. The selection balances accessibility with scientific rigor to meet the user's explicit requirement for research-backed material."
+      },
+      "evaluation": {
+        "relevance_score": 5,
+        "real_books_score": 5,
+        "selection_quality_score": 5,
+        "overall_score": 5,
+        "feedback": "Excellent selection covering all expected canonical titles (Atomic Habits, Thinking Fast and Slow, Nudge) plus well-chosen complementary academic texts on neuroscience and behavioral psychology, all real and accurately attributed with good diversity and no fluff."
+      },
+      "elapsed_s": 19.9
+    },
+    {
+      "test_id": "20",
+      "status": "scored",
+      "query": "What are some gripping true crime books that focus heavily on the investigative process rather than gore?",
+      "api_response": {
+        "query": "What are some gripping true crime books that focus heavily on the investigative process rather than gore?",
+        "request_type": "general",
+        "search_query": "\"true crime\" | investigation | \"detective work\" | intitle:\"In Cold Blood\" | intitle:\"The Killer Across the Table\" | intitle:\"I'll Be Gone in the Dark\" | intitle:\"Killers: Behind the Myths of History's Most Notorious Serial Murderers\"",
+        "audience_range": "adult",
+        "candidates_found": 26,
+        "recommendations": [
+          {
+            "title": "I'll Be Gone in the Dark",
+            "authors": [
+              "Michelle McNamara"
+            ],
+            "why_recommended": "A gripping investigation into the Golden State Killer case that emphasizes McNamara's methodical detective work, research process, and piecing together clues over many years\u2014perfect for readers interested in investigative process rather than graphic content.",
+            "notes": "HBO documentary series adaptation; Goodreads Best Nonfiction winner; focuses on investigative persistence and cold case methodology"
+          },
+          {
+            "title": "The Killer Across the Table",
+            "authors": [
+              "John E. Douglas",
+              "Mark Olshaker"
+            ],
+            "why_recommended": "Written by the FBI's pioneering criminal profiler, this book details the investigative and profiling techniques used to understand and solve major crimes\u2014directly centering the investigative process over graphic crime details.",
+            "notes": "Inspired the Netflix show Mindhunter; emphasizes behavioral analysis and investigative methodology"
+          },
+          {
+            "title": "The Shallow Grave and Other True Crime Stories from the Case Files of Christian Botha, South Africa's Foremost Private Investigator",
+            "authors": [
+              "Chip Michie",
+              "Christian Botha"
+            ],
+            "why_recommended": "Chronicles actual cases solved by a renowned private investigator, focusing on how he uncovers evidence and reconstructs events\u2014emphasizing detective work and problem-solving over sensationalism.",
+            "notes": "First-hand accounts of investigative process; cases many police had abandoned"
+          },
+          {
+            "title": "In Cold Blood",
+            "authors": [
+              "Truman Capote"
+            ],
+            "why_recommended": "The canonical true crime work that pioneered the genre; meticulously researched and reconstructs the investigation, capture, and trial with literary depth while maintaining focus on the investigative journey.",
+            "notes": "Foundational work in true crime; balances narrative with investigation without gratuitous gore"
+          },
+          {
+            "title": "The Australian Book of True Crime",
+            "authors": [
+              "Larry Writer"
+            ],
+            "why_recommended": "Uses exhaustive research, court records, and police statements to document 21 cases\u2014emphasizing documentary evidence and investigative reconstruction rather than sensationalism.",
+            "notes": "Spans from late 1800s to present; evidence-based approach"
+          },
+          {
+            "title": "People: True Crime Stories",
+            "authors": [
+              "Editors of People Magazine"
+            ],
+            "why_recommended": "Focuses on evidence, suspects, trials, and testimony\u2014the key elements of investigation\u2014as covered by professional journalists documenting the most dramatic cases of the past 30 years.",
+            "notes": "Journalistic approach; emphasizes investigative turning points and trial procedures"
+          },
+          {
+            "title": "Criminal Investigation",
+            "authors": [
+              "James W. Osterburg",
+              "Richard H. Ward"
+            ],
+            "why_recommended": "A foundational text on investigation methodology that details how investigators reconstruct crimes using evidence from people and physical sources\u2014ideal for understanding the investigative process itself.",
+            "notes": "Educational/professional resource; focuses on investigative fundamentals and methodology"
+          }
+        ],
+        "overall_notes": "These seven recommendations prioritize books that emphasize investigative methodology, evidence analysis, and detective work over sensational or graphic details. The well-known canonical works (In Cold Blood, I'll Be Gone in the Dark, The Killer Across the Table) are included because they genuinely fit the request\u2014they're celebrated specifically for balancing compelling narrative with substantive investigative focus. Excluded: writing guides, academic criticism, anthologies lacking investigative focus, juvenile books, and quiz formats that don't align with the 'gripping investigation' requirement."
+      },
+      "evaluation": {
+        "relevance_score": 4,
+        "real_books_score": 4,
+        "selection_quality_score": 3,
+        "overall_score": 3,
+        "feedback": "Includes I'll Be Gone in the Dark and other solid investigative true crime picks, but omits the expected flagship title Killers of the Flower Moon, and the inclusion of an academic textbook (Criminal Investigation) feels out of place for a 'gripping' narrative true crime list."
+      },
+      "elapsed_s": 23.5
+    }
+  ]
+}

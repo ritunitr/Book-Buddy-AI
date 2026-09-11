@@ -3,8 +3,7 @@
     "themes": [
       "cars",
       "trucks",
-      "vehicles",
-      "transportation"
+      "vehicles"
     ],
     "audience_range": "preschool",
     "genre": "fiction",
@@ -13,19 +12,18 @@
     "request_type": "general",
     "use_canonical_search": true,
     "known_titles": [
-      "Goodnight Moon by Margaret Wise Brown",
-      "The Little Blue Truck by Alice Schertle",
-      "Truck by Donald Crews",
-      "Cars by Richard Scarry",
-      "Big Red Barn by Margaret Wise Brown"
-    ]
+      "Richard Scarry's Cars and Trucks and Things That Go",
+      "Little Blue Truck by Alice Schertle",
+      "Goodnight, Goodnight Construction Site by Sherri Duskey Rinker",
+      "The Little Engine That Could by Watty Piper"
+    ],
+    "original_query": "My 4 year old son is into cars and trucks. Give me recommendations of books he'll enjoy."
   },
   "My 4 year old daughter is into cars and trucks. Give me recommendations of books she will enjoy.": {
     "themes": [
       "cars",
       "trucks",
-      "vehicles",
-      "transportation"
+      "vehicles"
     ],
     "audience_range": "preschool",
     "genre": "fiction",
@@ -34,19 +32,18 @@
     "request_type": "general",
     "use_canonical_search": true,
     "known_titles": [
-      "The Little Blue Truck by Alice Schertle",
-      "Trucks by Christopher Savage",
-      "Big Red Barn by Margaret Wise Brown",
-      "Goodnight Moon by Margaret Wise Brown"
-    ]
+      "Richard Scarry's Cars and Trucks and Things That Go",
+      "Little Blue Truck by Alice Schertle",
+      "Tractor Mac by Billy Steers",
+      "Big Red Barn by Margaret Wise Brown"
+    ],
+    "original_query": "My 4 year old daughter is into cars and trucks. Give me recommendations of books she will enjoy."
   },
   "My boy is into cars and trucks. Give me recommendations of books he'll enjoy.": {
     "themes": [
       "cars",
       "trucks",
-      "vehicles",
-      "transportation",
-      "adventure"
+      "vehicles"
     ],
     "audience_range": "not_specified",
     "genre": "mixed",
@@ -55,21 +52,20 @@
     "request_type": "general",
     "use_canonical_search": true,
     "known_titles": [
-      "Cars by Mary Pope Osborne",
-      "Truck Stuck by Mark Rosenthal",
+      "Richard Scarry's Cars and Trucks and Things That Go",
+      "Mike Mulligan and His Steam Shovel by Virginia Lee Burton",
       "Little Blue Truck by Alice Schertle",
-      "Goodnight, Goodnight Construction Site by Sherri Duskey Rinker",
       "Big Red Barn by Margaret Wise Brown"
-    ]
+    ],
+    "original_query": "My boy is into cars and trucks. Give me recommendations of books he'll enjoy."
   },
   "My son likes cars. Recommend a progression of books so he learns about engineering and complex mechanisms gradually.": {
     "themes": [
       "vehicles",
       "engineering",
-      "mechanics",
-      "how things work"
+      "mechanics"
     ],
-    "audience_range": "preschool",
+    "audience_range": "not_specified",
     "genre": "mixed",
     "format": "not_specified",
     "recommendation_type": "progression",
@@ -79,12 +75,11 @@
     "levels": [
       {
         "level": 1,
-        "description": "Introduction to cars and vehicles through pictures",
+        "description": "Introduction to cars and vehicles through pictures and simple stories",
         "keywords": [
           "cars",
           "trucks",
-          "vehicles",
-          "picture books"
+          "vehicles"
         ],
         "audience_range": "toddler",
         "known_titles": [
@@ -93,22 +88,18 @@
       },
       {
         "level": 2,
-        "description": "Different types of vehicles and their purposes",
+        "description": "Different types of vehicles and what they do",
         "keywords": [
           "vehicles",
-          "construction vehicles",
           "transportation",
-          "trucks"
+          "construction vehicles"
         ],
         "audience_range": "preschool",
-        "known_titles": [
-          "Big Red Barn by Margaret Wise Brown",
-          "Goodnight, Goodnight Construction Site by Sherri Duskey Rinker"
-        ]
+        "known_titles": []
       },
       {
         "level": 3,
-        "description": "How machines and mechanical parts work",
+        "description": "Introduction to simple machines and how parts move",
         "keywords": [
           "wheels",
           "gears",
@@ -120,35 +111,34 @@
       },
       {
         "level": 4,
-        "description": "How engines and motors work",
+        "description": "How engines and motors power vehicles",
         "keywords": [
           "engines",
           "motors",
-          "car mechanics",
-          "how cars work"
+          "how cars work",
+          "mechanics"
         ],
         "audience_range": "middle_grade",
         "known_titles": [
-          "Mike Mulligan and His Steam Shovel by Virginia Lee Burton",
-          "If I Built a Car by Chris Van Dusen"
+          "Mike Mulligan and His Steam Shovel by Virginia Lee Burton"
         ]
       },
       {
         "level": 5,
-        "description": "Engineering design and maker projects",
+        "description": "Engineering design, building, and maker projects",
         "keywords": [
           "engineering",
           "STEM",
-          "building projects",
           "invention",
-          "design"
+          "building projects"
         ],
         "audience_range": "middle_grade",
         "known_titles": [
-          "The Way Things Work Now by Macaulay"
+          "If I Built a Car by Chris Van Dusen"
         ]
       }
-    ]
+    ],
+    "original_query": "My son likes cars. Recommend a progression of books so he learns about engineering and complex mechanisms gradually."
   },
   "My 4 year son likes cars. What other kinds of books do you think he'd enjoy?": {
     "themes": [
@@ -174,50 +164,43 @@
         "how things work"
       ],
       [
-        "action",
-        "adventure"
-      ],
-      [
-        "animals",
-        "friendships"
+        "adventure",
+        "action"
       ]
     ],
     "use_canonical_search": true,
     "known_titles": [
       "Richard Scarry's Cars and Trucks and Things That Go",
-      "The Little Blue Truck by Alice Schertle",
-      "Click, Clack, Moo by Doreen Cronin",
-      "Pete the Cat by James Dean"
-    ]
+      "Little Blue Truck by Alice Schertle",
+      "Goodnight, Goodnight Construction Site by Sherri Duskey Rinker",
+      "Click, Clack, Moo by Doreen Cronin"
+    ],
+    "original_query": "My 4 year son likes cars. What other kinds of books do you think he'd enjoy?"
   },
   "I want my 5 year old to enjoy cooking. What books I can read to teach him cooking.": {
     "themes": [
       "cooking for kids",
-      "recipes kids",
-      "cooking activities children",
-      "kitchen skills",
-      "food"
+      "simple recipes children",
+      "kitchen activities"
     ],
     "audience_range": "preschool",
-    "genre": "nonfiction",
+    "genre": "mixed",
     "format": "not_specified",
     "recommendation_type": "general",
     "request_type": "general",
     "use_canonical_search": true,
     "known_titles": [
-      "Cooking with Kids by Salad Rohde",
-      "Little Chef by Kate Hewson",
-      "The Toddler Cookbook by Pesach Lattin",
-      "Good Enough to Eat by Lizzy Rockwell"
-    ]
+      "Cooking with Kids by Katie Gould",
+      "The Little Chef by Helen Wilkes",
+      "Cook and Learn by Patricia Feathers"
+    ],
+    "original_query": "I want my 5 year old to enjoy cooking. What books I can read to teach him cooking."
   },
   "I am a software engineer and I want to write a book about being a software engineer in the AI world. Suggest some helpful books.": {
     "themes": [
-      "software engineering",
       "artificial intelligence",
-      "AI systems",
-      "technical writing",
-      "engineering practices"
+      "software engineering",
+      "technical writing"
     ],
     "audience_range": "adult",
     "genre": "nonfiction",
@@ -227,20 +210,17 @@
     "use_canonical_search": true,
     "known_titles": [
       "Designing Machine Learning Systems by Chip Huyen",
-      "Building Machine Learning Powered Applications by Emmanuel Ameisen",
-      "Designing Data-Intensive Applications by Martin Kleppmann",
       "The Pragmatic Programmer by David Thomas and Andrew Hunt",
-      "Software Engineering at Google by Titus Winters, Tom Manshreck, and Hyrum Wright"
+      "AI Engineering by Chip Huyen",
+      "Weapons of Math Destruction by Cathy O'Neil"
     ],
-    "exploration_themes": []
+    "original_query": "I am a software engineer and I want to write a book about being a software engineer in the AI world. Suggest some helpful books."
   },
   "I want some spiritual guidance that can give me peace and direction. Recommend books.": {
     "themes": [
       "spirituality",
       "mindfulness",
-      "self-discovery",
-      "peace",
-      "meaning"
+      "self-discovery"
     ],
     "audience_range": "adult",
     "genre": "nonfiction",
@@ -251,18 +231,17 @@
     "known_titles": [
       "The Power of Now by Eckhart Tolle",
       "Man's Search for Meaning by Viktor Frankl",
-      "Wherever You Go, There You Are by Jon Kabat-Zinn",
       "The Untethered Soul by Michael A. Singer",
       "When Things Fall Apart by Pema Ch\u00f6dr\u00f6n"
-    ]
+    ],
+    "original_query": "I want some spiritual guidance that can give me peace and direction. Recommend books."
   },
   "I want some spiritual guidance that can give me peace and direction. Recommend some Indian inspired books.": {
     "themes": [
       "spirituality",
       "Indian philosophy",
       "mindfulness",
-      "self-help",
-      "wisdom"
+      "inner peace"
     ],
     "audience_range": "adult",
     "genre": "nonfiction",
@@ -273,18 +252,16 @@
     "known_titles": [
       "The Bhagavad Gita",
       "The Yoga Sutras of Patanjali",
-      "Siddhartha by Hermann Hesse",
       "The Upanishads",
-      "I Am That by Nisargadatta Maharaj",
-      "The Power of Now by Eckhart Tolle"
-    ]
+      "Siddhartha by Hermann Hesse"
+    ],
+    "original_query": "I want some spiritual guidance that can give me peace and direction. Recommend some Indian inspired books."
   },
   "Recommend a sci-fi book that deals heavily with artificial intelligence ethics and consciousness.": {
     "themes": [
       "artificial intelligence",
       "AI ethics",
-      "consciousness",
-      "philosophy"
+      "consciousness"
     ],
     "audience_range": "adult",
     "genre": "fiction",
@@ -296,15 +273,14 @@
       "Do Androids Dream of Electric Sheep? by Philip K. Dick",
       "Klara and the Sun by Kazuo Ishiguro",
       "Ancillary Justice by Ann Leckie",
-      "The Expelled by David Langford",
       "Machines Like Me by Ian McEwan"
-    ]
+    ],
+    "original_query": "Recommend a sci-fi book that deals heavily with artificial intelligence ethics and consciousness."
   },
   "What are the best books to learn system design for a senior engineer preparing for big tech interviews?": {
     "themes": [
       "system design",
       "distributed systems",
-      "software architecture",
       "scalability"
     ],
     "audience_range": "adult",
@@ -316,18 +292,16 @@
     "known_titles": [
       "Designing Data-Intensive Applications by Martin Kleppmann",
       "System Design Interview by Alex Xu",
-      "The System Design Primer by Alex Xu and Shuai Raj",
-      "Building Microservices by Sam Newman",
-      "Site Reliability Engineering by Google",
-      "Designing Distributed Systems by Brendan Burns"
-    ]
+      "The Art of Scalability by Martin Abbott and Michael T. Fisher",
+      "Building Microservices by Sam Newman"
+    ],
+    "original_query": "What are the best books to learn system design for a senior engineer preparing for big tech interviews?"
   },
   "My 8-year-old is a reluctant reader but loves graphic novels. What adventure series should I get them?": {
     "themes": [
       "adventure",
       "humor",
-      "action",
-      "fast-paced"
+      "action"
     ],
     "audience_range": "early_reader",
     "genre": "fiction",
@@ -337,19 +311,17 @@
     "use_canonical_search": true,
     "known_titles": [
       "Dog Man by Dav Pilkey",
+      "Wings of Fire: The Dragonet Prophecy (graphic novel)",
       "Amulet by Kazu Kibuishi",
-      "Wings of Fire: The Dragonet Prophecy (graphic novel adaptation)",
-      "Smile by Raina Telgemeier",
-      "Nathan Hale's Hazardous Tales series"
-    ]
+      "Hilo by Judd Winick"
+    ],
+    "original_query": "My 8-year-old is a reluctant reader but loves graphic novels. What adventure series should I get them?"
   },
   "Recommend some classic literature translated from Japanese that explores modern urban loneliness.": {
     "themes": [
       "Japanese literature",
       "urban loneliness",
-      "modern isolation",
-      "contemporary Japan",
-      "psychological fiction"
+      "modern society"
     ],
     "audience_range": "adult",
     "genre": "fiction",
@@ -361,17 +333,15 @@
       "Norwegian Wood by Haruki Murakami",
       "Kitchen by Banana Yoshimoto",
       "The Temple of the Golden Pavilion by Yukio Mishima",
-      "South of the Border, West of the Sun by Haruki Murakami",
-      "Convenience Store Woman by Sayaka Murata"
-    ]
+      "Kafka on the Shore by Haruki Murakami"
+    ],
+    "original_query": "Recommend some classic literature translated from Japanese that explores modern urban loneliness."
   },
   "I need a book on personal finance tailored for someone starting mid-career with a tech salary.": {
     "themes": [
       "personal finance",
-      "investment",
-      "wealth management",
-      "tech salary",
-      "financial planning"
+      "investing",
+      "wealth building"
     ],
     "audience_range": "adult",
     "genre": "nonfiction",
@@ -380,20 +350,18 @@
     "request_type": "general",
     "use_canonical_search": true,
     "known_titles": [
-      "The Bogleheads' Guide to Investing",
-      "I Will Teach You to Be Rich by Ramit Sethi",
+      "The Intelligent Investor by Benjamin Graham",
       "A Random Walk Down Wall Street by Burton Malkiel",
-      "The Simple Path to Wealth by JL Collins",
-      "Money: Master the Game by Tony Robbins"
-    ]
+      "I Will Teach You to Be Rich by Ramit Sethi",
+      "The Bogleheads' Guide to Investing by Taylor Larson"
+    ],
+    "original_query": "I need a book on personal finance tailored for someone starting mid-career with a tech salary."
   },
   "Give me history book recommendations about the silicon valley tech boom from the 1970s to 90s.": {
     "themes": [
-      "Silicon Valley",
-      "technology history",
-      "computer industry",
-      "1970s 1980s 1990s",
-      "startup culture"
+      "Silicon Valley history",
+      "technology industry",
+      "1970s 1980s 1990s"
     ],
     "audience_range": "adult",
     "genre": "nonfiction",
@@ -403,18 +371,16 @@
     "use_canonical_search": true,
     "known_titles": [
       "The Innovators by Walter Isaacson",
-      "Fire in the Valley by Paul Freiberger and Michael Swaine",
-      "The Accidental Billionaires by Ben Mezrich",
+      "The Code Breaker by Walter Isaacson",
       "Dealers of Lightning by Michael A. Hiltzik",
-      "The Ride of a Lifetime by Robert Iger"
-    ]
+      "The Silicon Boys by David A. Kaplan"
+    ],
+    "original_query": "Give me history book recommendations about the silicon valley tech boom from the 1970s to 90s."
   },
   "What are some beginner-friendly poetry books for someone who usually finds poetry pretentious?": {
     "themes": [
       "poetry",
-      "accessible",
-      "humor",
-      "everyday life",
+      "accessible poetry",
       "contemporary poetry"
     ],
     "audience_range": "adult",
@@ -427,17 +393,15 @@
       "Milk and Honey by Rupi Kaur",
       "The Sun and Her Flowers by Rupi Kaur",
       "Citizen by Claudia Rankine",
-      "Love that Boy by Ron Fournier",
-      "Wearing Overalls to Church by David Tufts"
-    ]
+      "Good Bones by Maggie Smith"
+    ],
+    "original_query": "What are some beginner-friendly poetry books for someone who usually finds poetry pretentious?"
   },
   "Recommend fiction books that feature complex corporate strategy and office politics similar to Succession.": {
     "themes": [
-      "corporate politics",
-      "power dynamics",
-      "business drama",
-      "workplace conflict",
-      "ambition"
+      "corporate strategy",
+      "office politics",
+      "power dynamics"
     ],
     "audience_range": "adult",
     "genre": "fiction",
@@ -447,19 +411,17 @@
     "use_canonical_search": true,
     "known_titles": [
       "Barbarians at the Gate by Bryan Burrough and John Helyar",
-      "The Bonfire of the Vanities by Tom Wolfe",
-      "American Psycho by Bret Easton Ellis",
-      "Debt of Honor by Tom Clancy",
       "The Firm by John Grisham",
-      "Disclosure by Michael Crichton"
-    ]
+      "American Psycho by Bret Easton Ellis",
+      "Moneyball by Michael Lewis"
+    ],
+    "original_query": "Recommend fiction books that feature complex corporate strategy and office politics similar to Succession."
   },
   "I'm looking for high-fantasy books with hard magic systems and intricate political world-building.": {
     "themes": [
       "hard magic systems",
       "political intrigue",
-      "world-building",
-      "fantasy"
+      "complex world-building"
     ],
     "audience_range": "adult",
     "genre": "fiction",
@@ -471,18 +433,15 @@
       "Mistborn by Brandon Sanderson",
       "The Name of the Wind by Patrick Rothfuss",
       "The Poppy War by R.F. Kuang",
-      "A Song of Ice and Fire by George R.R. Martin",
-      "The Stormlight Archive by Brandon Sanderson",
-      "The Blade Itself by Joe Abercrombie"
-    ]
+      "A Song of Ice and Fire by George R.R. Martin"
+    ],
+    "original_query": "I'm looking for high-fantasy books with hard magic systems and intricate political world-building."
   },
   "Suggest books on habit formation and behavioral psychology that are backed by actual scientific research.": {
     "themes": [
       "habit formation",
       "behavioral psychology",
-      "neuroscience",
-      "behavioral change",
-      "evidence-based"
+      "neuroscience"
     ],
     "audience_range": "adult",
     "genre": "nonfiction",
@@ -494,17 +453,15 @@
       "Atomic Habits by James Clear",
       "The Power of Habit by Charles Duhigg",
       "Thinking, Fast and Slow by Daniel Kahneman",
-      "Predictably Irrational by Dan Ariely",
-      "How to Change by Katy Milkman"
-    ]
+      "Nudge by Richard Thaler and Cass Sunstein"
+    ],
+    "original_query": "Suggest books on habit formation and behavioral psychology that are backed by actual scientific research."
   },
   "What are some gripping true crime books that focus heavily on the investigative process rather than gore?": {
     "themes": [
       "true crime",
       "investigation",
-      "detective work",
-      "criminal justice",
-      "forensic evidence"
+      "detective work"
     ],
     "audience_range": "adult",
     "genre": "nonfiction",
@@ -513,12 +470,11 @@
     "request_type": "general",
     "use_canonical_search": true,
     "known_titles": [
-      "I'll Be Gone in the Dark by Michelle McNamara",
-      "The Devil in the White City by Erik Larson",
       "In Cold Blood by Truman Capote",
-      "Killers of the Flower Moon by David Grann",
-      "The Immortal Life of Henrietta Lacks by Rebecca Skloot",
-      "Helter Skelter by Vincent Bugliosi"
-    ]
+      "The Killer Across the Table by John Douglas",
+      "I'll Be Gone in the Dark by Michelle McNamara",
+      "Killers: Behind the Myths of History's Most Notorious Serial Murderers by John Douglas"
+    ],
+    "original_query": "What are some gripping true crime books that focus heavily on the investigative process rather than gore?"
   }
 }

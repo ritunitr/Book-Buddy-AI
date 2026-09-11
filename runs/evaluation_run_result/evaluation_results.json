@@ -2,24 +2,105 @@
   "summary": {
     "total": 1,
     "scored": 1,
-    "average_score": null,
-    "score_distribution": {},
-    "errored": 1,
+    "average_score": 3.0,
+    "score_distribution": {
+      "3": 1
+    },
+    "errored": 0,
     "skipped": 0
   },
-  "errored": [
-    {
-      "test_id": "04",
-      "reason": "API call failed: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=120)"
-    }
-  ],
+  "errored": [],
   "skipped": [],
   "all_results": [
     {
-      "test_id": "04",
-      "status": "error",
-      "reason": "api_error",
-      "error": "HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=120)"
+      "test_id": "16",
+      "status": "scored",
+      "query": "What are some beginner-friendly poetry books for someone who usually finds poetry pretentious?",
+      "api_response": {
+        "query": "What are some beginner-friendly poetry books for someone who usually finds poetry pretentious?",
+        "request_type": "general",
+        "search_query": "poetry \"anthology\" subject:\"fiction\" | \"accessible poetry\" \"anthology\" subject:\"fiction\" | \"contemporary poetry\" \"anthology\" subject:\"fiction\" | intitle:\"Milk and Honey\" | intitle:\"The Sun and Her Flowers\" | intitle:\"Citizen\" | intitle:\"Good Bones\"",
+        "audience_range": "adult",
+        "candidates_found": 36,
+        "recommendations": [
+          {
+            "title": "Milk and Honey",
+            "authors": [
+              "Rupi Kaur"
+            ],
+            "why_recommended": "A massively popular, accessible poetry collection with short, relatable verses about relationships and self-discovery\u2014perfect for someone intimidated by 'difficult' poetry, as it prioritizes emotional directness over obscurity.",
+            "notes": "Over 3 million copies sold; accessible, contemporary voice; often recommended as an entry point to poetry"
+          },
+          {
+            "title": "Good Bones",
+            "authors": [
+              "Maggie Smith"
+            ],
+            "why_recommended": "Contemporary poems grounded in everyday experience (motherhood, observation) that feel genuine and human rather than overly cerebral, making poetry feel relatable rather than pretentious.",
+            "notes": "Accessible yet award-winning; strong emotional resonance without academic obscurity"
+          },
+          {
+            "title": "In the Clear",
+            "authors": [
+              "Allan Forrie",
+              "Patrick O'Rourke",
+              "Glen A. Sorestad"
+            ],
+            "why_recommended": "Explicitly described as 'accessible and wide-ranging' contemporary Canadian poetry\u2014designed for readers seeking clarity and varied perspectives without academic complexity.",
+            "notes": "Winner of Saskatchewan Book Award for Publishing in Education; vetted for accessibility"
+          },
+          {
+            "title": "The Noisy Silence",
+            "authors": [
+              "Bernard Gabriel Okurut"
+            ],
+            "why_recommended": "African poetry collection designed as 'a true replica of African oral tradition'\u2014emphasizes storytelling and human connection over formalism, making it feel natural and unpretentious.",
+            "notes": "Roots poetry in oral tradition and cultural voice rather than academic conventions"
+          },
+          {
+            "title": "Falling Leaves",
+            "authors": [
+              "Robert Bettmann",
+              "Susan Meehan"
+            ],
+            "why_recommended": "An interfaith poetry anthology on consolation and loss\u2014grounded in genuine human experience and emotional truth, with a clear thematic focus that makes the poetry purposeful rather than obscure.",
+            "notes": "Themed anthology on universal experiences; accessible, community-focused"
+          },
+          {
+            "title": "Medicine",
+            "authors": [
+              "Amy Gerstler"
+            ],
+            "why_recommended": "Described as 'complex yet accessible' with playful and surreal elements\u2014shows that contemporary poetry can be intelligent and imaginative without being pretentious or impenetrable.",
+            "notes": "Award-winning; balances sophistication with readability and humor"
+          },
+          {
+            "title": "The Sun and Her Flowers",
+            "authors": [
+              "Rupi Kaur"
+            ],
+            "why_recommended": "Second bestselling collection from the author of Milk and Honey, maintaining the same accessible, emotionally direct style that has made poetry feel approachable to millions of readers.",
+            "notes": "#1 New York Times bestseller; consistent with Milk and Honey's tone"
+          },
+          {
+            "title": "When She Named Fire",
+            "authors": [
+              "Andrea Hollander Budy"
+            ],
+            "why_recommended": "Anthology of U.S. female poets exploring diverse themes with tones ranging from darkly passionate to humorous\u2014demonstrates that poetry can be varied, emotionally honest, and even funny without being stuffy.",
+            "notes": "Wide range of voices and tones; humor and passion make poetry feel human"
+          }
+        ],
+        "overall_notes": "These recommendations prioritize contemporary, emotionally direct poetry that emphasizes accessibility and human connection over academic complexity or formalism. Rupi Kaur's work is included because it's specifically designed for readers who find traditional poetry intimidating. The selections avoid overly theoretical or obscure anthologies, instead focusing on collections where the language and themes feel immediate and relatable. This should help counter the perception that poetry is pretentious by showing it can be honest, varied, and genuinely moving."
+      },
+      "evaluation": {
+        "relevance_score": 4,
+        "real_books_score": 4,
+        "selection_quality_score": 3,
+        "overall_score": 3,
+        "feedback": "Good accessible picks like Milk and Honey, The Sun and Her Flowers, and Good Bones align well with the query, but the response omits well-known, expected figures like Mary Oliver and Billy Collins, and includes several obscure/less-verified titles (In the Clear, The Noisy Silence, Falling Leaves, When She Named Fire) that dilute the quality and may not be as reliably 'real' or well-matched as claimed."
+      },
+      "elapsed_s": 19.6
     }
   ]
 }

@@ -1,0 +1,500 @@
+{
+  "summary": {
+    "total": 5,
+    "scored": 5,
+    "average_score": 4.6,
+    "score_distribution": {
+      "5": 3,
+      "4": 2
+    },
+    "errored": 0,
+    "skipped": 0
+  },
+  "errored": [],
+  "skipped": [],
+  "all_results": [
+    {
+      "test_id": "11",
+      "status": "scored",
+      "query": "What are the best books to learn system design for a senior engineer preparing for big tech interviews?",
+      "api_response": {
+        "query": "What are the best books to learn system design for a senior engineer preparing for big tech interviews?",
+        "request_type": "general",
+        "search_query": "\"system design\" | scalability | \"distributed systems\" | \"software architecture\" | \"interview preparation\" | intitle:\"Designing Data-Intensive Applications\" | intitle:\"System Design Interview\" | intitle:\"Building Microservices\" | intitle:\"The Art of Scalability\" | intitle:\"Web Scalability for Startup Engineers\"",
+        "audience_range": "adult",
+        "candidates_found": 54,
+        "recommendations": [
+          {
+            "title": "System Design Interview - An Insider's Guide",
+            "authors": [
+              "Alex Xu"
+            ],
+            "why_recommended": "Directly addresses system design interview preparation for tech roles; written specifically for candidates facing complex design questions at major tech companies.",
+            "notes": "Canonical work for this exact use case; highly focused on interview formats and approaches."
+          },
+          {
+            "title": "Designing Data-Intensive Applications",
+            "authors": [
+              "Martin Kleppmann"
+            ],
+            "why_recommended": "Essential foundational knowledge for system design covering scalability, consistency, reliability, and efficiency\u2014core concepts tested in senior engineer interviews.",
+            "notes": "Highly regarded technical reference; deeper theoretical grounding than interview-focused books."
+          },
+          {
+            "title": "Building Microservices",
+            "authors": [
+              "Sam Newman"
+            ],
+            "why_recommended": "Covers distributed system design patterns and microservices architecture, commonly discussed in system design interviews for large-scale systems.",
+            "notes": "Practical guidance on designing and managing service-oriented architectures."
+          },
+          {
+            "title": "The Art of Scalability",
+            "authors": [
+              "Martin L. Abbott",
+              "Michael T. Fisher"
+            ],
+            "why_recommended": "Comprehensive approach to system scalability from industry veterans; directly addresses performance and architectural decisions in large systems.",
+            "notes": "Proven methodology from AKF Partners; covers both technical and organizational scaling challenges."
+          },
+          {
+            "title": "Web Scalability for Startup Engineers",
+            "authors": [
+              "Artur Ejsmont"
+            ],
+            "why_recommended": "Practical roadmap for handling scalability challenges in distributed systems; relevant for understanding real-world constraints in system design.",
+            "notes": "Startup-focused but applicable to design interview scenarios; pragmatic approaches to common bottlenecks."
+          },
+          {
+            "title": "System Design at Google",
+            "authors": [
+              "Chew Chee Keng",
+              "Harshita Singh",
+              "Kirti Singh"
+            ],
+            "why_recommended": "Provides insider perspective on actual Google system design practices and developer products; valuable for understanding how major tech companies approach design.",
+            "notes": "Interview-specific content covering real Google systems and design decisions."
+          },
+          {
+            "title": "Software Architecture in Practice",
+            "authors": [
+              "Len Bass",
+              "Paul Clements",
+              "Rick Kazman"
+            ],
+            "why_recommended": "Award-winning reference on architectural patterns and tradeoffs in large-scale systems; provides frameworks for reasoning about design decisions.",
+            "notes": "Emphasis on real-world architectural decisions and their consequences."
+          },
+          {
+            "title": "Fundamentals of Software Architecture",
+            "authors": [
+              "Mark Richards",
+              "Neal Ford"
+            ],
+            "why_recommended": "Comprehensive guide to software architecture fundamentals; helps build the conceptual foundation needed to discuss design patterns and tradeoffs in interviews.",
+            "notes": "Structured approach to architectural thinking; good for bridging from developer to architect perspective."
+          },
+          {
+            "title": "Understanding Distributed Systems, Second Edition",
+            "authors": [
+              "Roberto Vitillo"
+            ],
+            "why_recommended": "Directly addresses challenges of building large-scale distributed systems; combines academic principles with practical engineering insights relevant to design interviews.",
+            "notes": "Modern coverage of distributed systems; accessible yet comprehensive."
+          },
+          {
+            "title": "Scalability Rules",
+            "authors": [
+              "Martin L. Abbott",
+              "Michael T. Fisher"
+            ],
+            "why_recommended": "Practical reference of 50 scalability rules for architects and engineers; useful for quickly recalling design principles during interview discussions.",
+            "notes": "Concise format; complements The Art of Scalability with actionable rules."
+          }
+        ],
+        "overall_notes": "Strong match: The catalog contains several canonical works specifically designed for system design interview preparation. Recommendations prioritize books directly addressing interview preparation (System Design Interview, System Design at Google) alongside essential foundational knowledge (Designing Data-Intensive Applications, Building Microservices, Understanding Distributed Systems). All selections are established technical references with strong relevance to senior engineer interviews at major tech companies. Books on general interview prep, hardware design, or narrow specialties (RF systems, control systems) were excluded as not matching the core need."
+      },
+      "evaluation": {
+        "relevance_score": 5,
+        "real_books_score": 5,
+        "selection_quality_score": 5,
+        "overall_score": 5,
+        "feedback": "Excellent, comprehensive list that includes all the expected canonical titles (Kleppmann, Alex Xu) plus strong supporting references (Building Microservices, Software Architecture in Practice, Fundamentals of Software Architecture) that a senior engineer would genuinely benefit from; well-curated and non-redundant."
+      },
+      "elapsed_s": 23.8
+    },
+    {
+      "test_id": "12",
+      "status": "scored",
+      "query": "My 8-year-old is a reluctant reader but loves graphic novels. What adventure series should I get them?",
+      "api_response": {
+        "query": "My 8-year-old is a reluctant reader but loves graphic novels. What adventure series should I get them?",
+        "request_type": "general",
+        "search_query": "adventure \"graphic novel\" subject:\"juvenile fiction\" | humor \"graphic novel\" subject:\"juvenile fiction\" | action \"graphic novel\" subject:\"juvenile fiction\" | fast-paced \"graphic novel\" subject:\"juvenile fiction\" | intitle:\"Dog Man\" | intitle:\"Amulet\" | intitle:\"Wings of Fire: The Dragonet Prophecy (graphic novel)\" | intitle:\"Hilo\" | intitle:\"Smile\"",
+        "audience_range": "early_reader",
+        "candidates_found": 140,
+        "recommendations": [
+          {
+            "title": "Dog Man (Captain Underpants: Dog Man #1)",
+            "authors": [
+              "Dav Pilkey"
+            ],
+            "why_recommended": "Perfect for reluctant 8-year-old readers\u2014hilarious, fast-paced graphic novel with colorful illustrations, silly humor, and manageable text that keeps kids engaged and eager to read more.",
+            "notes": "Part of an extremely popular series with 15+ books available; highly recommended for this age group and reading level."
+          },
+          {
+            "title": "Flat Stanley: The Graphic Novel",
+            "authors": [
+              "Jeff Brown",
+              "SB Wilson"
+            ],
+            "why_recommended": "Classic character adapted into full-color graphic novel format\u2014engaging adventure with a unique premise that sparks imagination, perfect for reluctant readers seeking accessibility with fun storytelling.",
+            "notes": "Age-appropriate, features a beloved character, and the graphic format makes it visually engaging."
+          },
+          {
+            "title": "Hilo Book 1: The Boy Who Crashed to Earth",
+            "authors": [
+              "Judd Winick"
+            ],
+            "why_recommended": "Action-packed adventure with humor and heart, designed for middle-grade graphic novel fans; combines comedy with genuine story stakes to keep reluctant readers invested and turning pages.",
+            "notes": "First in a long-running bestselling series with 11+ books; endorsed by Dav Pilkey as having similar appeal to Dog Man."
+          },
+          {
+            "title": "The Stonekeeper: A Graphic Novel (Amulet #1)",
+            "authors": [
+              "Kazu Kibuishi"
+            ],
+            "why_recommended": "Beautifully illustrated adventure series featuring mystery, magic, and exploration in a fantastical world; the visual storytelling is compelling enough to draw in reluctant readers while maintaining genuine adventure narrative.",
+            "notes": "First in a 9-book series; artwork is professional and engaging, perfect for visual learners."
+          },
+          {
+            "title": "Adventure Time Original Graphic Novel Vol. 1: Playing With Fire",
+            "authors": [
+              "Danielle Corsetto",
+              "Pendleton Ward"
+            ],
+            "why_recommended": "Based on beloved animated series, this graphic novel offers familiar characters in new adventures; the visual comedy and accessible writing style appeal to reluctant readers already familiar with the show.",
+            "notes": "Part of a series; great entry point for kids who enjoy the TV show."
+          },
+          {
+            "title": "Pizza and Taco: Who's the Best?",
+            "authors": [
+              "Stephen Shaskan"
+            ],
+            "why_recommended": "Hysterical graphic novel series with simple, punchy storytelling about two lovable characters; the quick jokes and emotional beats keep younger reluctant readers laughing and engaged throughout.",
+            "notes": "First in a series; designed specifically for younger/newer graphic novel readers; similar appeal to early Narwhal and Jelly books."
+          },
+          {
+            "title": "On the Edge of the Dark Sea of Darkness: The Graphic Novel",
+            "authors": [
+              "Andrew Peterson"
+            ],
+            "why_recommended": "High-quality illustrated adventure with rich worldbuilding and memorable characters; engaging fantasy narrative with strong visual storytelling that appeals to adventure-loving readers even if they struggle with text-heavy books.",
+            "notes": "Part of the Wingfeather Saga; beautifully produced graphic novel adaptation."
+          },
+          {
+            "title": "Geronimo Stilton Graphic Novels Vol. 1",
+            "authors": [
+              "Geronimo Stilton"
+            ],
+            "why_recommended": "Adventure-focused with a talking mouse protagonist, time travel, and treasure-hunting plots; the graphic novel format preserves the original series' energy while making it more accessible for reluctant readers.",
+            "notes": "Part of a massive series (12+ volumes available); combines adventure, humor, and quick pacing."
+          },
+          {
+            "title": "My Weird School Graphic Novel: Get a Grip! We're on a Trip!",
+            "authors": [
+              "Dan Gutman"
+            ],
+            "why_recommended": "Humor-driven adventure with zany characters and silly situations; New York Times bestselling series adapted into graphic format, maintaining the comedy that appeals to this age group while being visually engaging.",
+            "notes": "Part of a series; known for humor that resonates strongly with early elementary readers."
+          },
+          {
+            "title": "Sherlock Bones and the Natural History Mystery",
+            "authors": [
+              "Renee Treml"
+            ],
+            "why_recommended": "Action-packed mystery graphic novel with gentle humor and engaging illustrations; specifically designed for emerging readers who love adventure and dinosaurs, making it ideal for reluctant readers seeking entry-level complexity.",
+            "notes": "Hi-lo format (accessible text/mature illustration); mystery elements create natural page-turning momentum."
+          }
+        ],
+        "overall_notes": "These recommendations prioritize series that combine strong visual storytelling with age-appropriate humor and adventure\u2014proven engagement drivers for reluctant 8-year-olds. The Dog Man, Hilo, and Geronimo Stilton series are particularly popular with this demographic. All selections feature full-color illustrations, manageable text volume, and fast-paced narratives. Most are part of longer series, allowing you to continue the engagement once your child finds favorites. Avoided classic adaptations (Tom Sawyer, Huckleberry Finn) as they're often too dense for reluctant young readers, despite the graphic format."
+      },
+      "evaluation": {
+        "relevance_score": 5,
+        "real_books_score": 5,
+        "selection_quality_score": 5,
+        "overall_score": 5,
+        "feedback": "Directly hits all the expected iconic titles (Dog Man, Amulet, Hilo) plus adds diverse, age-appropriate, real graphic novel series with well-justified rationale for reluctant 8-year-old readers; excellent breadth without redundancy."
+      },
+      "elapsed_s": 25.6
+    },
+    {
+      "test_id": "13",
+      "status": "scored",
+      "query": "Recommend some classic literature translated from Japanese that explores modern urban loneliness.",
+      "api_response": {
+        "query": "Recommend some classic literature translated from Japanese that explores modern urban loneliness.",
+        "request_type": "general",
+        "search_query": "\"urban loneliness\" \"novel\" subject:\"fiction\" | \"modern Japan\" \"novel\" subject:\"fiction\" | isolation \"novel\" subject:\"fiction\" | \"city life\" \"novel\" subject:\"fiction\" | \"psychological fiction\" \"novel\" subject:\"fiction\" | intitle:\"Norwegian Wood\" | intitle:\"Kitchen\" | intitle:\"The Temple of the Golden Pavilion\" | intitle:\"Kafka on the Shore\" | intitle:\"A Wild Sheep Chase\" | intitle:\"South of the Border, West of the Sun\"",
+        "audience_range": "adult",
+        "candidates_found": 71,
+        "recommendations": [
+          {
+            "title": "Norwegian Wood",
+            "authors": [
+              "Haruki Murakami"
+            ],
+            "why_recommended": "A canonical Japanese novel exploring urban loneliness and isolation in 1960s Tokyo through the protagonist's emotional distance and disconnection following his friend's death.",
+            "notes": "Original Japanese title: Norwegian Wood (Tokio Blues). Widely recognized as one of the most important modern Japanese novels addressing themes of urban alienation and psychological solitude."
+          },
+          {
+            "title": "Kitchen",
+            "authors": [
+              "Banana Yoshimoto"
+            ],
+            "why_recommended": "A celebrated contemporary Japanese novel that explores grief, isolation, and emotional disconnection through a young woman finding solace in urban spaces after personal loss.",
+            "notes": "Shorter, more contemporary work that directly addresses modern urban loneliness and the search for human connection in isolation."
+          },
+          {
+            "title": "The Temple of the Golden Pavilion",
+            "authors": [
+              "Yukio Mishima"
+            ],
+            "why_recommended": "A classic Japanese novel examining psychological isolation and alienation through the interior world of a temple acolyte struggling with beauty, obsession, and social disconnection.",
+            "notes": "Dense philosophical exploration of loneliness and existential struggle; more challenging but deeply influential in modern Japanese literature."
+          },
+          {
+            "title": "Kafka on the Shore",
+            "authors": [
+              "Haruki Murakami"
+            ],
+            "why_recommended": "A contemporary Japanese novel blending urban isolation with philosophical inquiry, exploring disconnection, displacement, and the search for meaning in modern life.",
+            "notes": "More recent work; combines metaphysical themes with exploration of urban alienation and internal psychological landscapes."
+          },
+          {
+            "title": "An I-Novel",
+            "authors": [
+              "Minae Mizumura"
+            ],
+            "why_recommended": "A semi-autobiographical work set in 1980s urban America exploring isolation and loneliness through the perspective of a Japanese expatriate graduate student navigating cultural and personal disconnection.",
+            "notes": "Contemporary Japanese author writing about urban displacement and modern alienation from an insider's perspective."
+          },
+          {
+            "title": "South of the Border, West of the Sun",
+            "authors": [
+              "Haruki Murakami"
+            ],
+            "why_recommended": "A Japanese novel examining emotional isolation and disconnection through an exploration of romance, loss, and the protagonist's journey through urban solitude and memory.",
+            "notes": "Explores themes of loneliness and emotional distance in contemporary settings; accessible entry to Murakami's examination of modern isolation."
+          }
+        ],
+        "overall_notes": "The search yielded excellent matches, primarily canonical works by major Japanese authors (Murakami, Yoshimoto, Mishima, Mizumura) who directly address modern urban loneliness in translated fiction. The recommendations prioritize well-established, critically acclaimed works that genuinely explore psychological isolation in urban contexts. Most other candidates in the list were either non-Japanese literature, light novels/contemporary fantasy, literary criticism, or thrillers that did not meet the specific request for classic Japanese literature exploring modern urban loneliness."
+      },
+      "evaluation": {
+        "relevance_score": 5,
+        "real_books_score": 5,
+        "selection_quality_score": 4,
+        "overall_score": 4,
+        "feedback": "Strong, on-topic selection with real, well-attributed books (Norwegian Wood, Kitchen, Kafka on the Shore, etc.) that fit the urban loneliness theme; however, it misses expected contemporary titles like Sayaka Murata's Convenience Store Woman or Mieko Kawakami's Breasts and Eggs, which are directly named in the expected criteria, slightly reducing completeness."
+      },
+      "elapsed_s": 18.2
+    },
+    {
+      "test_id": "14",
+      "status": "scored",
+      "query": "I need a book on personal finance tailored for someone starting mid-career with a tech salary.",
+      "api_response": {
+        "query": "I need a book on personal finance tailored for someone starting mid-career with a tech salary.",
+        "request_type": "general",
+        "search_query": "\"personal finance\" | investing | \"wealth building\" | \"financial planning\" | \"tech salary\" | intitle:\"The Simple Path to Wealth\" | intitle:\"I Will Teach You to Be Rich\" | intitle:\"A Random Walk Down Wall Street\" | intitle:\"The Bogleheads' Guide to Investing\"",
+        "audience_range": "adult",
+        "candidates_found": 52,
+        "recommendations": [
+          {
+            "title": "I Will Teach You to Be Rich",
+            "authors": [
+              "Ramit Sethi"
+            ],
+            "why_recommended": "Specifically designed for 20-to-35-year-olds earning higher incomes, this bestseller covers earning more, saving strategically, and investing wisely\u2014perfect for someone with a tech salary entering mid-career.",
+            "notes": "Netflix series adaptation available; practical 6-week program format; highly actionable"
+          },
+          {
+            "title": "The Simple Path to Wealth",
+            "authors": [
+              "J L Collins"
+            ],
+            "why_recommended": "A canonical guide to financial independence that balances practical money management with long-term wealth building, ideal for mid-career tech professionals seeking to maximize their earning years.",
+            "notes": "New York Times bestseller; covers financial independence and efficient investing; revised and expanded edition"
+          },
+          {
+            "title": "A Random Walk Down Wall Street (Eleventh Edition)",
+            "authors": [
+              "Burton G. Malkiel"
+            ],
+            "why_recommended": "Authoritative investment primer that evaluates the full range of financial opportunities and helps readers build a sound investment strategy\u2014essential for someone with significant tech income to invest.",
+            "notes": "Over 1.5 million copies sold; updated with behavioral finance insights; comprehensive market overview"
+          },
+          {
+            "title": "The Bogleheads' Guide to Investing",
+            "authors": [
+              "Mel Lindauer",
+              "Taylor Larimore",
+              "Michael LeBoeuf"
+            ],
+            "why_recommended": "Practical DIY handbook offering contrarian investment wisdom for building long-term wealth with a simple, proven approach suitable for someone with mid-career income growth.",
+            "notes": "Based on John Bogle's philosophy; witty and accessible; strong foundation for diversified investing"
+          },
+          {
+            "title": "Personal Finance For Dummies",
+            "authors": [
+              "Eric Tyson"
+            ],
+            "why_recommended": "Comprehensive guide that goes beyond just investing to cover the full picture of financial planning\u2014budgeting, debt management, and wealth building strategies appropriate for mid-career earners.",
+            "notes": "Broader scope than most investing-only books; accessible writing style"
+          },
+          {
+            "title": "Investing For Dummies",
+            "authors": [
+              "Eric Tyson"
+            ],
+            "why_recommended": "Focused guide for developing a full investment plan and strengthening a portfolio\u2014valuable for mid-career professionals seeking to optimize their 401(k), stock investments, and overall asset allocation.",
+            "notes": "Practical advice on portfolio management and retirement plan rollovers"
+          },
+          {
+            "title": "The Wall Street Journal. Complete Personal Finance Guidebook",
+            "authors": [
+              "Jeff D. Opdyke"
+            ],
+            "why_recommended": "Authoritative primer from a trusted financial source covering comprehensive money management and financial planning\u2014excellent reference for understanding and managing higher tech-sector income.",
+            "notes": "From America's most authoritative financial source; comprehensive coverage of all major finance topics"
+          },
+          {
+            "title": "Lower Your Taxes - BIG TIME! 2023-2024: Small Business Wealth Building and Tax Reduction Secrets from an IRS Insider",
+            "authors": [
+              "Sandy Botkin"
+            ],
+            "why_recommended": "Tech professionals often have side projects or contract income; this guide helps optimize tax strategies and accelerate wealth building\u2014practical for maximizing take-home wealth.",
+            "notes": "200,000+ copies sold; written by former IRS attorney; updated for current tax year"
+          },
+          {
+            "title": "Achieve Financial Freedom \u2013 Big Time!: Wealth-Building Secrets from Everyday Millionaires",
+            "authors": [
+              "Sandy Botkin",
+              "Sanford C. Botkin"
+            ],
+            "why_recommended": "Reveals strategies used by high earners to achieve long-term financial stability and wealth accumulation\u2014directly applicable to someone with a strong tech salary.",
+            "notes": "From bestselling author; focuses on practical wealth-building from successful professionals"
+          },
+          {
+            "title": "Ernst & Young's Personal Financial Planning Guide",
+            "authors": [
+              "Ernst & Young LLP",
+              "Martin Nissenbaum",
+              "Barbara J. Raasch",
+              "Charles L. Ratner"
+            ],
+            "why_recommended": "Professional-level financial planning guidance from a Big Four firm, offering sophisticated strategies for controlling finances, reducing taxes, and building wealth for higher earners.",
+            "notes": "Big Four perspective; comprehensive coverage of investments, tax optimization, and wealth building"
+          }
+        ],
+        "overall_notes": "These recommendations balance foundational personal finance knowledge with investment strategy and tax optimization\u2014all critical for a mid-career tech professional with higher income. The selection prioritizes canonical, well-regarded works (Sethi, Collins, Malkiel, Bogleheads) paired with practical guides on investing and tax efficiency. Books excluded: books focused only on entry-level wealth building (20s/30s primers), commercial real estate (too specialized), career guidance unrelated to personal finance, and specialized dividend investing. The recommendations provide comprehensive coverage from immediate money management through sophisticated investment and tax strategies."
+      },
+      "evaluation": {
+        "relevance_score": 5,
+        "real_books_score": 5,
+        "selection_quality_score": 5,
+        "overall_score": 5,
+        "feedback": "Includes both expected titles (Simple Path to Wealth, and a strong Housel-equivalent absence is minor) plus complementary real, well-regarded books covering investing, tax, and planning appropriate for higher earners; missing The Psychology of Money is the only notable gap."
+      },
+      "elapsed_s": 25.2
+    },
+    {
+      "test_id": "15",
+      "status": "scored",
+      "query": "Give me history book recommendations about the silicon valley tech boom from the 1970s to 90s.",
+      "api_response": {
+        "query": "Give me history book recommendations about the silicon valley tech boom from the 1970s to 90s.",
+        "request_type": "general",
+        "search_query": "\"Silicon Valley\" | \"technology history\" | \"computer industry\" | 1970s-1990s | \"startup culture\" | intitle:\"The Innovators\" | intitle:\"Hackers\" | intitle:\"The Accidental Empires\" | intitle:\"Valley of Genius\" | intitle:\"The Code Breaker\" | intitle:\"Where Wizards Stay Up Late\"",
+        "audience_range": "adult",
+        "candidates_found": 46,
+        "recommendations": [
+          {
+            "title": "Understanding Silicon Valley",
+            "authors": [
+              "Martin Kenney"
+            ],
+            "why_recommended": "Directly explores the factors that made Silicon Valley a breeding ground for new technologies and firms, with focus on pioneering achievements during the relevant period.",
+            "notes": "Business & Economics; scholarly analysis of the region's development"
+          },
+          {
+            "title": "The Rise, Decline, and Renewal of Silicon Valley's High Technology Industry",
+            "authors": [
+              "Dan M. Khanna"
+            ],
+            "why_recommended": "Explicitly covers the rise and renewal cycles of Silicon Valley's tech industry across the 1970s-90s timeframe, published in 1997 providing contemporary perspective.",
+            "notes": "Business & Economics; published 1997, captures the era directly"
+          },
+          {
+            "title": "The Silicon Valley Edge",
+            "authors": [
+              "Chong-Moon Lee"
+            ],
+            "why_recommended": "Examines Silicon Valley's business environment and what made it fertile ground for startup companies developing disruptive technologies during this boom period.",
+            "notes": "Business & Economics; focuses on the startup ecosystem"
+          },
+          {
+            "title": "The Innovators",
+            "authors": [
+              "Walter Isaacson"
+            ],
+            "why_recommended": "Chronicles the lives of key figures responsible for creating the digital age, including Robert Noyce, Bill Gates, and Steve Jobs\u2014central figures in Silicon Valley's 1970s-90s boom.",
+            "notes": "Biography & Autobiography; well-known canonical work covering the era and key personalities"
+          },
+          {
+            "title": "Hackers",
+            "authors": [
+              "Steven Levy"
+            ],
+            "why_recommended": "Traces the computer revolution's original hackers and early pioneers from the late 1950s through the boom years, providing essential context for Silicon Valley's tech culture and innovation.",
+            "notes": "Computers; 25th anniversary edition; canonical work on computing culture"
+          },
+          {
+            "title": "Where Wizards Stay Up Late",
+            "authors": [
+              "Katie Hafner",
+              "Matthew Lyon"
+            ],
+            "why_recommended": "Documents the foundational research and engineering that created the Internet, a critical technology developed during the Silicon Valley boom that shaped the region's growth.",
+            "notes": "Business & Economics; well-known canonical work on Internet origins"
+          },
+          {
+            "title": "Silicon Valley",
+            "authors": [
+              "Michael Rogers"
+            ],
+            "why_recommended": "Describes Silicon Valley as the heart of America's advanced computer business, focusing on where the future was being shaped during the boom period.",
+            "notes": "Computer Industry; contemporary perspective on the region"
+          },
+          {
+            "title": "Working in Silicon Valley",
+            "authors": [
+              "Alan Hyde"
+            ],
+            "why_recommended": "Examines the relationship between rapid technological and economic growth in Silicon Valley and its distinct labor market institutions, providing insight into the human side of the boom.",
+            "notes": "Business & Economics; explores workforce dynamics of the era"
+          }
+        ],
+        "overall_notes": "These recommendations prioritize books that directly address Silicon Valley's history during the 1970s-90s boom, covering business development, key innovators, technological foundations, and the startup ecosystem. The well-known canonical works (Isaacson, Levy, Hafner & Lyon) are included because they are authoritative, widely-regarded histories that specifically cover this period and region. Books about general startup culture, Japan's tech boom, or modern AI were excluded as they don't address the specific historical timeframe requested."
+      },
+      "evaluation": {
+        "relevance_score": 5,
+        "real_books_score": 4,
+        "selection_quality_score": 4,
+        "overall_score": 4,
+        "feedback": "Strong, relevant selection covering the era with well-known canonical works (The Innovators, Hackers, Where Wizards Stay Up Late) plus several scholarly Silicon Valley histories, all appearing to be real published works. However, it omits the expected definitive titles Dealers of Lightning and Fire in the Valley, which are central to the requested topic, slightly reducing completeness."
+      },
+      "elapsed_s": 28.1
+    }
+  ]
+}
