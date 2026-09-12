@@ -1,5 +1,5 @@
 ---
-title: SmartyPants Book Recommendations
+title: Book-Buddy-AI
 emoji: 📚
 colorFrom: blue
 colorTo: purple
@@ -9,9 +9,9 @@ app_file: app.py
 pinned: false
 ---
 
-# SmartyPants Frontend
+# Book-Buddy-AI Frontend
 
-A Gradio UI for the SmartyPants book recommendation backend.
+A Gradio UI for the Book-Buddy-AI book recommendation backend.
 
 ## Architecture
 

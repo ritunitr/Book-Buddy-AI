@@ -1,5 +1,5 @@
 """
-SmartyPants Gradio App
+Book-Buddy-AI Gradio App
 
 UI ONLY. This file wires Gradio components to api_client.py (which calls the
 backend) and formatting.py (which renders the response). It contains no
@@ -24,26 +24,29 @@ EXAMPLE_QUERIES = [
 ]
 
 
-def handle_query(query: str) -> str:
+def handle_query(query: str, progress=gr.Progress()) -> str:
     """Gradio event handler: query string -> Markdown to display."""
+    progress(0, desc="🔍 Understanding your request...")
     try:
         response = get_recommendations(query)
+        progress(0.9, desc="✨ Putting together your recommendations...")
         return format_recommendations(response)
     except BackendError as e:
         return format_error(str(e))
 
 
-with gr.Blocks(title="SmartyPants Book Recommendations") as demo:
-    gr.Markdown("# 📚 SmartyPants\nAsk for book recommendations in plain language.")
+with gr.Blocks(title="Book-Buddy-AI") as demo:
+    gr.Markdown("# 📚 Book-Buddy-AI\nAsk for book recommendations in plain language.")
 
+    gr.Markdown("**What can I help you find today?**")
     with gr.Row():
         query_input = gr.Textbox(
-            label="What are you looking for?",
+            show_label=False,
             placeholder="e.g. My 4 year old loves dinosaurs, what books would she enjoy?",
             lines=2,
             scale=4,
         )
-        submit_btn = gr.Button("Get Recommendations", variant="primary", scale=1)
+        submit_btn = gr.Button("Get Recommendations", variant="primary", size="sm", scale=1)
 
     gr.Examples(examples=EXAMPLE_QUERIES, inputs=query_input)
 
@@ -60,6 +63,11 @@ if __name__ == "__main__":
             "running (see scripts/main.py) and BACKEND_URL is set correctly "
             "if it's not on http://localhost:8000."
         )
+    # Explicit queue() so the gr.Progress() indicator in handle_query renders
+    # reliably regardless of the resolved Gradio version (requirements.txt
+    # only pins >=4.0.0, and queuing defaults differ across versions).
+    demo.queue()
+
     # 0.0.0.0 + $PORT: required for hosted platforms (Render, HF Spaces, etc.)
     # where the platform assigns the port dynamically and expects the app to
     # bind on all interfaces, not just localhost. Defaults (127.0.0.1:7860)
