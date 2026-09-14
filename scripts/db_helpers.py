@@ -342,7 +342,7 @@ def get_user_interactions(user_id: str, event_type: Optional[str] = None) -> Lis
 
 def count_feedback_since_last_summary(user_id: str) -> int:
     """
-    Count how many feedback entries user has given since last summarization.
+    Count how many feedback interactions user has given since last summarization.
     Used to trigger summarizer every Nth feedback.
     """
     profile = get_user_profile(user_id)
@@ -353,13 +353,13 @@ def count_feedback_since_last_summary(user_id: str) -> int:
     else:
         last_summary = profile["last_summarized"]
 
-    # Count sessions with feedback since last summary
-    query = supabase.table("recommendation_sessions").select(
+    # Count feedback_given interactions since last summary
+    query = supabase.table("interaction_log").select(
         "count", count="exact"
-    ).eq("user_id", user_id).not_.is_("liked_indices", "null")
+    ).eq("user_id", user_id).eq("event_type", "feedback_given")
 
     if last_summary:
-        query = query.gt("feedback_timestamp", last_summary)
+        query = query.gt("timestamp", last_summary)
 
     result = query.execute()
     return result.count if result.count is not None else 0
@@ -371,16 +371,14 @@ def count_feedback_since_last_summary(user_id: str) -> int:
 
 def get_user_stats(user_id: str) -> Dict[str, Any]:
     """Get summary statistics about a user."""
-    sessions = get_user_sessions(user_id)
     reading_history = get_user_reading_history(user_id)
     profile = get_user_profile(user_id)
 
-    feedback_count = sum(
-        1 for s in sessions if s.get("liked_indices") or s.get("rejected_indices")
-    )
+    # Count feedback interactions
+    feedback_interactions = get_user_interactions(user_id, event_type="feedback_given")
+    feedback_count = len(feedback_interactions)
 
     return {
-        "total_queries": len(sessions),
         "total_feedback_given": feedback_count,
         "books_read": len([b for b in reading_history if b["status"] == "read"]),
         "books_currently_reading": len([b for b in reading_history if b["status"] == "reading"]),

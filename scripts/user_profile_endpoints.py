@@ -18,9 +18,8 @@ from datetime import datetime
 class FeedbackRequest(BaseModel):
     """POST /feedback request body."""
     user_email: str
-    session_id: str
-    liked_indices: List[int]
-    rejected_indices: List[int]
+    liked_book_titles: List[str]
+    rejected_book_titles: List[str]
     feedback_text: Optional[str] = None
 
 
@@ -28,7 +27,6 @@ class FeedbackResponse(BaseModel):
     """Response from /feedback endpoint."""
     success: bool
     message: str
-    session_id: str
     feedback_count: int
     summarizer_triggered: bool
 
@@ -50,60 +48,30 @@ FEEDBACK_SUMMARIZER_THRESHOLD = 5  # Trigger summarizer every 5 feedbacks
 
 async def handle_feedback(request: FeedbackRequest) -> FeedbackResponse:
     """
-    Handle user feedback on recommendations.
+    Handle user feedback on book recommendations.
 
     Flow:
     1. Get or create user
-    2. Add feedback to session (episodic)
-    3. Log interaction
-    4. Check if we should trigger summarizer (every Nth feedback)
-    5. If yes, trigger async summarizer to distill semantic/procedural memory
+    2. Log interaction (feedback given)
+    3. Increment feedback counter
+    4. Every Nth feedback, trigger Claude to distill semantic/procedural profile
     """
 
-    # Step 1: Get user
+    # Step 1: Get or create user
     user_id = db_helpers.get_or_create_user(request.user_email)
 
-    # Step 2: Verify session exists and belongs to user
-    session = db_helpers.get_session(request.session_id)
-    if not session:
-        return FeedbackResponse(
-            success=False,
-            message=f"Session {request.session_id} not found",
-            session_id=request.session_id,
-            feedback_count=0,
-            summarizer_triggered=False
-        )
-
-    if session["user_id"] != user_id:
-        return FeedbackResponse(
-            success=False,
-            message="Session does not belong to this user",
-            session_id=request.session_id,
-            feedback_count=0,
-            summarizer_triggered=False
-        )
-
-    # Step 3: Add feedback to session
-    db_helpers.add_feedback_to_session(
-        session_id=request.session_id,
-        liked_indices=request.liked_indices,
-        rejected_indices=request.rejected_indices,
-        feedback_text=request.feedback_text
-    )
-
-    # Step 4: Log interaction
+    # Step 2: Log the feedback interaction
     db_helpers.log_interaction(
         user_id=user_id,
         event_type="feedback_given",
         event_data={
-            "liked_count": len(request.liked_indices),
-            "rejected_count": len(request.rejected_indices),
-            "has_feedback_text": bool(request.feedback_text)
-        },
-        session_id=request.session_id
+            "liked_titles": request.liked_book_titles,
+            "rejected_titles": request.rejected_book_titles,
+            "feedback_text": request.feedback_text or ""
+        }
     )
 
-    # Step 5: Check if summarizer should trigger
+    # Step 3: Check if summarizer should trigger (every Nth feedback)
     feedback_count = db_helpers.count_feedback_since_last_summary(user_id)
     summarizer_triggered = False
 
@@ -115,7 +83,6 @@ async def handle_feedback(request: FeedbackRequest) -> FeedbackResponse:
     return FeedbackResponse(
         success=True,
         message="Feedback recorded successfully",
-        session_id=request.session_id,
         feedback_count=feedback_count,
         summarizer_triggered=summarizer_triggered
     )

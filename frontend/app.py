@@ -6,13 +6,19 @@ backend) and formatting.py (which renders the response). It contains no
 recommendation logic itself - no keyword extraction, no Google Books calls,
 no Claude calls, no filtering/ranking. If the backend is ever replaced, only
 api_client.py should need to change.
+
+Milestone 3 Enhancement: Feedback UI
+- Users can rate recommendations (thumbs up/down)
+- Feedback is sent to /feedback endpoint
+- User profile is built from feedback patterns
 """
 
 import os
+import json
 
 import gradio as gr
 
-from api_client import get_recommendations, check_backend_health, BackendError
+from api_client import get_recommendations, check_backend_health, BackendError, submit_feedback
 from formatting import format_recommendations, format_error
 
 EXAMPLE_QUERIES = [

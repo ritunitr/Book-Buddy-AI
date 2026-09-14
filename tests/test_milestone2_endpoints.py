@@ -46,49 +46,36 @@ def test_user(test_user_email):
 
 
 @pytest.fixture
-def test_session(test_user):
-    """Fixture: Create test recommendation session."""
-    session_id = db_helpers.create_recommendation_session(
-        user_id=test_user,
-        query="Find fantasy books",
-        recommendation_type="general",
-        recommendations=[
-            {"title": "Book 1", "why": "Fantasy"},
-            {"title": "Book 2", "why": "Adventure"},
-            {"title": "Book 3", "why": "Magic"}
-        ]
-    )
-    yield session_id
+def sample_books():
+    """Fixture: Sample book titles for feedback."""
+    return ["The Hobbit", "Dune", "Foundation", "1984", "Pride and Prejudice"]
 
 
 class TestFeedbackEndpoint:
     """Test POST /feedback endpoint."""
 
     @pytest.mark.asyncio
-    async def test_feedback_basic(self, test_user_email, test_session):
-        """Should accept feedback on a recommendation session."""
+    async def test_feedback_basic(self, test_user_email, sample_books):
+        """Should accept feedback on book recommendations."""
         request = FeedbackRequest(
             user_email=test_user_email,
-            session_id=test_session,
-            liked_indices=[0, 2],
-            rejected_indices=[1],
-            feedback_text="Loved 1st and 3rd books"
+            liked_book_titles=[sample_books[0], sample_books[2]],
+            rejected_book_titles=[sample_books[1]],
+            feedback_text="Loved these books"
         )
 
         response = await handle_feedback(request)
 
         assert response.success
-        assert response.session_id == test_session
         assert response.feedback_count >= 1
 
     @pytest.mark.asyncio
-    async def test_feedback_without_text(self, test_user_email, test_session):
+    async def test_feedback_without_text(self, test_user_email, sample_books):
         """Should accept feedback without explanatory text."""
         request = FeedbackRequest(
             user_email=test_user_email,
-            session_id=test_session,
-            liked_indices=[0],
-            rejected_indices=[1, 2]
+            liked_book_titles=[sample_books[0]],
+            rejected_book_titles=[sample_books[1], sample_books[2]]
         )
 
         response = await handle_feedback(request)
@@ -97,55 +84,26 @@ class TestFeedbackEndpoint:
         assert response.feedback_count >= 1
 
     @pytest.mark.asyncio
-    async def test_feedback_invalid_session(self, test_user_email):
-        """Should reject feedback for non-existent session."""
+    async def test_feedback_empty_titles(self, test_user_email):
+        """Should accept feedback with empty liked/rejected lists."""
         request = FeedbackRequest(
             user_email=test_user_email,
-            session_id="invalid-session-id",
-            liked_indices=[0],
-            rejected_indices=[]
+            liked_book_titles=[],
+            rejected_book_titles=[],
+            feedback_text="Not sure about any of them"
         )
 
         response = await handle_feedback(request)
 
-        assert not response.success
-        assert "not found" in response.message.lower()
+        assert response.success
 
     @pytest.mark.asyncio
-    async def test_feedback_wrong_user_session(self, test_user_email, test_session):
-        """Should reject feedback if session doesn't belong to user."""
-        # Create session for different user
-        other_user_id = db_helpers.get_or_create_user("other_user@example.com")
-        other_session = db_helpers.create_recommendation_session(
-            user_id=other_user_id,
-            query="Test query",
-            recommendation_type="general",
-            recommendations=[{"title": "Book", "why": "Test"}]
-        )
-
-        request = FeedbackRequest(
-            user_email=test_user_email,
-            session_id=other_session,
-            liked_indices=[0],
-            rejected_indices=[]
-        )
-
-        response = await handle_feedback(request)
-
-        assert not response.success
-        assert "does not belong" in response.message.lower()
-
-        # Cleanup
-        db_helpers.supabase.table("users").delete().eq("id", other_user_id).execute()
-
-    @pytest.mark.asyncio
-    async def test_feedback_logs_interaction(self, test_user_email, test_user, test_session):
+    async def test_feedback_logs_interaction(self, test_user_email, test_user, sample_books):
         """Should log interaction when feedback is given."""
         request = FeedbackRequest(
             user_email=test_user_email,
-            session_id=test_session,
-            liked_indices=[0],
-            rejected_indices=[1]
+            liked_book_titles=[sample_books[0]],
+            rejected_book_titles=[sample_books[1]]
         )
 
         await handle_feedback(request)
@@ -153,40 +111,37 @@ class TestFeedbackEndpoint:
         # Check interaction log
         interactions = db_helpers.get_user_interactions(test_user, event_type="feedback_given")
         assert len(interactions) > 0
-        assert interactions[0]["event_data"]["liked_count"] == 1
-        assert interactions[0]["event_data"]["rejected_count"] == 1
+        assert sample_books[0] in interactions[0]["event_data"]["liked_titles"]
+        assert sample_books[1] in interactions[0]["event_data"]["rejected_titles"]
 
     @pytest.mark.asyncio
-    async def test_feedback_multiple_times(self, test_user_email, test_session):
+    async def test_feedback_multiple_times(self, test_user_email, sample_books):
         """Should accept multiple feedback submissions."""
         for i in range(3):
             request = FeedbackRequest(
                 user_email=test_user_email,
-                session_id=test_session,
-                liked_indices=[i % 3],
-                rejected_indices=[]
+                liked_book_titles=[sample_books[i % len(sample_books)]],
+                rejected_book_titles=[]
             )
 
             response = await handle_feedback(request)
             assert response.success
 
     @pytest.mark.asyncio
-    async def test_new_user_created_automatically(self, test_session):
+    async def test_new_user_created_automatically(self, sample_books):
         """Should create user if doesn't exist."""
         new_email = "auto_created_user@example.com"
 
         request = FeedbackRequest(
             user_email=new_email,
-            session_id=test_session,
-            liked_indices=[0],
-            rejected_indices=[]
+            liked_book_titles=[sample_books[0]],
+            rejected_book_titles=[]
         )
 
-        # This should fail because session doesn't belong to new user
         response = await handle_feedback(request)
-        assert not response.success
+        assert response.success
 
-        # But user should be created
+        # User should be created
         user = db_helpers.get_or_create_user(new_email)
         assert user is not None
 
@@ -207,7 +162,7 @@ class TestUserProfileEndpoint:
         assert response.user_email == new_email
         assert isinstance(response.semantic_profile, dict)
         assert isinstance(response.procedural_profile, dict)
-        assert response.stats["total_queries"] == 0
+        assert response.stats["total_feedback_given"] == 0
 
         # Cleanup
         user_id = db_helpers.get_or_create_user(new_email)
@@ -236,14 +191,15 @@ class TestUserProfileEndpoint:
         assert response.procedural_profile.get("reading_velocity") == 1.5
 
     @pytest.mark.asyncio
-    async def test_get_profile_includes_stats(self, test_user_email, test_user, test_session):
+    async def test_get_profile_includes_stats(self, test_user_email, test_user, sample_books):
         """Should include user statistics in profile."""
         # Add feedback
-        db_helpers.add_feedback_to_session(
-            session_id=test_session,
-            liked_indices=[0, 1],
-            rejected_indices=[2]
+        request = FeedbackRequest(
+            user_email=test_user_email,
+            liked_book_titles=[sample_books[0], sample_books[1]],
+            rejected_book_titles=[sample_books[2]]
         )
+        await handle_feedback(request)
 
         # Add reading history
         db_helpers.add_to_reading_history(
@@ -257,7 +213,6 @@ class TestUserProfileEndpoint:
 
         response = await handle_get_user_profile(test_user_email)
 
-        assert response.stats["total_queries"] >= 1
         assert response.stats["books_read"] >= 1
         assert response.stats["total_feedback_given"] >= 1
 
@@ -281,53 +236,38 @@ class TestSummarizerTrigger:
     """Test summarizer trigger logic."""
 
     @pytest.mark.asyncio
-    async def test_feedback_count_increments(self, test_user_email, test_user):
+    async def test_feedback_count_increments(self, test_user_email, test_user, sample_books):
         """Should increment feedback count."""
         initial_count = db_helpers.count_feedback_since_last_summary(test_user)
 
-        # Create sessions and add feedback
+        # Submit feedback multiple times
         for i in range(2):
-            session = db_helpers.create_recommendation_session(
-                user_id=test_user,
-                query=f"Query {i}",
-                recommendation_type="general",
-                recommendations=[{"title": f"Book {i}"}]
+            request = FeedbackRequest(
+                user_email=test_user_email,
+                liked_book_titles=[sample_books[i % len(sample_books)]],
+                rejected_book_titles=[]
             )
-
-            db_helpers.add_feedback_to_session(
-                session_id=session,
-                liked_indices=[0],
-                rejected_indices=[]
-            )
+            await handle_feedback(request)
 
         new_count = db_helpers.count_feedback_since_last_summary(test_user)
         assert new_count >= initial_count + 2
 
     @pytest.mark.asyncio
-    async def test_summarizer_trigger_threshold(self, test_user_email, test_user):
+    async def test_summarizer_trigger_threshold(self, test_user_email, sample_books):
         """Should detect when threshold is reached."""
         # Create FEEDBACK_SUMMARIZER_THRESHOLD feedback entries
         for i in range(FEEDBACK_SUMMARIZER_THRESHOLD):
-            session = db_helpers.create_recommendation_session(
-                user_id=test_user,
-                query=f"Query {i}",
-                recommendation_type="general",
-                recommendations=[{"title": f"Book {i}"}]
-            )
-
             request = FeedbackRequest(
                 user_email=test_user_email,
-                session_id=session,
-                liked_indices=[0],
-                rejected_indices=[]
+                liked_book_titles=[sample_books[i % len(sample_books)]],
+                rejected_book_titles=[]
             )
 
             response = await handle_feedback(request)
 
             # Last feedback should trigger summarizer
             if i == FEEDBACK_SUMMARIZER_THRESHOLD - 1:
-                # Note: summarizer_triggered might be true if threshold reached
-                # This is a soft check since async trigger is non-blocking
+                # Summarizer may be triggered (check is soft since async)
                 pass
 
 
@@ -397,14 +337,13 @@ class TestEndToEnd:
     """End-to-end tests for feedback + profile flow."""
 
     @pytest.mark.asyncio
-    async def test_feedback_then_profile(self, test_user_email, test_user, test_session):
+    async def test_feedback_then_profile(self, test_user_email, sample_books):
         """Should record feedback and reflect in profile."""
         # Give feedback
         request = FeedbackRequest(
             user_email=test_user_email,
-            session_id=test_session,
-            liked_indices=[0, 1],
-            rejected_indices=[2],
+            liked_book_titles=[sample_books[0], sample_books[1]],
+            rejected_book_titles=[sample_books[2]],
             feedback_text="Good recommendations"
         )
 
@@ -415,26 +354,15 @@ class TestEndToEnd:
         profile_response = await handle_get_user_profile(test_user_email)
 
         assert profile_response.stats["total_feedback_given"] >= 1
-        assert profile_response.stats["total_queries"] >= 1
 
     @pytest.mark.asyncio
-    async def test_multiple_sessions_multiple_feedback(self, test_user_email, test_user):
-        """Should handle multiple feedback sessions."""
+    async def test_multiple_feedback_sessions(self, test_user_email, sample_books):
+        """Should handle multiple feedback submissions."""
         for session_num in range(3):
-            session = db_helpers.create_recommendation_session(
-                user_id=test_user,
-                query=f"Query {session_num}",
-                recommendation_type="general",
-                recommendations=[
-                    {"title": f"Book {i}", "why": "Test"} for i in range(3)
-                ]
-            )
-
             request = FeedbackRequest(
                 user_email=test_user_email,
-                session_id=session,
-                liked_indices=[0],
-                rejected_indices=[1, 2]
+                liked_book_titles=[sample_books[session_num % len(sample_books)]],
+                rejected_book_titles=[sample_books[(session_num + 1) % len(sample_books)]]
             )
 
             response = await handle_feedback(request)
@@ -442,5 +370,4 @@ class TestEndToEnd:
 
         # Check profile
         profile = await handle_get_user_profile(test_user_email)
-        assert profile.stats["total_queries"] >= 3
         assert profile.stats["total_feedback_given"] >= 3

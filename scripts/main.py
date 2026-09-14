@@ -312,7 +312,6 @@ async def recommend_books_endpoint(request: RecommendationRequest):
             # Include filtering metadata if applied
             if filter_metadata:
                 response["filter_metadata"] = filter_metadata
-                response["session_id"] = None  # Will be set by frontend after recommendations are shown
             # Phase 2: only present if retrieval actually retried
             if recommendations.get("retrieval_attempts"):
                 response["retrieval_debug"] = recommendations.get("retrieval_debug", [])
@@ -330,18 +329,17 @@ async def recommend_books_endpoint(request: RecommendationRequest):
 @app.post("/feedback")
 async def feedback_endpoint(request: FeedbackRequest) -> FeedbackResponse:
     """
-    Accept user feedback on recommendations.
+    Accept user feedback on book recommendations.
 
-    Records which books the user liked/rejected from a recommendation session.
-    Triggers summarizer every Nth feedback to distill semantic + procedural memory.
+    Records which books the user liked/rejected.
+    Triggers Claude summarizer every Nth feedback to distill semantic + procedural profile.
 
     Request body:
     {
         "user_email": "user@example.com",
-        "session_id": "session-uuid",
-        "liked_indices": [0, 2],
-        "rejected_indices": [1],
-        "feedback_text": "Loved these, didn't like that"
+        "liked_book_titles": ["The Hobbit", "Dune"],
+        "rejected_book_titles": ["1984"],
+        "feedback_text": "Loved fantasy and sci-fi, dislike dystopia"
     }
 
     Returns feedback count and whether summarizer was triggered.
