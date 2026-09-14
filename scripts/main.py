@@ -29,6 +29,10 @@ from user_profile_endpoints import (
     handle_feedback,
     handle_get_user_profile
 )
+from semantic_injection import (
+    personalize_recommendation_prompt,
+    filter_candidates_by_profile
+)
 
 load_dotenv()
 
@@ -55,13 +59,15 @@ class RecommendationRequest(BaseModel):
     query: str = Field(..., description="Natural language book recommendation request")
     max_results: int = Field(default=20, ge=1, le=50, description="Deprecated, no longer used - the full quality-filtered candidate pool is always sent to the recommender. Kept for API/client backward compatibility.")
     save_results: bool = Field(default=False, description="Save intermediate results to runs/latest")
+    user_email: str = Field(default=None, description="(Optional) User email to enable semantic profile injection and filtering")
 
     class Config:
         json_schema_extra = {
             "example": {
                 "query": "My son is into cars and trucks. Give me recommendations of books he'll enjoy.",
                 "max_results": 30,
-                "save_results": False
+                "save_results": False,
+                "user_email": "user@example.com"
             }
         }
 
@@ -188,10 +194,23 @@ async def recommend_books_endpoint(request: RecommendationRequest):
     call count, and token usage all visible together.
     """
     try:
+        # Step 0: Apply semantic personalization if user_email provided
+        personalized_query = request.query
+        filter_metadata = None
+
+        if request.user_email:
+            print(f"\n[Step 0] Personalizing with user profile ({request.user_email})...")
+            personalized_query = personalize_recommendation_prompt(
+                request.query,
+                request.user_email
+            )
+            if personalized_query != request.query:
+                print(f"  ✓ Query enhanced with semantic profile")
+
         # Only save to aggregated files, not individual run directories
         # Step 1: Extract structured recommendation intent
         print(f"\n[Step 1] Extracting recommendation intent...")
-        intent = extract_intent(request.query)
+        intent = extract_intent(personalized_query)  # Use personalized query
         intent["original_query"] = request.query  # needed by Phase 2's tier-2 broaden call for context
         append_to_aggregated(request.query, "intent_extracted", intent, request.save_results)
         print(f"  ✓ Intent: {intent.get('recommendation_type')} - Genre: {intent.get('genre')} - Format: {intent.get('format')}")
@@ -216,6 +235,19 @@ async def recommend_books_endpoint(request: RecommendationRequest):
             total_candidates = candidates.get("total_results", 0)
             append_to_aggregated(request.query, "candidates_fetched", candidates, request.save_results)
             print(f"  ✓ Fetched: {total_candidates} total candidates")
+
+            # Step 2.5: Filter candidates by user's reading history if user_email provided
+            if request.user_email:
+                print(f"\n[Step 2.5] Filtering already-read books...")
+                books = candidates.get("books", [])
+                filtered_books, filter_metadata = filter_candidates_by_profile(
+                    request.user_email,
+                    books
+                )
+                candidates["books"] = filtered_books
+                candidates["total_results"] = len(filtered_books)
+                if filter_metadata.get("filter_context"):
+                    print(f"  ✓ {filter_metadata['filter_context']}")
 
             # Step 3: Generate recommendations
             print(f"\n[Step 3] Generating recommendations...")
@@ -277,6 +309,10 @@ async def recommend_books_endpoint(request: RecommendationRequest):
                 ],
                 "overall_notes": recommendations.get("overall_notes", "")
             }
+            # Include filtering metadata if applied
+            if filter_metadata:
+                response["filter_metadata"] = filter_metadata
+                response["session_id"] = None  # Will be set by frontend after recommendations are shown
             # Phase 2: only present if retrieval actually retried
             if recommendations.get("retrieval_attempts"):
                 response["retrieval_debug"] = recommendations.get("retrieval_debug", [])

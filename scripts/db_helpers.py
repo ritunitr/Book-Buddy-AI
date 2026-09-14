@@ -184,24 +184,31 @@ def get_user_reading_history(user_id: str) -> List[Dict[str, Any]]:
 
 
 def get_unread_books(user_id: str) -> List[str]:
-    """Get list of book IDs user hasn't read yet."""
+    """
+    Get list of book IDs user has already read or is reading.
+    These should be filtered out from recommendations.
+
+    Books with status "want" (wishlist) or "abandoned" are NOT excluded
+    since users may want recommendations similar to what they abandoned,
+    and wishlist books can be recommended by others.
+    """
     result = supabase.table("reading_history").select("book_id").eq(
         "user_id", user_id
-    ).neq("status", "abandoned").execute()
+    ).in_("status", ["read", "reading"]).execute()
 
-    # Extract book_ids from recommendations they've interacted with
-    read_book_ids = set(row["book_id"] for row in result.data)
+    # Extract book_ids (only read or currently reading)
+    already_read_ids = set(row["book_id"] for row in result.data)
 
-    # Also check recommendations they've given feedback on
+    # Also check recommendations they've given feedback on (already got)
     sessions = get_user_sessions(user_id)
     for session in sessions:
         if session.get("liked_indices"):
             recs = session.get("recommendations", [])
             for idx in session["liked_indices"]:
                 if idx < len(recs):
-                    read_book_ids.add(recs[idx].get("book_id", ""))
+                    already_read_ids.add(recs[idx].get("book_id", ""))
 
-    return list(read_book_ids)
+    return list(already_read_ids)
 
 
 # ============================================================================
