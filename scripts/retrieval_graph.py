@@ -43,6 +43,11 @@ except ImportError:
 # they reach the recommender, not just outright empty ones.
 MIN_CANDIDATES = 20
 
+# Early stopping threshold: if we have this many candidates, stop retrying
+# (even if we haven't hit MAX_ATTEMPTS). Reduces latency by avoiding
+# unnecessary queries when we already have enough books.
+ENOUGH_CANDIDATES = 30
+
 MAX_ATTEMPTS = 2  # tier 1 + tier 2, then stop regardless
 
 
@@ -114,6 +119,12 @@ def _search_node(state: RetrievalState) -> dict:
 
 def _check_result_node(state: RetrievalState) -> dict:
     n = len(state["books"])
+
+    # Early stopping: if we have enough candidates, stop retrying
+    if n >= ENOUGH_CANDIDATES:
+        return {"is_bad": False, "bad_reason": ""}
+
+    # Otherwise, check if we should retry
     if n == 0:
         return {"is_bad": True, "bad_reason": f"Zero candidates found (attempt {state['attempt']})"}
     if n < MIN_CANDIDATES:
