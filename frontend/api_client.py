@@ -20,6 +20,7 @@ import requests
 
 BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
 REQUEST_TIMEOUT = 120  # seconds - progression queries can take a while
+DEMO_MODE = os.getenv("DEMO_MODE", "false").lower() == "true"  # Set DEMO_MODE=true to use static responses
 
 
 class BackendError(Exception):
@@ -27,9 +28,53 @@ class BackendError(Exception):
     pass
 
 
+def _get_demo_recommendations() -> dict:
+    """Return static demo recommendations for UI testing without calling backend."""
+    return {
+        "query": "Find fantasy books",
+        "request_type": "general",
+        "search_query": "fantasy adventure",
+        "audience_range": "young_adult",
+        "candidates_found": 42,
+        "recommendations": [
+            {
+                "title": "The Hobbit",
+                "authors": ["J.R.R. Tolkien"],
+                "why_recommended": "Classic fantasy adventure with strong worldbuilding",
+                "notes": ""
+            },
+            {
+                "title": "Dune",
+                "authors": ["Frank Herbert"],
+                "why_recommended": "Epic sci-fi with political intrigue and adventure",
+                "notes": ""
+            },
+            {
+                "title": "The Name of the Wind",
+                "authors": ["Patrick Rothfuss"],
+                "why_recommended": "Modern fantasy with rich prose and magic system",
+                "notes": ""
+            },
+            {
+                "title": "Mistborn: The Final Empire",
+                "authors": ["Brandon Sanderson"],
+                "why_recommended": "Fast-paced fantasy with unique magic system",
+                "notes": ""
+            },
+            {
+                "title": "The Way of Kings",
+                "authors": ["Brandon Sanderson"],
+                "why_recommended": "Epic fantasy with multiple perspectives and deep worldbuilding",
+                "notes": ""
+            }
+        ],
+        "overall_notes": "These are demo recommendations. Set DEMO_MODE=false in .env to use the backend."
+    }
+
+
 def get_recommendations(query: str) -> dict:
     """
-    Call the backend's /recommend endpoint.
+    Call the backend's /recommend endpoint (or return demo data if DEMO_MODE=true).
 
     Args:
         query: Natural language book recommendation request.
@@ -45,6 +90,10 @@ def get_recommendations(query: str) -> dict:
     """
     if not query or not query.strip():
         raise BackendError("Please enter a query.")
+
+    # Demo mode for UI testing (no backend calls)
+    if DEMO_MODE:
+        return _get_demo_recommendations()
 
     try:
         response = requests.post(
@@ -85,7 +134,7 @@ def submit_feedback(
     feedback_text: str = ""
 ) -> dict:
     """
-    Submit user feedback on recommendations.
+    Submit user feedback on recommendations (or simulate if DEMO_MODE=true).
 
     Args:
         user_email: User's email address
@@ -101,6 +150,15 @@ def submit_feedback(
     """
     if not user_email or not user_email.strip():
         raise BackendError("User email is required for feedback.")
+
+    # Demo mode for UI testing
+    if DEMO_MODE:
+        return {
+            "success": True,
+            "message": "Feedback recorded successfully (DEMO MODE)",
+            "feedback_count": 1,
+            "summarizer_triggered": False
+        }
 
     try:
         response = requests.post(
