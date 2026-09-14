@@ -30,19 +30,75 @@ EXAMPLE_QUERIES = [
 ]
 
 
-def handle_query(query: str, progress=gr.Progress()) -> str:
-    """Gradio event handler: query string -> Markdown to display."""
+def handle_query(query: str, user_email: str, progress=gr.Progress()) -> tuple:
+    """
+    Gradio event handler: query string + email -> recommendations + feedback state.
+    Returns: (formatted_recommendations, state_with_books)
+    """
     progress(0, desc="🔍 Understanding your request...")
     try:
         response = get_recommendations(query)
         progress(0.9, desc="✨ Putting together your recommendations...")
-        return format_recommendations(response)
+        formatted = format_recommendations(response)
+
+        # Extract book titles from response for feedback
+        books = []
+        if response.get("request_type") == "progression":
+            for level in response.get("levels", []):
+                for rec in level.get("recommendations", []):
+                    books.append(rec.get("title", "Unknown"))
+        else:
+            for rec in response.get("recommendations", []):
+                books.append(rec.get("title", "Unknown"))
+
+        return formatted, {"books": books, "user_email": user_email, "query": query}
     except BackendError as e:
-        return format_error(str(e))
+        return format_error(str(e)), {"books": [], "user_email": user_email, "query": query}
+
+
+def handle_feedback(liked: list, rejected: list, feedback_text: str, state: dict) -> str:
+    """
+    Submit feedback to backend.
+
+    Args:
+        liked: List of liked book titles (selected)
+        rejected: List of rejected book titles (selected)
+        feedback_text: Optional user feedback
+        state: Contains user_email and book list
+
+    Returns:
+        Confirmation message
+    """
+    if not state or not state.get("user_email"):
+        return "❌ Please enter your email to submit feedback."
+
+    if not liked and not rejected:
+        return "ℹ️ Select at least one book you liked or rejected to give feedback."
+
+    try:
+        response = submit_feedback(
+            user_email=state["user_email"],
+            liked_titles=liked,
+            rejected_titles=rejected,
+            feedback_text=feedback_text
+        )
+
+        if response.get("success"):
+            msg = f"✅ Feedback recorded! ({response.get('feedback_count', 0)} total feedbacks)"
+            if response.get("summarizer_triggered"):
+                msg += "\n🧠 Your profile is being updated..."
+            return msg
+        else:
+            return f"❌ Error: {response.get('message', 'Unknown error')}"
+    except BackendError as e:
+        return f"❌ Error: {str(e)}"
 
 
 with gr.Blocks(title="Book-Buddy-AI") as demo:
     gr.Markdown("# 📚 Book-Buddy-AI\nAsk for book recommendations in plain language.")
+
+    # State to store current recommendations and user email
+    state = gr.State({"books": [], "user_email": "", "query": ""})
 
     gr.Markdown("**What can I help you find today?**")
     with gr.Row():
@@ -50,7 +106,12 @@ with gr.Blocks(title="Book-Buddy-AI") as demo:
             show_label=False,
             placeholder="e.g. My 4 year old loves dinosaurs, what books would she enjoy?",
             lines=2,
-            scale=4,
+            scale=3,
+        )
+        user_email = gr.Textbox(
+            show_label=False,
+            placeholder="your@email.com (for personalized recommendations)",
+            scale=1,
         )
         submit_btn = gr.Button("Get Recommendations", variant="primary", size="sm", scale=1)
 
@@ -58,8 +119,72 @@ with gr.Blocks(title="Book-Buddy-AI") as demo:
 
     output = gr.Markdown(label="Recommendations")
 
-    submit_btn.click(fn=handle_query, inputs=query_input, outputs=output)
-    query_input.submit(fn=handle_query, inputs=query_input, outputs=output)
+    # Feedback section
+    gr.Markdown("---\n### 📝 Rate These Recommendations")
+    with gr.Row():
+        liked_books = gr.Checkboxgroup(
+            label="👍 I liked these",
+            choices=[],
+            interactive=True
+        )
+        rejected_books = gr.Checkboxgroup(
+            label="👎 Not for me",
+            choices=[],
+            interactive=True
+        )
+
+    feedback_text = gr.Textbox(
+        label="📝 Optional feedback (why you liked/rejected them)",
+        placeholder="e.g., Too dark for my taste, or loved the fantasy element!",
+        lines=2,
+    )
+
+    with gr.Row():
+        feedback_btn = gr.Button("Submit Feedback", variant="secondary")
+        clear_feedback_btn = gr.Button("Clear Feedback", variant="secondary", size="sm")
+
+    feedback_output = gr.Textbox(
+        label="Status",
+        interactive=False,
+        value=""
+    )
+
+    # Event handlers
+    def update_feedback_choices(state_dict):
+        """Update feedback checkboxes when new recommendations are fetched."""
+        books = state_dict.get("books", [])
+        return gr.Checkboxgroup(choices=books), gr.Checkboxgroup(choices=books)
+
+    submit_btn.click(
+        fn=handle_query,
+        inputs=[query_input, user_email],
+        outputs=[output, state]
+    ).then(
+        fn=update_feedback_choices,
+        inputs=state,
+        outputs=[liked_books, rejected_books]
+    )
+
+    query_input.submit(
+        fn=handle_query,
+        inputs=[query_input, user_email],
+        outputs=[output, state]
+    ).then(
+        fn=update_feedback_choices,
+        inputs=state,
+        outputs=[liked_books, rejected_books]
+    )
+
+    feedback_btn.click(
+        fn=handle_feedback,
+        inputs=[liked_books, rejected_books, feedback_text, state],
+        outputs=feedback_output
+    )
+
+    clear_feedback_btn.click(
+        fn=lambda: ("", "", "", ""),
+        outputs=[liked_books, rejected_books, feedback_text, feedback_output]
+    )
 
 
 if __name__ == "__main__":

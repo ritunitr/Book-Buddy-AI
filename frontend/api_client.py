@@ -76,3 +76,55 @@ def check_backend_health() -> bool:
         return response.status_code == 200
     except requests.exceptions.RequestException:
         return False
+
+
+def submit_feedback(
+    user_email: str,
+    liked_titles: list,
+    rejected_titles: list,
+    feedback_text: str = ""
+) -> dict:
+    """
+    Submit user feedback on recommendations.
+
+    Args:
+        user_email: User's email address
+        liked_titles: List of book titles user liked
+        rejected_titles: List of book titles user rejected
+        feedback_text: Optional user feedback text
+
+    Returns:
+        Response dict with success status and feedback count
+
+    Raises:
+        BackendError: if the backend is unreachable or returns an error
+    """
+    if not user_email or not user_email.strip():
+        raise BackendError("User email is required for feedback.")
+
+    try:
+        response = requests.post(
+            f"{BACKEND_URL}/feedback",
+            json={
+                "user_email": user_email.strip(),
+                "liked_book_titles": liked_titles,
+                "rejected_book_titles": rejected_titles,
+                "feedback_text": feedback_text or None
+            },
+            timeout=30,
+        )
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.Timeout:
+        raise BackendError("The backend took too long to respond. Please try again.")
+    except requests.exceptions.ConnectionError:
+        raise BackendError(
+            f"Could not reach the backend at {BACKEND_URL}. Is it running?"
+        )
+    except requests.exceptions.HTTPError as e:
+        detail = ""
+        try:
+            detail = e.response.json().get("detail", "")
+        except Exception:
+            pass
+        raise BackendError(f"Backend error: {detail or str(e)}")
