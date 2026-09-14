@@ -52,15 +52,42 @@ async def handle_feedback(request: FeedbackRequest) -> FeedbackResponse:
 
     Flow:
     1. Get or create user
-    2. Log interaction (feedback given)
-    3. Increment feedback counter
-    4. Every Nth feedback, trigger Claude to distill semantic/procedural profile
+    2. Add liked books to reading_history (so they're not recommended again)
+    3. Add rejected books to reading_history with "abandoned" status (filtered out)
+    4. Log interaction (feedback given)
+    5. Every Nth feedback, trigger Claude to distill semantic/procedural profile
     """
 
     # Step 1: Get or create user
     user_id = db_helpers.get_or_create_user(request.user_email)
 
-    # Step 2: Log the feedback interaction
+    # Step 2: Add liked books to reading_history (status: "want" = wishlist)
+    for title in request.liked_book_titles:
+        try:
+            db_helpers.add_to_reading_history(
+                user_id=user_id,
+                book_id=f"liked_{title.lower().replace(' ', '_')}",
+                title=title,
+                authors=[],
+                status="want"  # Wishlist: user liked it, won't recommend same book
+            )
+        except Exception:
+            pass  # Skip if book already exists
+
+    # Step 3: Add rejected books to reading_history (status: "abandoned")
+    for title in request.rejected_book_titles:
+        try:
+            db_helpers.add_to_reading_history(
+                user_id=user_id,
+                book_id=f"rejected_{title.lower().replace(' ', '_')}",
+                title=title,
+                authors=[],
+                status="abandoned"  # Filtered out: won't recommend again
+            )
+        except Exception:
+            pass  # Skip if book already exists
+
+    # Step 4: Log the feedback interaction
     db_helpers.log_interaction(
         user_id=user_id,
         event_type="feedback_given",
@@ -71,7 +98,7 @@ async def handle_feedback(request: FeedbackRequest) -> FeedbackResponse:
         }
     )
 
-    # Step 3: Check if summarizer should trigger (every Nth feedback)
+    # Step 5: Check if summarizer should trigger (every Nth feedback)
     feedback_count = db_helpers.count_feedback_since_last_summary(user_id)
     summarizer_triggered = False
 
