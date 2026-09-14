@@ -22,6 +22,13 @@ from intent_extractor import extract_intent
 from fetch_candidate_books import fetch_candidate_books
 from book_recommender import recommend_books as generate_recommendations
 from book_recommender import run_progression_concurrent
+from user_profile_endpoints import (
+    FeedbackRequest,
+    FeedbackResponse,
+    UserProfileResponse,
+    handle_feedback,
+    handle_get_user_profile
+)
 
 load_dotenv()
 
@@ -278,3 +285,53 @@ async def recommend_books_endpoint(request: RecommendationRequest):
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error: {str(e)}")
+
+
+# ============================================================================
+# Milestone 2: User Profile Endpoints
+# ============================================================================
+
+@app.post("/feedback")
+async def feedback_endpoint(request: FeedbackRequest) -> FeedbackResponse:
+    """
+    Accept user feedback on recommendations.
+
+    Records which books the user liked/rejected from a recommendation session.
+    Triggers summarizer every Nth feedback to distill semantic + procedural memory.
+
+    Request body:
+    {
+        "user_email": "user@example.com",
+        "session_id": "session-uuid",
+        "liked_indices": [0, 2],
+        "rejected_indices": [1],
+        "feedback_text": "Loved these, didn't like that"
+    }
+
+    Returns feedback count and whether summarizer was triggered.
+    """
+    try:
+        response = await handle_feedback(request)
+        return response
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Feedback error: {str(e)}")
+
+
+@app.get("/user-profile")
+async def get_user_profile_endpoint(user_email: str) -> UserProfileResponse:
+    """
+    Get user's semantic and procedural profile.
+
+    Semantic: interests, preferences, dislikes (extracted by Claude from feedback history)
+    Procedural: reading_velocity, completion_rate, series_preference (learned patterns)
+
+    Query parameter:
+    - user_email: User's email address
+
+    Returns the user's distilled profile + reading statistics.
+    """
+    try:
+        response = await handle_get_user_profile(user_email)
+        return response
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Profile error: {str(e)}")
