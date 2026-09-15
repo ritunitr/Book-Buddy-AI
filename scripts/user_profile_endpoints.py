@@ -1,26 +1,21 @@
 """
-Milestone 2: User Profile Endpoints
-- POST /feedback: Capture user feedback on recommendations
-- GET /user-profile: Retrieve user's semantic + procedural profile
+User Profile Endpoints - Simplified
+
+POST /feedback - Record liked/disliked books from a recommendation session
+POST /preferences - Update user's explicit preferences
+GET /user-profile - Get user's current preferences and stats
 """
 
 from typing import Optional, List
 from pydantic import BaseModel
 import db_helpers
-from asyncio import create_task
-from datetime import datetime
 
-
-# ============================================================================
-# Request/Response Models
-# ============================================================================
 
 class FeedbackRequest(BaseModel):
-    """POST /feedback request body."""
+    """Record feedback from a recommendation session."""
     user_email: str
     liked_book_titles: List[str]
     rejected_book_titles: List[str]
-    feedback_text: Optional[str] = None
 
 
 class FeedbackResponse(BaseModel):
@@ -28,162 +23,213 @@ class FeedbackResponse(BaseModel):
     success: bool
     message: str
     feedback_count: int
-    summarizer_triggered: bool
 
 
-class UserProfileResponse(BaseModel):
-    """Response from /user-profile endpoint."""
+class PreferencesRequest(BaseModel):
+    """Update user preferences."""
     user_email: str
-    semantic_profile: dict  # interests, preferences, dislikes
-    procedural_profile: dict  # reading_velocity, completion_rate, etc.
-    stats: dict
+    liked_books: Optional[List[str]] = None
+    disliked_books: Optional[List[str]] = None
+    liked_authors: Optional[List[str]] = None
+    liked_genres: Optional[List[str]] = None
+    disliked_authors: Optional[List[str]] = None
+    disliked_genres: Optional[List[str]] = None
+
+
+class PreferencesResponse(BaseModel):
+    """Current user preferences."""
+    user_email: str
+    liked_books: List[str]
+    disliked_books: List[str]
+    liked_authors: List[str]
+    liked_genres: List[str]
+    disliked_authors: List[str]
+    disliked_genres: List[str]
+    updated_at: str
+
+
+class PatternSuggestions(BaseModel):
+    """Suggested preferences based on feedback analysis."""
+    user_email: str
+    suggested_liked_genres: List[str]
+    suggested_liked_authors: List[str]
+    suggested_disliked_genres: List[str]
+    suggested_disliked_authors: List[str]
+    analysis: str
+    confidence: float
+    feedback_count: int
+    books_analyzed: List[str]
+
+
+class ConfirmPatternsRequest(BaseModel):
+    """Confirm which suggested patterns to accept."""
+    user_email: str
+    liked_genres: Optional[List[str]] = None
+    liked_authors: Optional[List[str]] = None
+    disliked_genres: Optional[List[str]] = None
+    disliked_authors: Optional[List[str]] = None
 
 
 # ============================================================================
-# Feedback Endpoint (POST /feedback)
+# Feedback Endpoint
 # ============================================================================
-
-FEEDBACK_SUMMARIZER_THRESHOLD = 5  # Trigger summarizer every 5 feedbacks
-
 
 async def handle_feedback(request: FeedbackRequest) -> FeedbackResponse:
     """
-    Handle user feedback on book recommendations.
+    Record user feedback from a recommendation session.
 
     Flow:
     1. Get or create user
-    2. Add liked books to reading_history (so they're not recommended again)
-    3. Add rejected books to reading_history with "abandoned" status (filtered out)
-    4. Log interaction (feedback given)
-    5. Every Nth feedback, trigger Claude to distill semantic/procedural profile
+    2. Log feedback (liked/disliked books)
+    3. Return feedback count
     """
-
-    # Step 1: Get or create user
     user_id = db_helpers.get_or_create_user(request.user_email)
 
-    # Step 2: Add liked books to reading_history (status: "want" = wishlist)
-    for title in request.liked_book_titles:
-        try:
-            db_helpers.add_to_reading_history(
-                user_id=user_id,
-                book_id=f"liked_{title.lower().replace(' ', '_')}",
-                title=title,
-                authors=[],
-                status="want"  # Wishlist: user liked it, won't recommend same book
-            )
-        except Exception:
-            pass  # Skip if book already exists
-
-    # Step 3: Add rejected books to reading_history (status: "abandoned")
-    for title in request.rejected_book_titles:
-        try:
-            db_helpers.add_to_reading_history(
-                user_id=user_id,
-                book_id=f"rejected_{title.lower().replace(' ', '_')}",
-                title=title,
-                authors=[],
-                status="abandoned"  # Filtered out: won't recommend again
-            )
-        except Exception:
-            pass  # Skip if book already exists
-
-    # Step 4: Log the feedback interaction
-    db_helpers.log_interaction(
+    # Log this session's feedback
+    db_helpers.log_feedback(
         user_id=user_id,
-        event_type="feedback_given",
-        event_data={
-            "liked_titles": request.liked_book_titles,
-            "rejected_titles": request.rejected_book_titles,
-            "feedback_text": request.feedback_text or ""
-        }
+        liked_books=request.liked_book_titles,
+        disliked_books=request.rejected_book_titles
     )
 
-    # Step 5: Check if summarizer should trigger (every Nth feedback)
-    feedback_count = db_helpers.count_feedback_since_last_summary(user_id)
-    summarizer_triggered = False
-
-    if feedback_count >= FEEDBACK_SUMMARIZER_THRESHOLD:
-        # Trigger async summarizer (non-blocking)
-        create_task(_trigger_summarizer_async(user_id))
-        summarizer_triggered = True
+    # Get total feedback count
+    interactions = db_helpers.get_recent_interactions(user_id, limit=100)
+    feedback_count = len(interactions)
 
     return FeedbackResponse(
         success=True,
-        message="Feedback recorded successfully",
-        feedback_count=feedback_count,
-        summarizer_triggered=summarizer_triggered
-    )
-
-
-async def _trigger_summarizer_async(user_id: str):
-    """
-    Async task: Summarize user's episodic memory into semantic/procedural facts.
-    This will call Claude to distill patterns.
-    """
-    try:
-        # Import here to avoid circular dependency
-        from profile_summarizer import summarize_user_profile
-
-        await summarize_user_profile(user_id)
-    except Exception as e:
-        print(f"[Summarizer Error] Failed to summarize profile for user {user_id}: {e}")
-
-
-# ============================================================================
-# User Profile Endpoint (GET /user-profile)
-# ============================================================================
-
-async def handle_get_user_profile(user_email: str) -> UserProfileResponse:
-    """
-    Get user's current semantic and procedural profile.
-
-    Semantic: interests, preferences, dislikes (distilled from feedback)
-    Procedural: reading_velocity, completion_rate, series_preference (learned patterns)
-    """
-
-    # Get or create user
-    user_id = db_helpers.get_or_create_user(user_email)
-
-    # Ensure profile exists
-    db_helpers.get_or_create_user_profile(user_id)
-
-    # Fetch profile
-    profile = db_helpers.get_user_profile(user_id)
-
-    if not profile:
-        # Shouldn't happen, but handle gracefully
-        profile = {
-            "semantic_json": {},
-            "procedural_json": {},
-            "last_summarized": None
-        }
-
-    # Get stats
-    stats = db_helpers.get_user_stats(user_id)
-
-    return UserProfileResponse(
-        user_email=user_email,
-        semantic_profile=profile.get("semantic_json", {}),
-        procedural_profile=profile.get("procedural_json", {}),
-        stats=stats
+        message=f"Feedback recorded ({feedback_count} total sessions)",
+        feedback_count=feedback_count
     )
 
 
 # ============================================================================
-# Graceful Fallback (No Profile Yet)
+# Preferences Endpoint
 # ============================================================================
 
-def handle_get_user_profile_fallback(user_email: str) -> UserProfileResponse:
+async def handle_get_preferences(user_email: str) -> PreferencesResponse:
+    """Get user's current preferences."""
+    user_id = db_helpers.get_or_create_user(user_email)
+    prefs = db_helpers.get_user_preferences(user_id)
+
+    return PreferencesResponse(
+        user_email=user_email,
+        liked_books=prefs.get("liked_books", []) or [],
+        disliked_books=prefs.get("disliked_books", []) or [],
+        liked_authors=prefs.get("liked_authors", []) or [],
+        liked_genres=prefs.get("liked_genres", []) or [],
+        disliked_authors=prefs.get("disliked_authors", []) or [],
+        disliked_genres=prefs.get("disliked_genres", []) or [],
+        updated_at=prefs.get("updated_at", "")
+    )
+
+
+async def handle_update_preferences(request: PreferencesRequest) -> PreferencesResponse:
+    """Update user preferences."""
+    user_id = db_helpers.get_or_create_user(request.user_email)
+
+    # Build update dict with non-None values
+    update_data = {}
+    if request.liked_books is not None:
+        update_data["liked_books"] = request.liked_books
+    if request.disliked_books is not None:
+        update_data["disliked_books"] = request.disliked_books
+    if request.liked_authors is not None:
+        update_data["liked_authors"] = request.liked_authors
+    if request.liked_genres is not None:
+        update_data["liked_genres"] = request.liked_genres
+    if request.disliked_authors is not None:
+        update_data["disliked_authors"] = request.disliked_authors
+    if request.disliked_genres is not None:
+        update_data["disliked_genres"] = request.disliked_genres
+
+    if update_data:
+        db_helpers.update_preferences(user_id, update_data)
+
+    # Return updated preferences
+    prefs = db_helpers.get_user_preferences(user_id)
+
+    return PreferencesResponse(
+        user_email=request.user_email,
+        liked_books=prefs.get("liked_books", []) or [],
+        disliked_books=prefs.get("disliked_books", []) or [],
+        liked_authors=prefs.get("liked_authors", []) or [],
+        liked_genres=prefs.get("liked_genres", []) or [],
+        disliked_authors=prefs.get("disliked_authors", []) or [],
+        disliked_genres=prefs.get("disliked_genres", []) or [],
+        updated_at=prefs.get("updated_at", "")
+    )
+
+
+# ============================================================================
+# Pattern Detection Endpoints
+# ============================================================================
+
+async def handle_get_patterns(user_email: str) -> PatternSuggestions:
     """
-    Fallback when user has no profile yet.
-    Returns empty semantic/procedural profiles with stats.
+    Detect patterns from user's feedback history.
+    Uses Claude to analyze liked/disliked books and suggest new preferences.
     """
     user_id = db_helpers.get_or_create_user(user_email)
-    stats = db_helpers.get_user_stats(user_id)
+    patterns = db_helpers.detect_patterns(user_id)
 
-    return UserProfileResponse(
+    return PatternSuggestions(
         user_email=user_email,
-        semantic_profile={},
-        procedural_profile={},
-        stats=stats
+        suggested_liked_genres=patterns.get("suggested_liked_genres", []),
+        suggested_liked_authors=patterns.get("suggested_liked_authors", []),
+        suggested_disliked_genres=patterns.get("suggested_disliked_genres", []),
+        suggested_disliked_authors=patterns.get("suggested_disliked_authors", []),
+        analysis=patterns.get("analysis", ""),
+        confidence=patterns.get("confidence", 0.0),
+        feedback_count=patterns.get("feedback_count", 0),
+        books_analyzed=patterns.get("books_analyzed", [])
+    )
+
+
+async def handle_confirm_patterns(request: ConfirmPatternsRequest) -> PreferencesResponse:
+    """
+    Accept suggested patterns and update user preferences.
+    User can choose which suggestions to keep and which to reject.
+    """
+    user_id = db_helpers.get_or_create_user(request.user_email)
+    prefs = db_helpers.get_user_preferences(user_id)
+
+    # Build update dict by merging suggestions with existing preferences
+    update_data = {}
+
+    if request.liked_genres is not None:
+        current_genres = set(prefs.get("liked_genres", []) or [])
+        current_genres.update(request.liked_genres)
+        update_data["liked_genres"] = list(current_genres)
+
+    if request.liked_authors is not None:
+        current_authors = set(prefs.get("liked_authors", []) or [])
+        current_authors.update(request.liked_authors)
+        update_data["liked_authors"] = list(current_authors)
+
+    if request.disliked_genres is not None:
+        current_genres = set(prefs.get("disliked_genres", []) or [])
+        current_genres.update(request.disliked_genres)
+        update_data["disliked_genres"] = list(current_genres)
+
+    if request.disliked_authors is not None:
+        current_authors = set(prefs.get("disliked_authors", []) or [])
+        current_authors.update(request.disliked_authors)
+        update_data["disliked_authors"] = list(current_authors)
+
+    if update_data:
+        db_helpers.update_preferences(user_id, update_data)
+
+    # Return updated preferences
+    prefs = db_helpers.get_user_preferences(user_id)
+
+    return PreferencesResponse(
+        user_email=request.user_email,
+        liked_books=prefs.get("liked_books", []) or [],
+        disliked_books=prefs.get("disliked_books", []) or [],
+        liked_authors=prefs.get("liked_authors", []) or [],
+        liked_genres=prefs.get("liked_genres", []) or [],
+        disliked_authors=prefs.get("disliked_authors", []) or [],
+        disliked_genres=prefs.get("disliked_genres", []) or [],
+        updated_at=prefs.get("updated_at", "")
     )

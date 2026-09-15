@@ -1,6 +1,6 @@
 """
-Database helper functions for Supabase operations.
-Abstracts episodic, semantic, and procedural memory interactions.
+Database helper functions for simplified schema.
+Manages users, preferences, and interaction log.
 """
 
 import os
@@ -8,6 +8,7 @@ import json
 from typing import Optional, Dict, Any, List
 from dotenv import load_dotenv
 from supabase import create_client, Client
+from prompts import get_pattern_detection_prompt
 
 load_dotenv()
 
@@ -26,359 +27,252 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 def get_or_create_user(email: str) -> str:
     """Get user ID by email, or create user if doesn't exist."""
-    # Try to find existing user
-    result = supabase.table("users").select("id").eq("email", email).execute()
+    result = supabase.table("user_profile").select("user_id").eq("email", email).execute()
 
     if result.data:
-        return result.data[0]["id"]
+        return result.data[0]["user_id"]
 
     # Create new user
-    new_user = supabase.table("users").insert({"email": email}).execute()
-    return new_user.data[0]["id"]
+    new_user = supabase.table("user_profile").insert({"email": email}).execute()
+    return new_user.data[0]["user_id"]
 
 
 def get_user_by_id(user_id: str) -> Optional[Dict[str, Any]]:
     """Fetch user by ID."""
-    result = supabase.table("users").select("*").eq("id", user_id).execute()
+    result = supabase.table("user_profile").select("*").eq("user_id", user_id).execute()
     return result.data[0] if result.data else None
 
 
 # ============================================================================
-# Episodic Memory: Recommendation Sessions
+# User Preferences (THE CORE)
 # ============================================================================
 
-def create_recommendation_session(
-    user_id: str,
-    query: str,
-    recommendation_type: str,
-    recommendations: List[Dict[str, Any]]
-) -> str:
-    """
-    Create a recommendation session (episodic event).
+def get_or_create_preferences(user_id: str) -> Dict[str, Any]:
+    """Get or create user preferences."""
+    result = supabase.table("user_preferences").select("*").eq("user_id", user_id).execute()
 
-    Returns:
-        session_id: UUID of the created session
-    """
-    response = supabase.table("recommendation_sessions").insert({
+    if result.data:
+        return result.data[0]
+
+    # Create new preferences
+    new_prefs = supabase.table("user_preferences").insert({
         "user_id": user_id,
-        "query": query,
-        "recommendation_type": recommendation_type,
-        "num_recommendations": len(recommendations),
-        "recommendations": json.dumps(recommendations)
+        "liked_books": [],
+        "disliked_books": [],
+        "liked_authors": [],
+        "liked_genres": [],
+        "disliked_authors": [],
+        "disliked_genres": []
     }).execute()
 
-    return response.data[0]["id"]
+    return new_prefs.data[0]
 
 
-def add_feedback_to_session(
-    session_id: str,
-    liked_indices: List[int],
-    rejected_indices: List[int],
-    feedback_text: Optional[str] = None
-) -> Dict[str, Any]:
+def get_user_preferences(user_id: str) -> Dict[str, Any]:
+    """Fetch user preferences."""
+    result = supabase.table("user_preferences").select("*").eq("user_id", user_id).execute()
+    return result.data[0] if result.data else get_or_create_preferences(user_id)
+
+
+def update_preferences(user_id: str, preferences: Dict[str, List[str]]) -> Dict[str, Any]:
     """
-    Add user feedback to a recommendation session.
+    Update user preferences.
+
+    Args:
+        user_id: User ID
+        preferences: {
+            "liked_books": [...],
+            "disliked_books": [...],
+            "liked_authors": [...],
+            "liked_genres": [...],
+            "disliked_authors": [...],
+            "disliked_genres": [...]
+        }
+    """
+    from datetime import datetime, timezone
+    update_data = {
+        **preferences,
+        "updated_at": datetime.now(timezone.utc).isoformat()
+    }
+
+    result = supabase.table("user_preferences").update(update_data).eq("user_id", user_id).execute()
+    return result.data[0] if result.data else {}
+
+
+def add_to_preferences(user_id: str, field: str, value: str) -> None:
+    """
+    Add a single item to a preference array.
+
+    Args:
+        field: 'liked_books', 'disliked_authors', etc.
+        value: Item to add
+    """
+    from datetime import datetime, timezone
+    prefs = get_user_preferences(user_id)
+    current = prefs.get(field, []) or []
+
+    if value not in current:
+        current.append(value)
+        update_data = {
+            field: current,
+            "updated_at": datetime.now(timezone.utc).isoformat()
+        }
+        supabase.table("user_preferences").update(update_data).eq("user_id", user_id).execute()
+
+
+# ============================================================================
+# Interaction Log (Session Feedback)
+# ============================================================================
+
+def log_feedback(user_id: str, liked_books: List[str], disliked_books: List[str]) -> str:
+    """
+    Log user feedback from a single query session.
 
     Returns:
-        updated session data
+        interaction_log_id
     """
-    update_data = {
-        "liked_indices": liked_indices,
-        "rejected_indices": rejected_indices
-    }
+    result = supabase.table("interaction_log").insert({
+        "user_id": user_id,
+        "liked_books": liked_books,
+        "disliked_books": disliked_books
+    }).execute()
 
-    if feedback_text:
-        update_data["user_feedback"] = feedback_text
-
-    response = supabase.table("recommendation_sessions").update(
-        update_data
-    ).eq("id", session_id).execute()
-
-    return response.data[0] if response.data else {}
+    return result.data[0]["id"] if result.data else None
 
 
-def get_session(session_id: str) -> Optional[Dict[str, Any]]:
-    """Fetch a recommendation session."""
-    try:
-        result = supabase.table("recommendation_sessions").select("*").eq(
-            "id", session_id
-        ).execute()
-
-        if result.data:
-            # Parse JSON fields
-            session = result.data[0]
-            if session.get("recommendations"):
-                session["recommendations"] = json.loads(session["recommendations"])
-            return session
-
-        return None
-    except Exception:
-        # Invalid UUID format or other error
-        return None
-
-
-def get_user_sessions(user_id: str, limit: int = 50) -> List[Dict[str, Any]]:
-    """
-    Fetch all recommendation sessions for a user (ordered by most recent).
-    Used by summarizer to extract semantic/procedural patterns.
-    """
-    result = supabase.table("recommendation_sessions").select("*").eq(
+def get_recent_interactions(user_id: str, limit: int = 10) -> List[Dict[str, Any]]:
+    """Get recent feedback interactions for a user."""
+    result = supabase.table("interaction_log").select("*").eq(
         "user_id", user_id
     ).order("timestamp", desc=True).limit(limit).execute()
-
-    sessions = []
-    for session in result.data:
-        if session.get("recommendations"):
-            session["recommendations"] = json.loads(session["recommendations"])
-        sessions.append(session)
-
-    return sessions
-
-
-# ============================================================================
-# Episodic Memory: Reading History
-# ============================================================================
-
-def add_to_reading_history(
-    user_id: str,
-    book_id: str,
-    title: str,
-    authors: List[str],
-    status: str,
-    rating: Optional[int] = None,
-    review_text: Optional[str] = None,
-    came_from_session_id: Optional[str] = None
-) -> str:
-    """
-    Add a book to user's reading history.
-    Tracks user's actual reads (not just recommendations).
-    """
-    data = {
-        "user_id": user_id,
-        "book_id": book_id,
-        "title": title,
-        "authors": authors,
-        "status": status
-    }
-
-    if rating:
-        data["rating"] = rating
-
-    if review_text:
-        data["review_text"] = review_text
-
-    if came_from_session_id:
-        data["came_from_recommendation_id"] = came_from_session_id
-
-    response = supabase.table("reading_history").insert(data).execute()
-    return response.data[0]["id"]
-
-
-def get_user_reading_history(user_id: str) -> List[Dict[str, Any]]:
-    """Fetch all books user has read/is reading."""
-    result = supabase.table("reading_history").select("*").eq(
-        "user_id", user_id
-    ).order("date_finished", desc=True).execute()
 
     return result.data
 
 
-def get_unread_books(user_id: str) -> List[str]:
+def get_all_feedback(user_id: str) -> Dict[str, List[str]]:
     """
-    Get list of book IDs user has already read, is reading, or rejected.
-    These should be filtered out from recommendations.
-
-    Excludes:
-    - "read": Books user has finished
-    - "reading": Books user is currently reading
-    - "abandoned": Books user explicitly rejected
-    - "want": Books user marked as liked (wishlist, so don't re-recommend)
-
-    Does NOT exclude:
-    - Nothing; we filter everything that's been interacted with
+    Get all liked and disliked books from interaction history.
+    Used for pattern detection.
     """
-    result = supabase.table("reading_history").select("book_id").eq(
-        "user_id", user_id
-    ).in_("status", ["read", "reading", "abandoned", "want"]).execute()
+    interactions = get_recent_interactions(user_id, limit=100)
 
-    # Extract book_ids (read, reading, rejected, or marked as liked)
-    already_seen_ids = set(row["book_id"] for row in result.data)
+    all_liked = set()
+    all_disliked = set()
 
-    return list(already_seen_ids)
+    for interaction in interactions:
+        all_liked.update(interaction.get("liked_books", []))
+        all_disliked.update(interaction.get("disliked_books", []))
 
-
-# ============================================================================
-# Semantic Memory: User Profiles
-# ============================================================================
-
-def get_or_create_user_profile(user_id: str) -> str:
-    """Get user profile ID, or create empty one if doesn't exist."""
-    result = supabase.table("user_profiles").select("id").eq(
-        "user_id", user_id
-    ).execute()
-
-    if result.data:
-        return result.data[0]["id"]
-
-    # Create new profile
-    new_profile = supabase.table("user_profiles").insert({
-        "user_id": user_id,
-        "semantic_json": json.dumps({}),
-        "procedural_json": json.dumps({})
-    }).execute()
-
-    return new_profile.data[0]["id"]
-
-
-def get_user_profile(user_id: str) -> Optional[Dict[str, Any]]:
-    """Fetch user's semantic + procedural profile."""
-    result = supabase.table("user_profiles").select("*").eq(
-        "user_id", user_id
-    ).execute()
-
-    if not result.data:
-        return None
-
-    profile = result.data[0]
-
-    # Parse JSON fields
-    if profile.get("semantic_json"):
-        profile["semantic_json"] = json.loads(profile["semantic_json"])
-    else:
-        profile["semantic_json"] = {}
-
-    if profile.get("procedural_json"):
-        profile["procedural_json"] = json.loads(profile["procedural_json"])
-    else:
-        profile["procedural_json"] = {}
-
-    return profile
-
-
-def update_user_profile(
-    user_id: str,
-    semantic_data: Optional[Dict[str, Any]] = None,
-    procedural_data: Optional[Dict[str, Any]] = None
-) -> Dict[str, Any]:
-    """
-    Update user's semantic/procedural profile.
-    Called by the summarizer agent after distilling facts from episodic data.
-    """
-    update_dict = {}
-
-    if semantic_data is not None:
-        update_dict["semantic_json"] = json.dumps(semantic_data)
-
-    if procedural_data is not None:
-        update_dict["procedural_json"] = json.dumps(procedural_data)
-
-    if update_dict:
-        update_dict["last_summarized"] = "now()"
-
-    result = supabase.table("user_profiles").update(update_dict).eq(
-        "user_id", user_id
-    ).execute()
-
-    if result.data:
-        profile = result.data[0]
-        if profile.get("semantic_json"):
-            profile["semantic_json"] = json.loads(profile["semantic_json"])
-        if profile.get("procedural_json"):
-            profile["procedural_json"] = json.loads(profile["procedural_json"])
-        return profile
-
-    return {}
-
-
-# ============================================================================
-# Interaction Log (Audit Trail)
-# ============================================================================
-
-def log_interaction(
-    user_id: str,
-    event_type: str,
-    event_data: Dict[str, Any],
-    session_id: Optional[str] = None
-) -> str:
-    """Log an interaction event."""
-    data = {
-        "user_id": user_id,
-        "event_type": event_type,
-        "event_data": json.dumps(event_data)
+    return {
+        "liked_books": list(all_liked),
+        "disliked_books": list(all_disliked)
     }
 
-    if session_id:
-        data["session_id"] = session_id
-
-    response = supabase.table("interaction_log").insert(data).execute()
-    return response.data[0]["id"]
-
-
-def get_user_interactions(user_id: str, event_type: Optional[str] = None) -> List[Dict[str, Any]]:
-    """Fetch user's interaction logs, optionally filtered by event type."""
-    query = supabase.table("interaction_log").select("*").eq("user_id", user_id)
-
-    if event_type:
-        query = query.eq("event_type", event_type)
-
-    result = query.order("timestamp", desc=True).execute()
-
-    interactions = []
-    for log in result.data:
-        if log.get("event_data"):
-            log["event_data"] = json.loads(log["event_data"])
-        interactions.append(log)
-
-    return interactions
-
 
 # ============================================================================
-# Feedback Counting (For Summarizer Trigger)
+# Pattern Detection (for suggesting preference updates)
 # ============================================================================
 
-def count_feedback_since_last_summary(user_id: str) -> int:
+def detect_patterns(user_id: str) -> Dict[str, Any]:
     """
-    Count how many feedback interactions user has given since last summarization.
-    Used to trigger summarizer every Nth feedback.
+    Detect patterns from recent feedback using Claude.
+    Analyzes liked/disliked books to suggest new genres, authors, themes.
+
+    Returns:
+        {
+            "suggested_liked_genres": [...],
+            "suggested_liked_authors": [...],
+            "suggested_disliked_genres": [...],
+            "suggested_disliked_authors": [...],
+            "analysis": "Why these suggestions",
+            "confidence": 0.8,
+            "feedback_count": 10,
+            "books_analyzed": ["Title 1", "Title 2", ...]
+        }
     """
-    profile = get_user_profile(user_id)
+    from anthropic import Anthropic
 
-    if not profile or not profile.get("last_summarized"):
-        # Never summarized, count all feedback
-        last_summary = None
-    else:
-        last_summary = profile["last_summarized"]
+    feedback = get_all_feedback(user_id)
+    prefs = get_user_preferences(user_id)
 
-    # Count feedback_given interactions since last summary
-    query = supabase.table("interaction_log").select(
-        "count", count="exact"
-    ).eq("user_id", user_id).eq("event_type", "feedback_given")
+    liked_books = feedback.get("liked_books", [])
+    disliked_books = feedback.get("disliked_books", [])
 
-    if last_summary:
-        query = query.gt("timestamp", last_summary)
+    # Need at least 5 voted books to detect patterns
+    if len(liked_books) + len(disliked_books) < 5:
+        return {
+            "suggested_liked_genres": [],
+            "suggested_liked_authors": [],
+            "suggested_disliked_genres": [],
+            "suggested_disliked_authors": [],
+            "analysis": f"Need at least 5 votes to detect patterns (currently {len(liked_books) + len(disliked_books)})",
+            "confidence": 0.0,
+            "feedback_count": len(liked_books) + len(disliked_books),
+            "books_analyzed": []
+        }
 
-    result = query.execute()
-    return result.count if result.count is not None else 0
+    # Use Claude to detect patterns
+    client = Anthropic()
+    prompt = get_pattern_detection_prompt(liked_books, disliked_books, prefs)
+
+    try:
+        message = client.messages.create(
+            model="claude-3-5-sonnet-20241022",
+            max_tokens=500,
+            messages=[{"role": "user", "content": prompt}]
+        )
+
+        import json
+        response_text = message.content[0].text
+
+        # Extract JSON from response
+        try:
+            result = json.loads(response_text)
+        except json.JSONDecodeError:
+            # Try to find JSON in the response
+            import re
+            json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
+            if json_match:
+                result = json.loads(json_match.group())
+            else:
+                raise ValueError("Could not parse Claude response as JSON")
+
+        return {
+            **result,
+            "feedback_count": len(liked_books) + len(disliked_books),
+            "books_analyzed": liked_books + disliked_books
+        }
+
+    except Exception as e:
+        print(f"Error detecting patterns: {e}")
+        return {
+            "suggested_liked_genres": [],
+            "suggested_liked_authors": [],
+            "suggested_disliked_genres": [],
+            "suggested_disliked_authors": [],
+            "analysis": f"Pattern detection error: {str(e)}",
+            "confidence": 0.0,
+            "feedback_count": len(liked_books) + len(disliked_books),
+            "books_analyzed": []
+        }
 
 
 # ============================================================================
-# Summary Statistics (For Debugging)
+# Statistics
 # ============================================================================
 
 def get_user_stats(user_id: str) -> Dict[str, Any]:
     """Get summary statistics about a user."""
-    reading_history = get_user_reading_history(user_id)
-    profile = get_user_profile(user_id)
-
-    # Count feedback interactions
-    feedback_interactions = get_user_interactions(user_id, event_type="feedback_given")
-    feedback_count = len(feedback_interactions)
+    prefs = get_user_preferences(user_id)
+    interactions = get_recent_interactions(user_id, limit=100)
 
     return {
-        "total_feedback_given": feedback_count,
-        "books_read": len([b for b in reading_history if b["status"] == "read"]),
-        "books_currently_reading": len([b for b in reading_history if b["status"] == "reading"]),
-        "books_in_wishlist": len([b for b in reading_history if b["status"] == "want"]),
-        "profile_interests": profile["semantic_json"].get("interests", []) if profile else [],
-        "last_summarized": profile["last_summarized"] if profile else None
+        "total_interactions": len(interactions),
+        "liked_books": len(prefs.get("liked_books", []) or []),
+        "disliked_books": len(prefs.get("disliked_books", []) or []),
+        "liked_authors": len(prefs.get("liked_authors", []) or []),
+        "liked_genres": len(prefs.get("liked_genres", []) or []),
+        "disliked_authors": len(prefs.get("disliked_authors", []) or []),
+        "disliked_genres": len(prefs.get("disliked_genres", []) or []),
+        "updated_at": prefs.get("updated_at")
     }

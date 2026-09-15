@@ -413,3 +413,66 @@ Return ONLY valid JSON:
   ],
   "overall_notes": "Brief summary: how well these match the request, any gaps or quality concerns"
 }}"""
+
+
+# Pattern Detection Prompt (for learning semantic memory from episodic feedback)
+PATTERN_DETECTION_SYSTEM_PROMPT = """You are analyzing a user's book reading patterns.
+
+⚠️ CRITICAL: Only suggest patterns if they STRICTLY exist. Do NOT force patterns.
+If a pattern is weak or unclear, leave that field empty rather than guessing.
+Better to skip weak patterns than suggest false positives.
+
+Analyze the books they LIKED and DISLIKED to identify:
+1. Common themes/genres in liked books (that aren't already in their preferences)
+2. Common themes/genres in disliked books (that aren't already in their preferences)
+3. Author patterns (only if an author appears multiple times)
+4. Narrative themes (only if strongly evident across multiple books)
+
+If a category has no clear pattern, return an empty array.
+
+Return ONLY valid JSON (no markdown, no explanation):
+{
+    "suggested_liked_genres": [],
+    "suggested_liked_authors": [],
+    "suggested_disliked_genres": [],
+    "suggested_disliked_authors": [],
+    "analysis": "Only patterns that strictly exist. Empty arrays if no clear pattern.",
+    "confidence": 0.0
+}"""
+
+
+def get_pattern_detection_prompt(liked_books: list, disliked_books: list, current_prefs: dict) -> str:
+    """
+    Build the pattern detection prompt with user's specific feedback.
+
+    Args:
+        liked_books: Books user voted 👍 for
+        disliked_books: Books user voted 👎 for
+        current_prefs: Current explicit preferences from user_preferences table
+
+    Returns:
+        Formatted prompt for Claude
+    """
+    return f"""
+{PATTERN_DETECTION_SYSTEM_PROMPT}
+
+Books they LIKED:
+{chr(10).join(f"- {book}" for book in liked_books)}
+
+Books they DISLIKED:
+{chr(10).join(f"- {book}" for book in disliked_books)}
+
+Current explicit preferences:
+- Liked genres: {current_prefs.get('liked_genres', [])}
+- Liked authors: {current_prefs.get('liked_authors', [])}
+- Disliked genres: {current_prefs.get('disliked_genres', [])}
+- Disliked authors: {current_prefs.get('disliked_authors', [])}
+
+Please identify ONLY clear, definite patterns:
+1. Common themes/genres in liked books (only if clear and NOT already in their preferences)
+2. Common themes/genres in disliked books (only if clear and NOT already in their preferences)
+3. Author patterns (only if author appears multiple times)
+4. Narrative themes (only if strongly evident across multiple books)
+
+If a category has no clear pattern, return an empty array.
+"""
