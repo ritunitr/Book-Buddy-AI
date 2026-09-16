@@ -1,8 +1,8 @@
 """
-Semantic Profile Injection using User Preferences.
+Semantic Profile Injection using User Preferences (Fact).
 
-Injects user's explicit preferences (liked/disliked books, authors, genres)
-into the recommendation prompt to personalize results.
+Injects user's distilled preference fact into recommendation prompts
+to personalize results based on their reading history.
 """
 
 from typing import Optional, Dict, Any
@@ -11,35 +11,17 @@ import db_helpers
 
 def build_preference_context(user_email: str) -> str:
     """
-    Build preference context string from user's settings.
-    Returns empty string if no preferences set.
+    Build preference context from user's fact (semantic memory).
+    Returns empty string if no fact exists yet.
     """
     user_id = db_helpers.get_or_create_user(user_email)
     prefs = db_helpers.get_user_preferences(user_id)
 
-    lines = []
-
-    # Liked preferences
-    if prefs.get("liked_genres"):
-        lines.append(f"Interested in: {', '.join(prefs['liked_genres'])}")
-
-    if prefs.get("liked_authors"):
-        lines.append(f"Favorite authors: {', '.join(prefs['liked_authors'])}")
-
-    if prefs.get("liked_books"):
-        lines.append(f"Books they enjoyed: {', '.join(prefs['liked_books'][:3])}")
-
-    # Dislikes
-    if prefs.get("disliked_genres"):
-        lines.append(f"Avoid: {', '.join(prefs['disliked_genres'])}")
-
-    if prefs.get("disliked_authors"):
-        lines.append(f"Not interested in: {', '.join(prefs['disliked_authors'])}")
-
-    if not lines:
+    fact = prefs.get("fact")
+    if not fact:
         return ""
 
-    return "User Preferences:\n" + "\n".join(f"  • {line}" for line in lines)
+    return f"User Reading Profile:\n{fact}"
 
 
 def personalize_recommendation_prompt(
@@ -47,8 +29,8 @@ def personalize_recommendation_prompt(
     user_email: Optional[str] = None
 ) -> str:
     """
-    Enhance recommendation query with user's preferences.
-    Falls back to original query if no preferences exist.
+    Enhance recommendation query with user's preference fact.
+    Falls back to original query if no fact exists.
     """
     if not user_email:
         return original_query
@@ -60,10 +42,10 @@ def personalize_recommendation_prompt(
     prompt_section = f"""
 {context}
 
-Consider these preferences when selecting recommendations.
-- Prioritize books matching their interests
-- Avoid books in their dislike list
-- Look for similar authors or genres they enjoy
+Consider this reading profile when selecting recommendations:
+- Prioritize books that match their demonstrated interests
+- Avoid books similar to ones they disliked
+- Look for patterns in their liked books
 """
     return f"{original_query}\n{prompt_section}"
 
@@ -73,24 +55,23 @@ def filter_candidates_by_preferences(
     candidate_books: list
 ) -> tuple:
     """
-    Filter candidate books by user's preferences.
-    Removes books by disliked authors or in disliked genres (if extractable).
+    Filter candidate books based on user preferences.
+
+    For now, returns all candidates since the fact is qualitative.
+    In a more sophisticated system, could extract structured dislikes
+    from the fact using Claude.
 
     Returns:
         (filtered_books, metadata)
     """
-    user_id = db_helpers.get_or_create_user(user_email)
-    prefs = db_helpers.get_user_preferences(user_id)
-
-    disliked_books = set(prefs.get("disliked_books", []) or [])
-
-    # Filter out explicitly disliked books
-    filtered = [b for b in candidate_books if b.get("title") not in disliked_books]
+    # Currently, filtering is done via semantic injection in the prompt
+    # The LLM uses the fact to naturally avoid disliked preferences
 
     metadata = {
         "original_count": len(candidate_books),
-        "filtered_out_count": len(candidate_books) - len(filtered),
-        "final_count": len(filtered)
+        "filtered_out_count": 0,
+        "final_count": len(candidate_books),
+        "filter_type": "semantic"
     }
 
-    return filtered, metadata
+    return candidate_books, metadata

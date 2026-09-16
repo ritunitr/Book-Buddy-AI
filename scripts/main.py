@@ -25,15 +25,9 @@ from book_recommender import run_progression_concurrent
 from user_profile_endpoints import (
     FeedbackRequest,
     FeedbackResponse,
-    PreferencesRequest,
-    PreferencesResponse,
-    PatternSuggestions,
-    ConfirmPatternsRequest,
+    UserProfileResponse,
     handle_feedback,
-    handle_get_preferences,
-    handle_update_preferences,
-    handle_get_patterns,
-    handle_confirm_patterns
+    handle_get_user_profile
 )
 from semantic_injection import (
     personalize_recommendation_prompt,
@@ -359,81 +353,17 @@ async def feedback_endpoint(request: FeedbackRequest) -> FeedbackResponse:
 
 
 @app.get("/user-profile")
-async def get_user_profile_endpoint(user_email: str) -> PreferencesResponse:
+async def get_user_profile_endpoint(user_email: str) -> UserProfileResponse:
     """
-    Get user's current preferences.
+    Get user's semantic memory (preference fact).
 
     Query parameter:
     - user_email: User's email address
 
-    Returns user's explicit preferences: liked/disliked books, authors, genres.
+    Returns user's distilled reading profile fact.
     """
     try:
-        response = await handle_get_preferences(user_email)
+        response = await handle_get_user_profile(user_email)
         return response
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Profile error: {str(e)}")
-
-
-@app.post("/user-profile/preferences")
-async def update_preferences_endpoint(request: PreferencesRequest) -> PreferencesResponse:
-    """
-    Update user's preferences.
-
-    Allows user to set or modify their explicit preferences.
-    """
-    try:
-        response = await handle_update_preferences(request)
-        return response
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Update error: {str(e)}")
-
-
-# ============================================================================
-# Pattern Detection Endpoints
-# ============================================================================
-
-@app.get("/user-profile/patterns")
-async def get_patterns_endpoint(user_email: str) -> PatternSuggestions:
-    """
-    Detect patterns from user's feedback history.
-
-    Analyzes all liked/disliked books and suggests new preferences (genres, authors).
-    Uses Claude to identify patterns.
-
-    Query parameter:
-    - user_email: User's email address
-
-    Returns suggested preferences with confidence scores.
-    """
-    try:
-        response = await handle_get_patterns(user_email)
-        return response
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Pattern detection error: {str(e)}")
-
-
-@app.post("/user-profile/patterns/confirm")
-async def confirm_patterns_endpoint(request: ConfirmPatternsRequest) -> PreferencesResponse:
-    """
-    Accept suggested patterns and update user preferences.
-
-    User can selectively accept suggested genres, authors, etc. from pattern detection.
-    Accepted suggestions are merged with existing preferences.
-
-    Request body:
-    {
-        "user_email": "user@example.com",
-        "liked_genres": ["Mystery", "Thriller"],
-        "liked_authors": ["Agatha Christie"],
-        "disliked_genres": ["Horror"],
-        "disliked_authors": []
-    }
-
-    Returns updated user preferences.
-    """
-    try:
-        response = await handle_confirm_patterns(request)
-        return response
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Confirm error: {str(e)}")
