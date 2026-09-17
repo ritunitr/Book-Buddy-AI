@@ -5,7 +5,7 @@ Injects user's distilled preference fact into recommendation prompts
 to personalize results based on their reading history.
 """
 
-from typing import Optional, Dict, Any
+from typing import Optional
 import db_helpers
 
 
@@ -55,23 +55,51 @@ def filter_candidates_by_preferences(
     candidate_books: list
 ) -> tuple:
     """
-    Filter candidate books based on user preferences.
+    Hard filter: Remove books that user explicitly disliked.
 
-    For now, returns all candidates since the fact is qualitative.
-    In a more sophisticated system, could extract structured dislikes
-    from the fact using Claude.
+    Gets disliked books from interaction_log and removes exact title matches
+    from candidates before recommendation LLM sees them.
 
     Returns:
         (filtered_books, metadata)
     """
-    # Currently, filtering is done via semantic injection in the prompt
-    # The LLM uses the fact to naturally avoid disliked preferences
+    if not candidate_books:
+        return [], {
+            "original_count": 0,
+            "filtered_out_count": 0,
+            "final_count": 0,
+            "filter_type": "disliked_books"
+        }
+
+    # Get user's disliked books from interaction history
+    user_id = db_helpers.get_or_create_user(user_email)
+    feedback = db_helpers.get_all_feedback(user_id)
+    disliked_books = set(b.lower().strip() for b in feedback.get("disliked_books", []))
+
+    if not disliked_books:
+        return candidate_books, {
+            "original_count": len(candidate_books),
+            "filtered_out_count": 0,
+            "final_count": len(candidate_books),
+            "filter_type": "disliked_books"
+        }
+
+    # Filter out books matching disliked titles
+    filtered = []
+    filtered_out_count = 0
+
+    for book in candidate_books:
+        title = book.get("title", "").lower().strip()
+        if title not in disliked_books:
+            filtered.append(book)
+        else:
+            filtered_out_count += 1
 
     metadata = {
         "original_count": len(candidate_books),
-        "filtered_out_count": 0,
-        "final_count": len(candidate_books),
-        "filter_type": "semantic"
+        "filtered_out_count": filtered_out_count,
+        "final_count": len(filtered),
+        "filter_type": "disliked_books"
     }
 
-    return candidate_books, metadata
+    return filtered, metadata
